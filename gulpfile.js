@@ -2,6 +2,7 @@
 
 const csso = require('gulp-csso')
 const del = require('del')
+const ga = require('gulp-ga')
 const gulp = require('gulp')
 const htmlmin = require('gulp-htmlmin')
 const inline = require('gulp-inline')
@@ -14,6 +15,12 @@ gulp.task('clean', () =>
 
 gulp.task('build', ['clean'], () =>
   gulp.src('app/index.html')
+    .pipe(ga({
+      minify: true,
+      tag: 'body',
+      uid: 'UA-83435303-1',
+      url: 'auto'
+    }))
     .pipe(inline({
       css: csso
     }))
