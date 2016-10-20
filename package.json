@@ -1,0 +1,13 @@
+{
+  "name": "dustinspecker.com",
+  "version": "0.0.0",
+  "description": "Personal website of Dustin Specker",
+  "repository": "dustinspecker/dustinspecker.com",
+  "author": "Dustin Specker <DustinSpecker@DustinSpecker.com> (http://dustinspecker.com/)",
+  "scripts": {
+    "build": "gulp"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
