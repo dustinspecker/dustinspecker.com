@@ -1,0 +1,47 @@
+<h2>{{lift}}</h2>
+<form class="form-inline" role="form">
+  <div class="form-group">
+    <label class="sr-only" for="workWeight">Work Weight</label>
+    <input class="form-control" type="number" ng-model="workset" ng-change="update()" min="45" step="5" value="{{workset}}" id="workWeight"/>
+  </div>
+  <button class="btn pull-left" ng-click="workset = workset - 5; update()"><span class="glyphicon glyphicon-minus"></span></button>
+  <button class="btn pull-right" ng-click="workset = workset + 5; update()"><span class="glyphicon glyphicon-plus"></span></button>
+</form>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Sets &times; Reps</th>
+      <th>Weight</th>
+      <th>Plates</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2&times;5</td>
+      <td>{{warmup1}}</td>
+      <td>{{plate1}}</td>
+    </tr>
+    <tr>
+      <td>1&times;5</td>
+      <td>{{warmup2}}</td>
+      <td>{{plate2}}</td>
+    </tr>
+    <tr>
+      <td>1&times;3</td>
+      <td>{{warmup3}}</td>
+      <td>{{plate3}}</td>
+    </tr>
+    <tr>
+      <td>1&times;2</td>
+      <td>{{warmup4}}</td>
+      <td>{{plate4}}</td>
+    </tr>
+    <tr>
+      <td>{{lift == "deadlift" && "1&times;5" || "3&times;5"}}</td>
+      <td>{{workset}}</td>
+      <td>{{plate5}}</td>
+    </tr>
+  </tbody>
+</table>
+<textarea class="form-control" ng-model="comment" ng-change="updateComment()" placeholder="Comment..."></textarea>
+<a href="#/lifts" class="btn btn-default btn-block">Back</a>
