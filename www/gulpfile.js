@@ -6,8 +6,10 @@ const ga = require('gulp-ga')
 const gulp = require('gulp')
 const htmlmin = require('gulp-htmlmin')
 const inline = require('gulp-inline')
+const purify = require('gulp-purifycss')
 
 const buildDir = 'build'
+const tmpDir = 'tmp'
 
 gulp.task('clean', () =>
   del(`${buildDir}`)
@@ -21,7 +23,13 @@ gulp.task('foundation', ['clean'], () =>
     .pipe(gulp.dest(buildDir))
 )
 
-gulp.task('build', ['foundation'], () =>
+gulp.task('purifycss', () =>
+  gulp.src('./node_modules/foundation-icon-fonts/foundation-icons.css')
+    .pipe(purify(['./app/index.html']))
+    .pipe(gulp.dest(tmpDir))
+)
+
+gulp.task('build', ['foundation', 'purifycss'], () =>
   gulp.src('app/index.html')
     .pipe(ga({
       minify: true,
