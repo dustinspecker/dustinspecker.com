@@ -5,7 +5,8 @@
   "repository": "dustinspecker/dustinspecker.com",
   "author": "Dustin Specker <DustinSpecker@DustinSpecker.com> (http://dustinspecker.com/)",
   "scripts": {
-    "build": "gulp"
+    "build": "gulp",
+    "install": "napa zurb/foundation-icon-fonts"
   },
   "devDependencies": {
     "del": "^2.2.2",
@@ -13,6 +14,7 @@
     "gulp-csso": "^2.0.0",
     "gulp-ga": "0.0.8",
     "gulp-htmlmin": "^3.0.0",
-    "gulp-inline": "^0.1.2"
+    "gulp-inline": "^0.1.2",
+    "napa": "^3.0.0"
   }
 }

@@ -13,7 +13,15 @@ gulp.task('clean', () =>
   del(`${buildDir}`)
 )
 
-gulp.task('build', ['clean'], () =>
+gulp.task('foundation', ['clean'], () =>
+  gulp.src([
+    './node_modules/foundation-icon-fonts/foundation-icons.ttf',
+    './node_modules/foundation-icon-fonts/foundation-icons.woff'
+  ])
+    .pipe(gulp.dest(buildDir))
+)
+
+gulp.task('build', ['foundation'], () =>
   gulp.src('app/index.html')
     .pipe(ga({
       minify: true,
