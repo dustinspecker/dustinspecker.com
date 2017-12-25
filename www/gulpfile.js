@@ -29,7 +29,12 @@ gulp.task('purifycss', () =>
     .pipe(gulp.dest(tmpDir))
 )
 
-gulp.task('build', ['foundation', 'purifycss'], () =>
+gulp.task('manifest', ['clean'], () =>
+  gulp.src('app/manifest.webmanifest')
+    .pipe(gulp.dest(buildDir))
+)
+
+gulp.task('build', ['foundation', 'purifycss', 'manifest'], () =>
   gulp.src('app/index.html')
     .pipe(ga({
       minify: true,
