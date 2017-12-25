@@ -12,7 +12,8 @@
     <!--Bootstrap javascript-->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <!--Angular-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular-route.min.js"></script>
     <script src="angular/angular-local-storage.js"></script>
 
     <style>
@@ -51,7 +52,7 @@
     <footer class="well well-sm text-center"><a href="#/changelog">Change Log</a></footer>
 
     <script>
-      var app = angular.module('dustinSpecker', ['LocalStorageModule']);
+      var app = angular.module('dustinSpecker', ['LocalStorageModule', 'ngRoute']);
       app.controller('bodyCtrl', function($scope, $location) {
 
         // active tab class
