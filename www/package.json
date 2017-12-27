@@ -15,7 +15,6 @@
     "gulp-ga": "0.0.8",
     "gulp-htmlmin": "^3.0.0",
     "gulp-inline": "^0.1.2",
-    "gulp-purifycss": "^0.2.0",
     "napa": "^3.0.0"
   }
 }

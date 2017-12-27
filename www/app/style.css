@@ -37,18 +37,19 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .icon {
-  font-size: 72px;
+  height: 72px;
+  width: 72px;
   margin: 0 5%;
 }
 
 .fi-social-github {
-  color: #221e1b;
+  fill: #221e1b;
 }
 
 .fi-social-linkedin {
-  color: #007bb6;
+  fill: #007bb6;
 }
 
 .fi-social-twitter {
-  color: #00aced;
+  fill: #00aced;
 }
