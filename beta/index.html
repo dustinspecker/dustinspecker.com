@@ -13,7 +13,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <!--Angular-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular-route.min.js"></script>
+    <script src="//unpkg.com/@uirouter/angularjs@1.0.12/release/angular-ui-router.min.js"></script>
     <script src="angular/angular-local-storage.js"></script>
 
     <style>
@@ -23,7 +23,7 @@
     </style>
   </head>
 
-  <body ng-controller="bodyCtrl">
+  <body>
 
     <!--top navigation-->
     <nav class="navbar navbar-default" role="navigation">
@@ -34,48 +34,28 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#/">Dustin Specker</a>
+        <a class="navbar-brand" ui-sref="home">Dustin Specker</a>
       </div>
 
       <div class="collapse navbar-collapse navbar-main-collapse">
         <ul class="nav navbar-nav">
-          <li ng-class="getActiveLink('/')"><a href="#/">Home</a></li>
-          <li ng-class="getActiveLink('/lifts')"><a href="#/lifts">Lifts</a></li>
+          <li ui-sref-active="{active: 'home'}"><a ui-sref="home">Home</a></li>
+          <li ui-sref-active="{active: 'lifts'}"><a ui-sref="lifts">Lifts</a></li>
         </ul>
       </div>
     </nav>
 
     <!--main content-->
-    <ng-view></ng-view>
+    <ui-view></ui-view>
 
     <!--footer-->
     <footer class="well well-sm text-center"><a href="#/changelog">Change Log</a></footer>
 
     <script>
-      var app = angular.module('dustinSpecker', ['LocalStorageModule', 'ngRoute']);
-      app.controller('bodyCtrl', function($scope, $location) {
-
-        // active tab class
-        $scope.activetab = ($location.path().indexOf('/lifts') !== -1) ? '/lifts' : '/';
-        $scope.setTab = function(tab) {
-          $scope.activetab = tab;
-        }
-        $scope.getActiveLink = function(path) {
-          return (path == $scope.activetab) ? 'active' : '';
-        }
-      });
-      app.controller('changeLogCtrl', function($scope) {
-        $scope.setTab('/changelog');
-      })
-      app.controller('homeCtrl', function($scope) {
-        $scope.setTab('/');
-      });
-      app.controller('liftsCtrl', function($scope) {
-        $scope.setTab('/lifts');
-      });
-      app.controller('warmupCtrl', function($scope, $location, $routeParams, localStorageService) {
+      var app = angular.module('dustinSpecker', ['LocalStorageModule', 'ui.router']);
+      app.controller('warmupCtrl', function($scope, $location, $stateParams, localStorageService) {
         // lift name
-        $scope.lift = $routeParams.lift;
+        $scope.lift = $stateParams.lift;
 
         // gets current lift work weight
         if(localStorageService.get($scope.lift) == null) {
@@ -155,28 +135,34 @@
       });
 
       // load page content based on URL change
-      app.config(['$routeProvider', function($routeProvider, $locationProvider) {
-        $routeProvider
-          .when('/', {
-            templateUrl: 'pages/home.html',
-            controller: 'homeCtrl'
+      app.config(function ($stateProvider) {
+        $stateProvider
+          .state({
+            name: 'home',
+            url: '/',
+            templateUrl: 'pages/home.html'
           })
-          .when('/changelog', {
-            templateUrl: 'pages/changelog.html',
-            controller: 'changeLogCtrl'
+          .state({
+            name: 'changelog',
+            url: '/changelog',
+            templateUrl: 'pages/changelog.html'
           })
-          .when('/lifts', {
-            templateUrl: 'pages/lifts.html',
-            controller: 'liftsCtrl'
+          .state({
+            name: 'lifts',
+            url: '/lifts',
+            templateUrl: 'pages/lifts.html'
           })
-          .when('/lifts/:lift', {
-            templateUrl: 'pages/warmup.html',
-            controller: 'warmupCtrl'
-          })
-          .otherwise({
-            redirectTo: '/'
+          .state({
+            name: 'lifts.warmup',
+            url: '/:lift',
+            views: {
+              '@': {
+                templateUrl: 'pages/warmup.html',
+                controller: 'warmupCtrl'
+              }
+            }
           });
-      }]);
+      });
     </script>
 
   </body>
