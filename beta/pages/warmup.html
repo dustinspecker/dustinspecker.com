@@ -1,11 +1,11 @@
-<h2>{{lift}}</h2>
+<h2>{{warmup.lift}}</h2>
 <form class="form-inline" role="form">
   <div class="form-group">
     <label class="sr-only" for="workWeight">Work Weight</label>
-    <input class="form-control" type="number" ng-model="workset" ng-change="update()" min="45" step="5" value="{{workset}}" id="workWeight"/>
+    <input class="form-control" type="number" ng-model="workset" ng-change="warmup.update()" min="45" step="5" value="{{warmup.workset}}" id="workWeight"/>
   </div>
-  <button class="btn pull-left" ng-click="workset = workset - 5; update()"><span class="glyphicon glyphicon-minus"></span></button>
-  <button class="btn pull-right" ng-click="workset = workset + 5; update()"><span class="glyphicon glyphicon-plus"></span></button>
+  <button class="btn pull-left" ng-click="warmup.workset = warmup.workset - 5; warmup.update()"><span class="glyphicon glyphicon-minus"></span></button>
+  <button class="btn pull-right" ng-click="warmup.workset = warmup.workset + 5; warmup.update()"><span class="glyphicon glyphicon-plus"></span></button>
 </form>
 <table class="table table-hover">
   <thead>
@@ -18,30 +18,30 @@
   <tbody>
     <tr>
       <td>2&times;5</td>
-      <td>{{warmup1}}</td>
-      <td>{{plate1}}</td>
+      <td>{{warmup.warmup1}}</td>
+      <td>{{warmup.plate1}}</td>
     </tr>
     <tr>
       <td>1&times;5</td>
-      <td>{{warmup2}}</td>
-      <td>{{plate2}}</td>
+      <td>{{warmup.warmup2}}</td>
+      <td>{{warmup.plate2}}</td>
     </tr>
     <tr>
       <td>1&times;3</td>
-      <td>{{warmup3}}</td>
-      <td>{{plate3}}</td>
+      <td>{{warmup.warmup3}}</td>
+      <td>{{warmup.plate3}}</td>
     </tr>
     <tr>
       <td>1&times;2</td>
-      <td>{{warmup4}}</td>
-      <td>{{plate4}}</td>
+      <td>{{warmup.warmup4}}</td>
+      <td>{{warmup.plate4}}</td>
     </tr>
     <tr>
-      <td>{{lift == "deadlift" && "1&times;5" || "3&times;5"}}</td>
-      <td>{{workset}}</td>
-      <td>{{plate5}}</td>
+      <td>{{warmup.lift == "deadlift" && "1&times;5" || "3&times;5"}}</td>
+      <td>{{warmup.workset}}</td>
+      <td>{{warmup.plate5}}</td>
     </tr>
   </tbody>
 </table>
-<textarea class="form-control" ng-model="comment" ng-change="updateComment()" placeholder="Comment..."></textarea>
+<textarea class="form-control" ng-model="warmup.comment" ng-change="warmup.updateComment()" placeholder="Comment..."></textarea>
 <a ui-sref="lifts" class="btn btn-default btn-block">Back</a>

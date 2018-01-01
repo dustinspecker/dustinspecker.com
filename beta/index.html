@@ -53,52 +53,52 @@
 
     <script>
       var app = angular.module('dustinSpecker', ['LocalStorageModule', 'ui.router']);
-      app.controller('warmupCtrl', function($scope, $location, $stateParams, localStorageService) {
+      app.controller('warmupCtrl', function($location, $stateParams, localStorageService) {
         // lift name
-        $scope.lift = $stateParams.lift;
+        this.lift = $stateParams.lift;
 
         // gets current lift work weight
-        if(localStorageService.get($scope.lift) == null) {
-          localStorageService.add($scope.lift, 50);
+        if(localStorageService.get(this.lift) == null) {
+          localStorageService.add(this.lift, 50);
         }
-        $scope.workset = parseInt(localStorageService.get($scope.lift));
+        this.workset = parseInt(localStorageService.get(this.lift));
 
         // gets current lift comment
-        $scope.comment = localStorageService.get($scope.lift + 'Comment');
+        this.comment = localStorageService.get(this.lift + 'Comment');
 
         // total weight
-        $scope.warmup1 = 45;
-        $scope.warmup2 = 45;
-        $scope.warmup3 = 45;
-        $scope.warmup4 = 45;
+        this.warmup1 = 45;
+        this.warmup2 = 45;
+        this.warmup3 = 45;
+        this.warmup4 = 45;
 
         // plates
-        $scope.plate1 = "";
-        $scope.plate2 = "";
-        $scope.plate3 = "";
-        $scope.plate4 = "";
-        $scope.plate5 = "";
+        this.plate1 = "";
+        this.plate2 = "";
+        this.plate3 = "";
+        this.plate4 = "";
+        this.plate5 = "";
 
 
-        $scope.update = function() {
-          localStorageService.add($scope.lift, $scope.workset);
-          var increment = ($scope.workset - 45) / 4;
-          $scope.warmup1 = 45;
-          $scope.warmup2 = round5($scope.warmup1 + increment);
-          $scope.warmup3 = round5($scope.warmup2 + increment);
-          $scope.warmup4 = round5($scope.warmup3 + increment);
+        this.update = function() {
+          localStorageService.add(this.lift, this.workset);
+          var increment = (this.workset - 45) / 4;
+          this.warmup1 = 45;
+          this.warmup2 = round5(this.warmup1 + increment);
+          this.warmup3 = round5(this.warmup2 + increment);
+          this.warmup4 = round5(this.warmup3 + increment);
 
-          $scope.plate1 = "bar";
-          $scope.plate2 = $scope.warmup2 == 45 ? "bar" : plates($scope.warmup2, "");
-          $scope.plate3 = $scope.warmup3 == 45 ? "bar" : plates($scope.warmup3, "");
-          $scope.plate4 = $scope.warmup4 == 45 ? "bar" : plates($scope.warmup4, "");
-          $scope.plate5 = $scope.workset == 45 ? "bar" : plates($scope.workset, "");
+          this.plate1 = "bar";
+          this.plate2 = this.warmup2 == 45 ? "bar" : plates(this.warmup2, "");
+          this.plate3 = this.warmup3 == 45 ? "bar" : plates(this.warmup3, "");
+          this.plate4 = this.warmup4 == 45 ? "bar" : plates(this.warmup4, "");
+          this.plate5 = this.workset == 45 ? "bar" : plates(this.workset, "");
         };
 
-        $scope.update(); // update to get initial display values
+        this.update(); // update to get initial display values
 
-        $scope.updateComment = function() {
-          localStorageService.add($scope.lift + 'Comment', $scope.comment);
+        this.updateComment = function() {
+          localStorageService.add(this.lift + 'Comment', this.comment);
         };
 
         function round5(x) {
@@ -158,7 +158,8 @@
             views: {
               '@': {
                 templateUrl: 'pages/warmup.html',
-                controller: 'warmupCtrl'
+                controller: 'warmupCtrl',
+                controllerAs: 'warmup'
               }
             }
           });
