@@ -34,3 +34,11 @@ module.exports = {
     })
   ]
 }
+
+module.exports.serve = {
+  content: ['./app'],
+  hot: {
+    host: 'localhost',
+    port: '8090'
+  }
+}

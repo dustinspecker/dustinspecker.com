@@ -4,7 +4,8 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "serve": "webpack-serve"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -14,7 +15,8 @@
     "html-webpack-plugin": "^3.2.0",
     "html-webpack-template": "^6.2.0",
     "webpack": "^4.5.0",
-    "webpack-cli": "^2.0.14"
+    "webpack-cli": "^2.0.14",
+    "webpack-serve": "^0.3.1"
   },
   "dependencies": {
     "material-ui": "^1.0.0-beta.41",
