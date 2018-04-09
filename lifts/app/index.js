@@ -1,6 +1,6 @@
 import AppBar from 'material-ui/AppBar'
 import CssBaseline from 'material-ui/CssBaseline'
-import Lift from './components/lift'
+import LiftListItem from './components/lift-list-item'
 import List from 'material-ui/List'
 import Paper from 'material-ui/Paper'
 import React from 'react'
@@ -52,7 +52,7 @@ class App extends React.Component {
           >
             {Object.entries(lifts)
               .map(([id, liftData]) =>
-                <Lift
+                <LiftListItem
                   key={id}
                   id={id}
                   {...liftData}

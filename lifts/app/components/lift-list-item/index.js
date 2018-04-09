@@ -3,7 +3,7 @@ import Paper from 'material-ui/Paper'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-class Lift extends React.Component {
+class LiftListItem extends React.Component {
   render() {
     const {name} = this.props
 
@@ -26,9 +26,9 @@ class Lift extends React.Component {
   }
 }
 
-Lift.propTypes = {
+LiftListItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired
 }
 
-export default Lift
+export default LiftListItem
