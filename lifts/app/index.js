@@ -1,8 +1,6 @@
 import AppBar from 'material-ui/AppBar'
 import CssBaseline from 'material-ui/CssBaseline'
-import LiftListItem from './components/lift-list-item'
-import List from 'material-ui/List'
-import Paper from 'material-ui/Paper'
+import LiftsList from './components/lifts-list'
 import React from 'react'
 import {render} from 'react-dom'
 import ToolBar from 'material-ui/ToolBar'
@@ -44,23 +42,9 @@ class App extends React.Component {
             </Typography>
           </ToolBar>
         </AppBar>
-        <Paper
-          elevation={0}
-        >
-          <List
-            component='nav'
-          >
-            {Object.entries(lifts)
-              .map(([id, liftData]) =>
-                <LiftListItem
-                  key={id}
-                  id={id}
-                  {...liftData}
-                />
-              )
-            }
-          </List>
-        </Paper>
+        <LiftsList
+          lifts={lifts}
+        />
       </React.Fragment>
     )
   }
