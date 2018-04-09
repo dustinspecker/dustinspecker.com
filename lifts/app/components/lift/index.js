@@ -27,6 +27,7 @@ class Lift extends React.Component {
 }
 
 Lift.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired
 }
 

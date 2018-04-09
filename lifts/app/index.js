@@ -8,13 +8,23 @@ import {render} from 'react-dom'
 import ToolBar from 'material-ui/ToolBar'
 import Typography from 'material-ui/Typography'
 
-const lifts = [
-  'squats',
-  'bench press',
-  'rows',
-  'overhead press',
-  'deadlifts'
-]
+const lifts = {
+  0: {
+    name: 'squats'
+  },
+  1: {
+    name: 'bench press'
+  },
+  2: {
+    name: 'rows'
+  },
+  3: {
+    name: 'overhead press'
+  },
+  4: {
+    name: 'deadlifts'
+  }
+}
 
 class App extends React.Component {
   render() {
@@ -40,11 +50,12 @@ class App extends React.Component {
           <List
             component='nav'
           >
-            {lifts
-              .map(lift =>
+            {Object.entries(lifts)
+              .map(([id, liftData]) =>
                 <Lift
-                  key={lift}
-                  name={lift}
+                  key={id}
+                  id={id}
+                  {...liftData}
                 />
               )
             }
