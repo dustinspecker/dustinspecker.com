@@ -5,22 +5,27 @@ import {render} from 'react-dom'
 import ToolBar from 'material-ui/ToolBar'
 import Typography from 'material-ui/Typography'
 
-const App = () =>
-  <React.Fragment>
-    <CssBaseline />
-    <AppBar
-      color='primary'
-      position='static'
-    >
-      <ToolBar>
-        <Typography
-          color='inherit'
-          variant='title'
+class App extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <CssBaseline />
+        <AppBar
+          color='primary'
+          position='static'
         >
-          Lifts
-        </Typography>
-      </ToolBar>
-    </AppBar>
-  </React.Fragment>
+          <ToolBar>
+            <Typography
+              color='inherit'
+              variant='title'
+            >
+              Lifts
+            </Typography>
+          </ToolBar>
+        </AppBar>
+      </React.Fragment>
+    )
+  }
+}
 
 render(<App />, document.querySelector('#app'))
