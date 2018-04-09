@@ -10,6 +10,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      appMountId: 'app',
       inject: false,
       template,
       title: 'Lifts'
