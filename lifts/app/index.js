@@ -9,7 +9,7 @@ const App = () =>
   <React.Fragment>
     <CssBaseline />
     <AppBar
-      color='default'
+      color='primary'
       position='static'
     >
       <ToolBar>
