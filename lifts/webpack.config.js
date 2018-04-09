@@ -11,7 +11,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: false,
-      template
+      template,
+      title: 'Lifts'
     })
   ]
 }
