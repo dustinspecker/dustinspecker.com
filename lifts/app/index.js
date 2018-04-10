@@ -66,6 +66,13 @@ class App extends React.Component {
     return this.setState(state)
   }
 
+  setNotes = (id, newNotes) => {
+    const newState = Object.assign({}, this.state)
+
+    newState.lifts[id].notes = newNotes
+    this.writeState(newState)
+  }
+
   setWorkWeight = (id, newWorkWeight) => {
     const newState = Object.assign({}, this.state)
 
@@ -100,6 +107,7 @@ class App extends React.Component {
                 <LiftView
                   id={id}
                   {...this.state.lifts[id]}
+                  setNotes={this.setNotes}
                   setWorkWeight={this.setWorkWeight}
                 />
               )

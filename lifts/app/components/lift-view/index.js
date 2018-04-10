@@ -22,7 +22,7 @@ const setWeight = (workWeight, setIndex, numberOfSets) => {
 
 class LiftView extends React.Component {
   render() {
-    const {id, name, setWorkWeight, workout, workWeight} = this.props
+    const {id, name, notes, setNotes, setWorkWeight, workout, workWeight} = this.props
 
     return (
       <Paper
@@ -74,6 +74,10 @@ class LiftView extends React.Component {
           label="Notes"
           placeholder="Notes"
           multiline
+          onChange={event => {
+            setNotes(id, event.target.value)
+          }}
+          value={notes}
         />
       </Paper>
     )
