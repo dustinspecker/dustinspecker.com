@@ -47,8 +47,9 @@ module.exports = {
 
 module.exports.serve = {
   content: ['./app'],
+  host: '192.168.1.4',
   hot: {
-    host: 'localhost',
+    host: '192.168.1.4',
     port: '8090'
   }
 }
