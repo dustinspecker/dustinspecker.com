@@ -32,7 +32,9 @@ class App extends React.Component {
       <HashRouter>
         <React.Fragment>
           <CssBaseline />
-          <Header />
+          <Header
+            lifts={this.state.lifts}
+          />
           <Route
             exact
             path='/'
