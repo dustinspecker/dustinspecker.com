@@ -14,6 +14,26 @@ const setWeight = (workWeight, percentOfWorkingWeight) => {
   return Math.max(roundToNearest5(workWeight * percentOfWorkingWeight / 100), 45)
 }
 
+const getPlates = weight => {
+  if (weight === 45) {
+    return 'bar'
+  }
+
+  return [45, 35, 25, 10, 5, 2.5]
+    .reduce((acc, plate) => {
+      const plateWeight = acc.currentWeight - 45
+      const oneSideOfPlates = plateWeight / 2
+      const numOfPlates = Math.floor(oneSideOfPlates / plate)
+
+      return {
+        currentWeight: acc.currentWeight - (numOfPlates * plate * 2),
+        str: acc.str + `${plate.toString()} `.repeat(numOfPlates)
+      }
+    }, {currentWeight: weight, str: ''})
+    .str
+    .trim()
+}
+
 class LiftView extends React.Component {
   render() {
     const {id, name, notes, setNotes, setWorkWeight, workout, workWeight} = this.props
@@ -57,7 +77,7 @@ class LiftView extends React.Component {
                   >
                     <TableCell>{`${w.sets}x${w.reps}`}</TableCell>
                     <TableCell numeric>{weight}</TableCell>
-                    <TableCell>bar</TableCell>
+                    <TableCell>{getPlates(weight)}</TableCell>
                   </TableRow>
                 )
               })
