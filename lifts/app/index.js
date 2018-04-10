@@ -6,23 +6,49 @@ import LiftView from './components/lift-view'
 import React from 'react'
 import {render} from 'react-dom'
 
+const oneByFiveWorkout = [
+  {sets: 2, reps: 5},
+  {sets: 1, reps: 5},
+  {sets: 1, reps: 3},
+  {sets: 1, reps: 2},
+  {sets: 1, reps: 5}
+]
+
+const threeByFiveWorkout = [
+  {sets: 2, reps: 5},
+  {sets: 1, reps: 5},
+  {sets: 1, reps: 3},
+  {sets: 1, reps: 2},
+  {sets: 3, reps: 5}
+]
+
 class App extends React.Component {
   state = {
     lifts: {
       0: {
-        name: 'squats'
+        name: 'squats',
+        workout: threeByFiveWorkout,
+        workWeight: 280
       },
       1: {
-        name: 'bench press'
+        name: 'bench press',
+        workout: threeByFiveWorkout,
+        workWeight: 180
       },
       2: {
-        name: 'rows'
+        name: 'rows',
+        workout: threeByFiveWorkout,
+        workWeight: 175
       },
       3: {
-        name: 'overhead press'
+        name: 'overhead press',
+        workout: threeByFiveWorkout,
+        workWeight: 110
       },
       4: {
-        name: 'deadlifts'
+        name: 'deadlifts',
+        workout: oneByFiveWorkout,
+        workWeight: 330
       }
     }
   }

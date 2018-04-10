@@ -3,9 +3,25 @@ import React from 'react'
 import Table, {TableBody, TableCell, TableHead, TableRow} from 'material-ui/Table'
 import TextField from 'material-ui/TextField'
 
+const roundToNearest5 = x => {
+  const correctionForNeedingToRoundUp = x % 5 > 2.5 ? 5 : 0
+
+  return parseInt(x / 5) * 5 + correctionForNeedingToRoundUp
+}
+
+const setWeight = (workWeight, setIndex, numberOfSets) => {
+  if (setIndex === 0) {
+    return 45
+  }
+
+  const increment = (workWeight - 45) / (numberOfSets - 1)
+
+  return roundToNearest5(45 + (increment * (setIndex)))
+}
+
 class LiftView extends React.Component {
   render() {
-    const {name} = this.props
+    const {name, workout, workWeight} = this.props
 
     return (
       <Paper
@@ -20,31 +36,21 @@ class LiftView extends React.Component {
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow>
-              <TableCell>2x5</TableCell>
-              <TableCell numeric>45</TableCell>
-              <TableCell>bar</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>1x5</TableCell>
-              <TableCell numeric>100</TableCell>
-              <TableCell>25 2.5</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>1x3</TableCell>
-              <TableCell numeric>155</TableCell>
-              <TableCell>45 10</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>1x2</TableCell>
-              <TableCell numeric>210</TableCell>
-              <TableCell>45 35 2.5</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>3x5</TableCell>
-              <TableCell numeric>270</TableCell>
-              <TableCell>45 45 10 10 2.5</TableCell>
-            </TableRow>
+            {workout
+              .map((w, index, {length}) => {
+                const weight = setWeight(workWeight, index, length)
+
+                return (
+                  <TableRow
+                    key={`${w.sets}x${w.reps}x${weight}`}
+                  >
+                    <TableCell>{`${w.sets}x${w.reps}`}</TableCell>
+                    <TableCell numeric>{weight}</TableCell>
+                    <TableCell>bar</TableCell>
+                  </TableRow>
+                )
+              })
+            }
           </TableBody>
         </Table>
         <TextField
