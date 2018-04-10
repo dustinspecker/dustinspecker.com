@@ -16,6 +16,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
+            plugins: [
+              'syntax-class-properties',
+              'transform-class-properties'
+            ],
             presets: [
               'babel-preset-env',
               'babel-preset-react'

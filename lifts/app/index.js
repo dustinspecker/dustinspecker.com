@@ -9,10 +9,8 @@ import Toolbar from 'material-ui/Toolbar'
 import Typography from 'material-ui/Typography'
 
 class App extends React.Component {
-  constructor() {
-    super(...arguments)
-
-    const lifts = {
+  state = {
+    lifts: {
       0: {
         name: 'squats'
       },
@@ -28,10 +26,6 @@ class App extends React.Component {
       4: {
         name: 'deadlifts'
       }
-    }
-
-    this.state = {
-      lifts
     }
   }
 
