@@ -59,7 +59,7 @@ class LiftView extends React.Component {
 
                 return (
                   <TableRow
-                    key={`${w.sets}x${w.reps}x${weight}`}
+                    key={w.id}
                   >
                     <TableCell>{`${w.sets}x${w.reps}`}</TableCell>
                     <TableCell numeric>{weight}</TableCell>
