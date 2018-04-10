@@ -7,19 +7,19 @@ import React from 'react'
 import {render} from 'react-dom'
 
 const oneByFiveWorkout = [
-  {sets: 2, reps: 5, id: 0},
-  {sets: 1, reps: 5, id: 1},
-  {sets: 1, reps: 3, id: 2},
-  {sets: 1, reps: 2, id: 3},
-  {sets: 1, reps: 5, id: 4}
+  {sets: 2, reps: 5, id: 0, percentOfWorkingWeight: 0},
+  {sets: 1, reps: 5, id: 1, percentOfWorkingWeight: 40},
+  {sets: 1, reps: 3, id: 2, percentOfWorkingWeight: 60},
+  {sets: 1, reps: 2, id: 3, percentOfWorkingWeight: 80},
+  {sets: 1, reps: 5, id: 4, percentOfWorkingWeight: 100}
 ]
 
 const threeByFiveWorkout = [
-  {sets: 2, reps: 5, id: 0},
-  {sets: 1, reps: 5, id: 1},
-  {sets: 1, reps: 3, id: 2},
-  {sets: 1, reps: 2, id: 3},
-  {sets: 3, reps: 5, id: 4}
+  {sets: 2, reps: 5, id: 0, percentOfWorkingWeight: 0},
+  {sets: 1, reps: 5, id: 1, percentOfWorkingWeight: 40},
+  {sets: 1, reps: 3, id: 2, percentOfWorkingWeight: 60},
+  {sets: 1, reps: 2, id: 3, percentOfWorkingWeight: 80},
+  {sets: 3, reps: 5, id: 4, percentOfWorkingWeight: 100}
 ]
 
 const defaultState = {

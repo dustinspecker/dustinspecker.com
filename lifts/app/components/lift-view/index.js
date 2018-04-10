@@ -10,14 +10,8 @@ const roundToNearest5 = x => {
   return parseInt(x / 5) * 5 + correctionForNeedingToRoundUp
 }
 
-const setWeight = (workWeight, setIndex, numberOfSets) => {
-  if (setIndex === 0) {
-    return 45
-  }
-
-  const increment = (workWeight - 45) / (numberOfSets - 1)
-
-  return roundToNearest5(45 + (increment * (setIndex)))
+const setWeight = (workWeight, percentOfWorkingWeight) => {
+  return Math.max(roundToNearest5(workWeight * percentOfWorkingWeight / 100), 45)
 }
 
 class LiftView extends React.Component {
@@ -54,8 +48,8 @@ class LiftView extends React.Component {
           </TableHead>
           <TableBody>
             {workout
-              .map((w, index, {length}) => {
-                const weight = setWeight(workWeight, index, length)
+              .map(w => {
+                const weight = setWeight(workWeight, w.percentOfWorkingWeight)
 
                 return (
                   <TableRow
