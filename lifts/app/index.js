@@ -57,7 +57,8 @@ class App extends React.Component {
   constructor() {
     super()
 
-    this.state = defaultState
+    const existingState = localStorage.getItem('state')
+    this.state = existingState ? JSON.parse(existingState) : defaultState
   }
 
   writeState = state => {
