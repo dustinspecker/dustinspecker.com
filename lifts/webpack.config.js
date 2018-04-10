@@ -33,6 +33,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       appMountId: 'app',
       inject: false,
+      links: [
+        'https://fonts.googleapis.com/css?family=Roboto:300,400,500'
+      ],
       meta: [
         {
           name: 'viewport',
