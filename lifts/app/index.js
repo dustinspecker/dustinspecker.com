@@ -5,7 +5,7 @@ import LiftsList from './components/lifts-list'
 import LiftView from './components/lift-view'
 import React from 'react'
 import {render} from 'react-dom'
-import ToolBar from 'material-ui/ToolBar'
+import Toolbar from 'material-ui/Toolbar'
 import Typography from 'material-ui/Typography'
 
 class App extends React.Component {
@@ -44,14 +44,14 @@ class App extends React.Component {
             color='primary'
             position='static'
           >
-            <ToolBar>
+            <Toolbar>
               <Typography
                 color='inherit'
                 variant='title'
               >
                 Lifts
               </Typography>
-            </ToolBar>
+            </Toolbar>
           </AppBar>
           <Route
             exact
