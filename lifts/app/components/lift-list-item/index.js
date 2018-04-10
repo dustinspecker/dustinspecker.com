@@ -2,6 +2,7 @@ import {ListItem, ListItemText} from 'material-ui/List'
 import Paper from 'material-ui/Paper'
 import PropTypes from 'prop-types'
 import React from 'react'
+import {upperCaseWords} from '../../utils/string'
 
 class LiftListItem extends React.Component {
   render() {
@@ -18,7 +19,7 @@ class LiftListItem extends React.Component {
         >
           <ListItemText
             inset
-            primary={name}
+            primary={upperCaseWords(name)}
           />
         </ListItem>
       </Paper>

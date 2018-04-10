@@ -5,6 +5,7 @@ import {matchPath, withRouter} from 'react-router-dom'
 import React from 'react'
 import Toolbar from 'material-ui/Toolbar'
 import Typography from 'material-ui/Typography'
+import {upperCaseWords} from '../../utils/string'
 import {withStyles} from 'material-ui/styles'
 
 const styles = {
@@ -34,7 +35,7 @@ class Header extends React.Component {
             variant='title'
           >
             {selectedLift
-              ? `Lifts | ${selectedLift.name}`
+              ? `Lifts | ${upperCaseWords(selectedLift.name)}`
               : 'Lifts'
             }
           </Typography>
