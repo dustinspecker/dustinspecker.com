@@ -22,35 +22,42 @@ const threeByFiveWorkout = [
   {sets: 3, reps: 5}
 ]
 
-class App extends React.Component {
-  state = {
-    lifts: {
-      0: {
-        name: 'squats',
-        workout: threeByFiveWorkout,
-        workWeight: 280
-      },
-      1: {
-        name: 'bench press',
-        workout: threeByFiveWorkout,
-        workWeight: 180
-      },
-      2: {
-        name: 'rows',
-        workout: threeByFiveWorkout,
-        workWeight: 175
-      },
-      3: {
-        name: 'overhead press',
-        workout: threeByFiveWorkout,
-        workWeight: 110
-      },
-      4: {
-        name: 'deadlifts',
-        workout: oneByFiveWorkout,
-        workWeight: 330
-      }
+const defaultState = {
+  lifts: {
+    0: {
+      name: 'squats',
+      workout: threeByFiveWorkout,
+      workWeight: 280
+    },
+    1: {
+      name: 'bench press',
+      workout: threeByFiveWorkout,
+      workWeight: 180
+    },
+    2: {
+      name: 'rows',
+      workout: threeByFiveWorkout,
+      workWeight: 175
+    },
+    3: {
+      name: 'overhead press',
+      workout: threeByFiveWorkout,
+      workWeight: 110
+    },
+    4: {
+      name: 'deadlifts',
+      workout: oneByFiveWorkout,
+      workWeight: 330
     }
+  }
+}
+
+
+class App extends React.Component {
+  constructor() {
+    super()
+
+    this.state = defaultState
   }
 
   setWorkWeight = (id, newWorkWeight) => {
