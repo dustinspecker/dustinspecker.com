@@ -53,6 +53,14 @@ class App extends React.Component {
     }
   }
 
+  setWorkWeight = (id, newWorkWeight) => {
+    const newState = Object.assign({}, this.state)
+
+    newState.lifts[id].workWeight = newWorkWeight
+
+    this.setState(newState)
+  }
+
   render() {
     return (
       <HashRouter>
@@ -77,7 +85,9 @@ class App extends React.Component {
 
               return (
                 <LiftView
+                  id={id}
                   {...this.state.lifts[id]}
+                  setWorkWeight={this.setWorkWeight}
                 />
               )
             }}

@@ -1,3 +1,4 @@
+import {InputAdornment} from 'material-ui/Input'
 import Paper from 'material-ui/Paper'
 import React from 'react'
 import Table, {TableBody, TableCell, TableHead, TableRow} from 'material-ui/Table'
@@ -21,12 +22,28 @@ const setWeight = (workWeight, setIndex, numberOfSets) => {
 
 class LiftView extends React.Component {
   render() {
-    const {name, workout, workWeight} = this.props
+    const {id, name, setWorkWeight, workout, workWeight} = this.props
 
     return (
       <Paper
         elevation={0}
       >
+        <TextField
+          inputProps={{
+            min: 45,
+            step: 5
+          }}
+          InputProps={{
+            endAdornment: <InputAdornment position='end'>lbs</InputAdornment>,
+          }}
+          label='Working Weight'
+          onChange={event => {
+            setWorkWeight(id, parseInt(event.target.value, 10))
+          }}
+          placeholder='150'
+          type='number'
+          value={workWeight}
+        />
         <Table>
           <TableHead>
             <TableRow>
