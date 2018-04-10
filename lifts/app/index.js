@@ -8,25 +8,33 @@ import {render} from 'react-dom'
 import ToolBar from 'material-ui/ToolBar'
 import Typography from 'material-ui/Typography'
 
-const lifts = {
-  0: {
-    name: 'squats'
-  },
-  1: {
-    name: 'bench press'
-  },
-  2: {
-    name: 'rows'
-  },
-  3: {
-    name: 'overhead press'
-  },
-  4: {
-    name: 'deadlifts'
-  }
-}
-
 class App extends React.Component {
+  constructor() {
+    super(...arguments)
+
+    const lifts = {
+      0: {
+        name: 'squats'
+      },
+      1: {
+        name: 'bench press'
+      },
+      2: {
+        name: 'rows'
+      },
+      3: {
+        name: 'overhead press'
+      },
+      4: {
+        name: 'deadlifts'
+      }
+    }
+
+    this.state = {
+      lifts
+    }
+  }
+
   render() {
     return (
       <HashRouter>
@@ -50,7 +58,7 @@ class App extends React.Component {
             path='/'
             render={() =>
               <LiftsList
-                lifts={lifts}
+                lifts={this.state.lifts}
               />
             }
           />
@@ -61,7 +69,7 @@ class App extends React.Component {
 
               return (
                 <LiftView
-                  {...lifts[id]}
+                  {...this.state.lifts[id]}
                 />
               )
             }}
