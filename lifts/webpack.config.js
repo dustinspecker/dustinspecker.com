@@ -34,7 +34,8 @@ module.exports = {
       appMountId: 'app',
       inject: false,
       links: [
-        'https://fonts.googleapis.com/css?family=Roboto:300,400,500'
+        'https://fonts.googleapis.com/css?family=Roboto:300,400,500',
+        'https://fonts.googleapis.com/icon?family=Material+Icons'
       ],
       meta: [
         {
