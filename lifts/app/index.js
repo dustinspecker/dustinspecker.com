@@ -1,12 +1,10 @@
-import AppBar from 'material-ui/AppBar'
 import CssBaseline from 'material-ui/CssBaseline'
 import {HashRouter, Route} from 'react-router-dom'
+import Header from './components/header'
 import LiftsList from './components/lifts-list'
 import LiftView from './components/lift-view'
 import React from 'react'
 import {render} from 'react-dom'
-import Toolbar from 'material-ui/Toolbar'
-import Typography from 'material-ui/Typography'
 
 class App extends React.Component {
   state = {
@@ -34,19 +32,7 @@ class App extends React.Component {
       <HashRouter>
         <React.Fragment>
           <CssBaseline />
-          <AppBar
-            color='primary'
-            position='static'
-          >
-            <Toolbar>
-              <Typography
-                color='inherit'
-                variant='title'
-              >
-                Lifts
-              </Typography>
-            </Toolbar>
-          </AppBar>
+          <Header />
           <Route
             exact
             path='/'
