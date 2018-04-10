@@ -6,7 +6,7 @@ import {upperCaseWords} from '../../utils/string'
 
 class LiftListItem extends React.Component {
   render() {
-    const {id, name} = this.props
+    const {id, name, workWeight} = this.props
 
     return (
       <Paper
@@ -20,6 +20,7 @@ class LiftListItem extends React.Component {
           <ListItemText
             inset
             primary={upperCaseWords(name)}
+            secondary={`${workWeight} lbs`}
           />
         </ListItem>
       </Paper>
