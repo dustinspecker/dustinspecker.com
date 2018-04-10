@@ -35,7 +35,12 @@ module.exports = {
       inject: false,
       links: [
         'https://fonts.googleapis.com/css?family=Roboto:300,400,500',
-        'https://fonts.googleapis.com/icon?family=Material+Icons'
+        'https://fonts.googleapis.com/icon?family=Material+Icons',
+        {
+          href: 'https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/places/1x_web/ic_pool_black_18dp.png',
+          type: 'image/png',
+          rel: 'icon'
+        }
       ],
       meta: [
         {
