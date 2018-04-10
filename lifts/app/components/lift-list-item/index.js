@@ -5,7 +5,7 @@ import React from 'react'
 
 class LiftListItem extends React.Component {
   render() {
-    const {name} = this.props
+    const {id, name} = this.props
 
     return (
       <Paper
@@ -14,7 +14,7 @@ class LiftListItem extends React.Component {
         <ListItem
           button
           component='a'
-          href={`#/${name.replace(/\s+/g, '')}`}
+          href={`#/${id}`}
         >
           <ListItemText
             inset
