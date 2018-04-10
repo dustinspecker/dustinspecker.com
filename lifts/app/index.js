@@ -1,5 +1,6 @@
 import AppBar from 'material-ui/AppBar'
 import CssBaseline from 'material-ui/CssBaseline'
+import {HashRouter} from 'react-router-dom'
 import LiftsList from './components/lifts-list'
 import React from 'react'
 import {render} from 'react-dom'
@@ -27,25 +28,27 @@ const lifts = {
 class App extends React.Component {
   render() {
     return (
-      <React.Fragment>
-        <CssBaseline />
-        <AppBar
-          color='primary'
-          position='static'
-        >
-          <ToolBar>
-            <Typography
-              color='inherit'
-              variant='title'
-            >
-              Lifts
-            </Typography>
-          </ToolBar>
-        </AppBar>
-        <LiftsList
-          lifts={lifts}
-        />
-      </React.Fragment>
+      <HashRouter>
+        <React.Fragment>
+          <CssBaseline />
+          <AppBar
+            color='primary'
+            position='static'
+          >
+            <ToolBar>
+              <Typography
+                color='inherit'
+                variant='title'
+              >
+                Lifts
+              </Typography>
+            </ToolBar>
+          </AppBar>
+          <LiftsList
+            lifts={lifts}
+          />
+        </React.Fragment>
+      </HashRouter>
     )
   }
 }
