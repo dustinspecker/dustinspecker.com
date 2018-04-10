@@ -60,12 +60,17 @@ class App extends React.Component {
     this.state = defaultState
   }
 
+  writeState = state => {
+    localStorage.setItem('state', JSON.stringify(state))
+    return this.setState(state)
+  }
+
   setWorkWeight = (id, newWorkWeight) => {
     const newState = Object.assign({}, this.state)
 
     newState.lifts[id].workWeight = newWorkWeight
 
-    this.setState(newState)
+    this.writeState(newState)
   }
 
   render() {
