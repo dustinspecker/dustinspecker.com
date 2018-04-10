@@ -33,6 +33,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       appMountId: 'app',
       inject: false,
+      meta: [
+        {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1.0'
+        }
+      ],
       template,
       title: 'Lifts'
     })
