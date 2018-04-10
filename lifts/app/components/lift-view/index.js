@@ -11,7 +11,6 @@ class LiftView extends React.Component {
       <Paper
         elevation={0}
       >
-        <p>{name}</p>
         <Table>
           <TableHead>
             <TableRow>
