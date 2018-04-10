@@ -2,6 +2,7 @@ import AppBar from 'material-ui/AppBar'
 import CssBaseline from 'material-ui/CssBaseline'
 import {HashRouter, Route} from 'react-router-dom'
 import LiftsList from './components/lifts-list'
+import LiftView from './components/lift-view'
 import React from 'react'
 import {render} from 'react-dom'
 import ToolBar from 'material-ui/ToolBar'
@@ -52,6 +53,18 @@ class App extends React.Component {
                 lifts={lifts}
               />
             }
+          />
+          <Route
+            path='/:id'
+            render={props => {
+              const {id} = props.match.params
+
+              return (
+                <LiftView
+                  {...lifts[id]}
+                />
+              )
+            }}
           />
         </React.Fragment>
       </HashRouter>
