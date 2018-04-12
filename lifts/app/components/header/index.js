@@ -19,7 +19,8 @@ class Header extends React.Component {
   render() {
     const match = matchPath(this.props.location.pathname, '/:id')
     const id = match && match.params.id
-    const selectedLift = this.props.lifts[id]
+    const selectedLift = this.props.lifts
+      .find(lift => lift.id === id)
     const {classes} = this.props
 
     return (
