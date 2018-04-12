@@ -52,7 +52,6 @@ const defaultState = {
   }
 }
 
-
 class App extends React.Component {
   constructor() {
     super()
