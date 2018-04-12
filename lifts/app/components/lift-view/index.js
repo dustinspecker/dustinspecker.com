@@ -36,7 +36,15 @@ const getPlates = weight => {
 
 class LiftView extends React.Component {
   render() {
-    const {id, name, notes, setNotes, setWorkWeight, workout, workWeight} = this.props
+    const {
+      id,
+      name,
+      notes,
+      setNotes,
+      setWorkWeight,
+      workout,
+      workWeight
+    } = this.props
 
     return (
       <Paper
