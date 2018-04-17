@@ -12,7 +12,13 @@ class App extends React.Component {
     super()
 
     const existingState = localStorage.getItem('state')
-    this.state = existingState ? JSON.parse(existingState) : defaultState
+    if (existingState) {
+      this.state = JSON.parse(existingState)
+    }
+    else {
+      this.state = defaultState
+      this.writeState(this.state)
+    }
   }
 
   writeState = state => {
