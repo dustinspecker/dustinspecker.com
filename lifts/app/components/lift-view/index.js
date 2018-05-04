@@ -53,7 +53,7 @@ class LiftView extends React.Component {
       >
         <TextField
           inputProps={{
-            min: 45,
+            min: usesBarbell ? 45 : 0,
             step: 5
           }}
           InputProps={{
