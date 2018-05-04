@@ -53,9 +53,11 @@ const defaultOneByFiveWorkouts = flattenArray(
     .map(({id}) => createWorkouts(oneByFiveWorkout, id))
 )
 
-const defaultLifts = defaultThreeByFiveLifts.concat(defaultOneByFiveLifts)
+const defaultLifts = defaultThreeByFiveLifts
+  .concat(defaultOneByFiveLifts)
 
-const defaultWorkouts = defaultThreeByFiveWorkouts.concat(defaultOneByFiveWorkouts)
+const defaultWorkouts = defaultThreeByFiveWorkouts
+  .concat(defaultOneByFiveWorkouts)
 
 export default {
   lifts: defaultLifts,
