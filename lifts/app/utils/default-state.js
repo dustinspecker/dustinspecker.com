@@ -33,10 +33,10 @@ const createWorkouts = (workouts, liftId) =>
     )
 
 const defaultThreeByFiveLifts = [
-  {id: uuidv4(), name: 'squats', workWeight: 280},
-  {id: uuidv4(), name: 'bench press', workWeight: 180},
-  {id: uuidv4(), name: 'rows', workWeight: 175},
-  {id: uuidv4(), name: 'overhead press', workWeight: 110}
+  {id: uuidv4(), name: 'squats', workWeight: 280, usesBarbell: true},
+  {id: uuidv4(), name: 'bench press', workWeight: 180, usesBarbell: true},
+  {id: uuidv4(), name: 'rows', workWeight: 175, usesBarbell: true},
+  {id: uuidv4(), name: 'overhead press', workWeight: 110, usesBarbell: true}
 ]
 
 const defaultThreeByFiveWorkouts = flattenArray(
@@ -45,7 +45,7 @@ const defaultThreeByFiveWorkouts = flattenArray(
 )
 
 const defaultOneByFiveLifts = [
-  {id: uuidv4(), name: 'deadlifts', workWeight: 330}
+  {id: uuidv4(), name: 'deadlifts', workWeight: 330, usesBarbell: true}
 ]
 
 const defaultOneByFiveWorkouts = flattenArray(

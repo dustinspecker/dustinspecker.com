@@ -42,6 +42,7 @@ class LiftView extends React.Component {
       notes,
       setNotes,
       setWorkWeight,
+      usesBarbell,
       workout,
       workWeight
     } = this.props
@@ -71,7 +72,7 @@ class LiftView extends React.Component {
             <TableRow>
               <TableCell>Sets x Reps</TableCell>
               <TableCell numeric>Weight (lbs)</TableCell>
-              <TableCell>Plates</TableCell>
+              {usesBarbell &&  <TableCell>Plates</TableCell>}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -85,7 +86,7 @@ class LiftView extends React.Component {
                   >
                     <TableCell>{`${w.sets}x${w.reps}`}</TableCell>
                     <TableCell numeric>{weight}</TableCell>
-                    <TableCell>{getPlates(weight)}</TableCell>
+                    {usesBarbell && <TableCell>{getPlates(weight)}</TableCell>}
                   </TableRow>
                 )
               })
