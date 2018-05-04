@@ -19,6 +19,10 @@ const threeByFiveWorkout = [
   {sets: 3, reps: 5, percentOfWorkingWeight: 100}
 ]
 
+const weightedWorkout = [
+  {sets: 3, reps: 5, percentOfWorkingWeight: 100}
+]
+
 const createWorkouts = (workouts, liftId) =>
   workouts
     .map(workout =>
@@ -53,11 +57,23 @@ const defaultOneByFiveWorkouts = flattenArray(
     .map(({id}) => createWorkouts(oneByFiveWorkout, id))
 )
 
+const defaultWeightedLifts = [
+  {id: uuidv4(), name: 'dips', workWeight: 45},
+  {id: uuidv4(), name: 'chin-ups', workWeight: 35}
+]
+
+const defaultWeightedWorkouts = flattenArray(
+  defaultWeightedLifts
+    .map(({id}) => createWorkouts(weightedWorkout, id))
+)
+
 const defaultLifts = defaultThreeByFiveLifts
   .concat(defaultOneByFiveLifts)
+  .concat(defaultWeightedLifts)
 
 const defaultWorkouts = defaultThreeByFiveWorkouts
   .concat(defaultOneByFiveWorkouts)
+  .concat(defaultWeightedWorkouts)
 
 export default {
   lifts: defaultLifts,
