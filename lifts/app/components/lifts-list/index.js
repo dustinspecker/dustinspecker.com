@@ -1,6 +1,7 @@
 import LiftListItem from '../lift-list-item'
 import List from 'material-ui/List'
 import Paper from 'material-ui/Paper'
+import PropTypes from 'prop-types'
 import React from 'react'
 
 class LiftsList extends React.Component {
@@ -26,6 +27,10 @@ class LiftsList extends React.Component {
       </Paper>
     )
   }
+}
+
+LiftsList.propTypes = {
+  lifts: PropTypes.array.isRequired
 }
 
 export default LiftsList
