@@ -30,7 +30,8 @@ class LiftListItem extends React.Component {
 
 LiftListItem.propTypes = {
   id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  workWeight: PropTypes.number.isRequired
 }
 
 export default LiftListItem
