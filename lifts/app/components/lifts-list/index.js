@@ -14,12 +14,11 @@ class LiftsList extends React.Component {
         <List
           component='nav'
         >
-          {Object.entries(lifts)
-            .map(([id, liftData]) =>
+          {lifts
+            .map(lift =>
               <LiftListItem
-                key={id}
-                id={id}
-                {...liftData}
+                key={lift.id}
+                {...lift}
               />
             )
           }
