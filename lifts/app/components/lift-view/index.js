@@ -1,37 +1,12 @@
+import {getPlates, roundToNearest5} from '../../utils/weights'
 import {InputAdornment} from 'material-ui/Input'
 import Paper from 'material-ui/Paper'
 import React from 'react'
 import Table, {TableBody, TableCell, TableHead, TableRow} from 'material-ui/Table'
 import TextField from 'material-ui/TextField'
 
-const roundToNearest5 = x => {
-  const correctionForNeedingToRoundUp = x % 5 > 2.5 ? 5 : 0
-
-  return parseInt(x / 5) * 5 + correctionForNeedingToRoundUp
-}
-
 const setWeight = (workWeight, percentOfWorkingWeight) => {
   return Math.max(roundToNearest5(workWeight * percentOfWorkingWeight / 100), 45)
-}
-
-const getPlates = weight => {
-  if (weight === 45) {
-    return 'bar'
-  }
-
-  return [45, 35, 25, 10, 5, 2.5]
-    .reduce((acc, plate) => {
-      const plateWeight = acc.currentWeight - 45
-      const oneSideOfPlates = plateWeight / 2
-      const numOfPlates = Math.floor(oneSideOfPlates / plate)
-
-      return {
-        currentWeight: acc.currentWeight - (numOfPlates * plate * 2),
-        str: acc.str + `${plate.toString()} `.repeat(numOfPlates)
-      }
-    }, {currentWeight: weight, str: ''})
-    .str
-    .trim()
 }
 
 class LiftView extends React.Component {
