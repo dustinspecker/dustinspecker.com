@@ -5,7 +5,7 @@ import React from 'react'
 import Table, {TableBody, TableCell, TableHead, TableRow} from 'material-ui/Table'
 import TextField from 'material-ui/TextField'
 
-const setWeight = (workWeight, percentOfWorkingWeight) => {
+const getWeightForSet = (workWeight, percentOfWorkingWeight) => {
   return Math.max(roundToNearest5(workWeight * percentOfWorkingWeight / 100), 45)
 }
 
@@ -53,7 +53,7 @@ class LiftView extends React.Component {
           <TableBody>
             {workout
               .map(w => {
-                const weight = setWeight(workWeight, w.percentOfWorkingWeight)
+                const weight = getWeightForSet(workWeight, w.percentOfWorkingWeight)
 
                 return (
                   <TableRow
