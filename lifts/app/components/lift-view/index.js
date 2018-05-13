@@ -1,13 +1,9 @@
-import {getPlates, roundToNearest5} from '../../utils/weights'
+import {getWeightForSet, getPlates} from '../../utils/weights'
 import {InputAdornment} from 'material-ui/Input'
 import Paper from 'material-ui/Paper'
 import React from 'react'
 import Table, {TableBody, TableCell, TableHead, TableRow} from 'material-ui/Table'
 import TextField from 'material-ui/TextField'
-
-const getWeightForSet = (workWeight, percentOfWorkingWeight) => {
-  return Math.max(roundToNearest5(workWeight * percentOfWorkingWeight / 100), 45)
-}
 
 class LiftView extends React.Component {
   render() {

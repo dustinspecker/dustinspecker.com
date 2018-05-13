@@ -1,7 +1,11 @@
-export const roundToNearest5 = x => {
+const roundToNearest5 = x => {
   const correctionForNeedingToRoundUp = x % 5 > 2.5 ? 5 : 0
 
   return parseInt(x / 5) * 5 + correctionForNeedingToRoundUp
+}
+
+export const getWeightForSet = (workWeight, percentOfWorkingWeight) => {
+  return Math.max(roundToNearest5(workWeight * percentOfWorkingWeight / 100), 45)
 }
 
 export const getPlates = weight => {

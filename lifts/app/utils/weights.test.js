@@ -1,11 +1,11 @@
-import {getPlates, roundToNearest5} from './weights'
+import {getPlates, getWeightForSet} from './weights'
 
 test('roundToNearest5', () => {
-  expect(roundToNearest5('42')).toBe(40)
-  expect(roundToNearest5('43')).toBe(45)
-  expect(roundToNearest5('47.49')).toBe(45)
-  expect(roundToNearest5('47.5')).toBe(45)
-  expect(roundToNearest5('47.51')).toBe(50)
+  expect(getWeightForSet(100, 40)).toBe(45)
+  expect(getWeightForSet(100, 47.49)).toBe(45)
+  expect(getWeightForSet(100, 47.50)).toBe(45)
+  expect(getWeightForSet(100, 47.51)).toBe(50)
+  expect(getWeightForSet(200, 50)).toBe(100)
 })
 
 test('getPlates', () => {
