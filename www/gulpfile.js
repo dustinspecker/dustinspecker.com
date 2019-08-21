@@ -13,12 +13,12 @@ gulp.task('clean', () =>
   del(`${buildDir}`)
 )
 
-gulp.task('manifest', ['clean'], () =>
+gulp.task('manifest', gulp.series('clean', () =>
   gulp.src('app/manifest.webmanifest')
     .pipe(gulp.dest(buildDir))
-)
+))
 
-gulp.task('build', ['manifest'], () =>
+gulp.task('build', gulp.series('manifest', () =>
   gulp.src('app/index.html')
     .pipe(ga({
       minify: true,
@@ -41,6 +41,6 @@ gulp.task('build', ['manifest'], () =>
       useShortDoctype: true
     }))
     .pipe(gulp.dest(buildDir))
-)
+))
 
-gulp.task('default', ['build'])
+gulp.task('default', gulp.series('build'))
