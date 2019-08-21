@@ -12,7 +12,7 @@
     "del": "^5.0.0",
     "gulp": "^3.9.1",
     "gulp-csso": "^2.0.0",
-    "gulp-ga": "0.0.8",
+    "gulp-ga": "0.0.9",
     "gulp-htmlmin": "^3.0.0",
     "gulp-inline": "^0.1.2",
     "napa": "^3.0.0"
