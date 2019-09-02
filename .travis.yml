@@ -6,7 +6,7 @@ matrix:
   - env: SUBDOMAIN_DIR=www
 before_install:
 - cd ./$SUBDOMAIN_DIR
-script: docker build . -t $SUBDOMAIN_DIR
+script: make
 deploy:
   provider: script
   script: docker run --rm -e AWS_ACCESS_KEY=$AWS_ACCESS_KEY -e AWS_SECRET_KEY=$AWS_SECRET_KEY $SUBDOMAIN_DIR
