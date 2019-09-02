@@ -7,6 +7,8 @@ RUN apk add --no-cache \
   py-pip \
   && pip install s3cmd
 
+COPY deploy.sh .
+
 COPY package.json package-lock.json ./
 
 RUN npm ci --unsafe-perm
@@ -17,4 +19,4 @@ COPY app ./app
 
 RUN npm run build
 
-CMD cd ./build && s3cmd sync --acl-public --delete-removed . s3://dustinspecker.com
+CMD ["./deploy.sh"]
