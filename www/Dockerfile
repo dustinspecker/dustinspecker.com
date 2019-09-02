@@ -17,4 +17,4 @@ COPY app ./app
 
 RUN npm run build
 
- CMD cd ./build && s3cmd sync --acl-public --delete-removed . s3://dustinspecker.com
+CMD cd ./build && s3cmd sync --acl-public --delete-removed . s3://dustinspecker.com
