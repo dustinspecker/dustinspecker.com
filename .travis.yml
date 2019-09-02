@@ -6,7 +6,7 @@ matrix:
   - env: SUBDOMAIN_DIR=www
 before_install:
 - cd ./$SUBDOMAIN_DIR
-script: make
+script: make build
 deploy:
   provider: script
   script: make deploy
