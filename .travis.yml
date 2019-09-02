@@ -9,7 +9,7 @@ before_install:
 script: make
 deploy:
   provider: script
-  script: docker run --rm -e AWS_ACCESS_KEY=$AWS_ACCESS_KEY -e AWS_SECRET_KEY=$AWS_SECRET_KEY $SUBDOMAIN_DIR
+  script: make deploy
   on:
     branch: master
     condition: $TRAVIS_PULL_REQUEST == "false"
