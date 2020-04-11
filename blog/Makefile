@@ -6,6 +6,10 @@ HUGO = docker run \
 	--volume=$(PWD):/src \
 	jojomi/hugo:0.68.3 hugo
 
+.PHONY: build
+build:
+	$(HUGO)
+
 .PHONY: fetch-theme
 fetch-theme:
 	./scripts/fetch-theme.sh
