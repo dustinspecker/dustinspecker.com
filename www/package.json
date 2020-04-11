@@ -11,7 +11,7 @@
   "devDependencies": {
     "del": "^5.0.0",
     "gulp": "^4.0.2",
-    "gulp-csso": "^3.0.1",
+    "gulp-csso": "^4.0.1",
     "gulp-ga": "0.0.9",
     "gulp-htmlmin": "^5.0.1",
     "gulp-inline": "^0.1.2",
