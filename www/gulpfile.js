@@ -10,7 +10,7 @@ const inline = require('gulp-inline')
 const buildDir = 'build'
 
 gulp.task('clean', () =>
-  del(`${buildDir}`)
+  del(buildDir)
 )
 
 gulp.task('manifest', gulp.series('clean', () =>
