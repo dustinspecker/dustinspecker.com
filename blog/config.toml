@@ -335,7 +335,7 @@ uglyURLs = false
     siteLogo = ""
     # Note: used for JSON-LD, Open Graph
 
-    siteDescription = "Dustin Specker's personal blog"
+    siteDescription = "Dustin Specker's knowledgebase"
     # Note: used for HTML head meta, JSON-LD,
     #       Open Graph, Atom, RSS
     #
