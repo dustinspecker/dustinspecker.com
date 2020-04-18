@@ -1,4 +1,6 @@
 HUGO = docker run \
+	--env AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY_ID) \
+	--env AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_ACCESS_KEY) \
 	--interactive \
 	--publish 1313:1313 \
 	--rm \
@@ -9,6 +11,11 @@ HUGO = docker run \
 .PHONY: build
 build:
 	$(HUGO)
+
+.PHONY: deploy
+deploy:
+	$(HUGO) deploy \
+		--target s3
 
 .PHONY: fetch-theme
 fetch-theme:

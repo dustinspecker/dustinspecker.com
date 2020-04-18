@@ -1290,3 +1290,9 @@ uglyURLs = false
     fofVideoMp4 = ""
     # Note: you can leave these two
     #       options empty("")
+
+[deployment]
+[[deployment.targets]]
+name = "s3"
+URL = "s3://dustinspecker.com?region=us-east-1"
+cloudFrontDistributionID = "E31LNIWHS5691E"
