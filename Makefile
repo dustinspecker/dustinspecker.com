@@ -15,6 +15,7 @@ build: fetch-theme
 .PHONY: deploy
 deploy:
 	$(HUGO) deploy \
+		--invalidateCDN \
 		--target s3
 
 .PHONY: fetch-theme
