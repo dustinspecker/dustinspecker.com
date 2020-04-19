@@ -21,7 +21,7 @@ more challenging since the cluster is running within a docker container.
 
 ## Install kind
 For this we'll be using kind v0.7.0, which can be installed from its
-[GitHub Release](https://github.com/kubernetes-sigs/kind/releases/tag/v0.7.0)
+[GitHub Release](https://github.com/kubernetes-sigs/kind/releases/tag/v0.7.0).
 
 For 64bit Linux, this can be done via:
 
