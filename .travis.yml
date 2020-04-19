@@ -1,11 +1,8 @@
 language: minimal
 services:
   - docker
-matrix:
-  include:
-  - env: SUBDOMAIN_DIR=www
 before_install:
-- cd ./$SUBDOMAIN_DIR
+- cd ./blog
 script: make build
 deploy:
   provider: script

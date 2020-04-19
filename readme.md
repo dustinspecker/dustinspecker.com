@@ -1,6 +1,3 @@
 # dustinspecker.com
 
 [![Build Status](https://travis-ci.org/dustinspecker/dustinspecker.com.svg?branch=master)](https://travis-ci.org/dustinspecker/dustinspecker.com)
-
-![www](https://img.shields.io/badge/subdomain-www-blue.svg)
-[![DevDependencies](https://david-dm.org/dustinspecker/dustinspecker.com/dev-status.svg?path=www)](https://david-dm.org/dustinspecker/dustinspecker.com?path=www&type=dev)
