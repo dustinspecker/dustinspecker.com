@@ -1,3 +1,5 @@
+NEW_POST_NAME            ?=
+
 HUGO = docker run \
 	--env AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY) \
 	--env AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_KEY) \
@@ -26,3 +28,7 @@ fetch-theme:
 hugo-server:
 	$(HUGO) server \
 			--bind "0.0.0.0"
+
+.PHONY: new-post
+new-post:
+	$(HUGO) new posts/$(NEW_POST_NAME).md
