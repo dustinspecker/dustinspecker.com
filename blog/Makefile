@@ -9,7 +9,7 @@ HUGO = docker run \
 	jojomi/hugo:0.68.3 hugo
 
 .PHONY: build
-build:
+build: fetch-theme
 	$(HUGO)
 
 .PHONY: deploy
