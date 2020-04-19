@@ -1,6 +1,6 @@
 HUGO = docker run \
-	--env AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY_ID) \
-	--env AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_ACCESS_KEY) \
+	--env AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY) \
+	--env AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_KEY) \
 	--interactive \
 	--publish 1313:1313 \
 	--rm \
