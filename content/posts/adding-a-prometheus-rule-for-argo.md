@@ -1,6 +1,7 @@
 ---
 title: "Adding a Prometheus Rule for Argo"
 date: 2020-04-19T21:12:15Z
+lastmod: 2020-04-19T21:12:15Z
 draft: false
 tags:
   - prometheus
