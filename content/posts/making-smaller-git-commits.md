@@ -81,7 +81,7 @@ Changes to be committed:
 ```
 
 Files under the "Changes to be committed:" header are now staged. Anything
-in the stage would be part of a commit if we ran `git commit`. Speaking of stage,
+in the stage would be part of a commit if we were to run `git commit`. Speaking of stage,
 sometimes you'll see Git's stage referred to as its index. Stage and index are the
 same thing.
 
