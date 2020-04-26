@@ -3,6 +3,12 @@ title: "Adding an AlertManager Gmail Receiver"
 date: 2020-04-26T17:01:24Z
 lastmod: 2020-04-26T17:01:24Z
 draft: false
+categories:
+  - development
+tags:
+  - prometheus
+  - argo
+  - kubernetes
 ---
 In a previous [post]({{< ref "adding-a-prometheus-rule-for-argo.md" >}}), we added a
 PrometheusRule for Argo that caused an alert to fire when an Argo Workflow failed.
