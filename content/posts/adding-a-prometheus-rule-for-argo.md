@@ -147,7 +147,7 @@ via:
 
 ```bash
 ~/argo submit ~/workflow-fail.yaml \
-  --namespace=argo \
+  --namespace argo \
   --watch
 ```
 

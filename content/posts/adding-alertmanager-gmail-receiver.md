@@ -108,7 +108,7 @@ Argo Workflow by running:
 
 ```bash
 ~/argo submit ~/workflow-fail.yaml \
-  --namespace=argo \
+  --namespace argo \
   --watch
 ```
 
