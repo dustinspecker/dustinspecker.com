@@ -231,7 +231,16 @@ in our `~/kpt-demo` directory and kpt will execute every function config it find
 it easy to commit a repeatable procedure for running kpt functions.
 
 So now we have an automated process for patching the deployment with `hostNetwork: true` and
-for removing the ingress-nginx-controller service.
+for removing the ingress-nginx-controller service. At this point we're able to deploy our
+resources by running the following:
+
+```bash
+kubectl apply \
+  --kustomize .
+```
+
+This will process our patch using kustomize and then deploy the resources to our Kubernetes
+cluster.
 
 # updating ingress-nginx
 One of the kpt features I'm excited about is updating dependencies. We can attempt to update
@@ -272,6 +281,15 @@ In my little use with kpt I've been using resource-merge the most, but I'm consi
 new resources added to upstream dependencies. It should be possible to have a Continuous
 Integration process to also validate that `kpt fn run .` has been ran to make sure that's
 never missed by a developer updating dependencies.
+
+And to deploy our updated dependencies to our cluster we can once again run:
+
+```bash
+kubectl apply \
+  --kustomize .
+```
+
+This will update any changed resources in our cluster due to our dependency update.
 
 # other kpt functionality to explore in the future
 kpt also features a live command that will apply resources to a Kubernetes cluster. I've
