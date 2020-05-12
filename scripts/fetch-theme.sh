@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
 
-memes_sha="3754acc74c03c33003fc3d9755a550510ec05683"
+memes_sha="ea7ecaea580125509024ee307570807a9ab326ac"
 
 mkdir -p themes/meme
 

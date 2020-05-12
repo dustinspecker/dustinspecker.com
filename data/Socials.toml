@@ -1,0 +1,35 @@
+[[socials]]
+    id = "email"
+    url = "mailto:dustinspecker@dustinspecker.com"
+    icon = "envelope"
+    title = "Email"
+    weight = 1
+
+[[socials]]
+    id = "github"
+    url = "https://github.com/dustinspecker"
+    icon = "github"
+    title = "GitHub"
+    weight = 2
+
+[[socials]]
+    id = "twitter"
+    url = "https://twitter.com/dustinspecker"
+    icon = "twitter"
+    title = "Twitter"
+    weight = 3
+
+[[socials]]
+    id = "linkedin"
+    url = "https://www.linkedin.com/in/dustin-specker/"
+    icon = "linkedin"
+    title = "LinkedIn"
+    weight = 4
+
+[[socials]]
+    id = "rss"
+    url = "/rss.xml"
+    icon = "rss"
+    title = "RSS"
+    weight = 5
+
