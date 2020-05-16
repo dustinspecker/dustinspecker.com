@@ -31,7 +31,7 @@ enableEmoji = false
 footnoteReturnLinkContents = "↩"
 
 # Enable `.GitInfo` object for each page?
-enableGitInfo = false
+enableGitInfo = true
 
 # Enable generation of `robots.txt` file?
 enableRobotsTXT = true
@@ -1066,20 +1066,20 @@ uglyURLs = false
     ######################################
     # Post Gitinfo
 
-    enablePostGitInfo = false
+    enablePostGitInfo = true
 
-    displayPostGitInfo = false
+    displayPostGitInfo = true
     # Note: *global settings*
     #       `gitinfo` in post’s Front Matter
     #       has a higher priority than here
 
-    repoURL = ""
-    repoEditURL = ""
+    repoURL = "https://github.com/dustinspecker/dustinspecker.com"
+    repoEditURL = "https://github.com/dustinspecker/dustinspecker.com/edit/master"
 
     gitIcon = "code-branch"
-    displayCommitHash = true
+    displayCommitHash = false
 
-    displayCommitMessage = true
+    displayCommitMessage = false
     msgIcon = "info"
 
     displayFeedback = true
