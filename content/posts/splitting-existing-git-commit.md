@@ -8,6 +8,7 @@ categories:
 tags:
   - git
 ---
+
 In a previous post we went through how to
 [make smaller git commits]({{< ref "making-smaller-git-commits" >}}).
 Sometimes during code review or development we find a commit that would
@@ -16,18 +17,19 @@ what was discussed in the previous post combined with Git's `reset` command
 to split an existing commit.
 
 ## intro to git reset
+
 For this post we'll be using reset like `git reset HEAD^`. This command means reset
 history until `HEAD^`, which means remove the `HEAD` commit. The `reset` command
-takes optional arguments on *how* to reset the commit. There are three main
+takes optional arguments on _how_ to reset the commit. There are three main
 strategies of reset to focus on. Assuming these are done with `git reset HEAD^`
 the strategies of reset and what they do are as follows:
 
 - soft - remove the `HEAD` commit from our current history and move this commit's
-changes to the stage
+  changes to the stage
 - mixed - remove the `HEAD` commit from our current history and move this commit's
-changes to the working directory
+  changes to the working directory
 - hard - remove the `HEAD` commit from our current history and discard the commit's
-changes entirely
+  changes entirely
 
 The default strategy of reset is `mixed`.
 
@@ -193,8 +195,7 @@ commit using the exact message from `ORIG_HEAD`.
 
 After creating this first commit, we can then create the second commit by
 running `git add --patch` again. Accept the only remaining hunk. Now
-a new commit may be created like normal with `git commit -m 'change list to
-numbered'`.
+a new commit may be created like normal with `git commit -m 'change list to numbered'`.
 
 ## gotcha with splitting commits
 

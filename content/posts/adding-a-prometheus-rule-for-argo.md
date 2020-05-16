@@ -56,14 +56,14 @@ and then navigate to [http://localhost:9090](http://localhost:9090). On the main
 page enter an "Expression" of `argo_workflow_status_phase{}`. This expression will return
 results similar to:
 
-| Element | Value |
-| ------- | ----- |
-| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Error",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"} | 0 |
-| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Failed",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"} | 0 |
-| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Pending",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"} | 0 |
-| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Running",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"} | 0 |
-| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Skipped",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"} | 0 |
-| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Succeeded",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"} | 1 |
+| Element                                                                                                                                                                                                                                                                                                  | Value |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Error",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"}     | 0     |
+| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Failed",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"}    | 0     |
+| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Pending",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"}   | 0     |
+| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Running",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"}   | 0     |
+| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Skipped",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"}   | 0     |
+| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Succeeded",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"} | 1     |
 
 Looking at these results the metrics inform us that the hello-world-g7rzt Argo Workflow
 succeeded. This is good, but required us manually validating this. What we really want to do
@@ -136,10 +136,10 @@ metadata:
 spec:
   entrypoint: fail
   templates:
-  - name: fail
-    container:
-      image: busybox:latest
-      command: [false]
+    - name: fail
+      container:
+        image: busybox:latest
+        command: [false]
 ```
 
 Assuming this YAML file is created at `~/workflow-fail.yaml`, we can submit this Workflow

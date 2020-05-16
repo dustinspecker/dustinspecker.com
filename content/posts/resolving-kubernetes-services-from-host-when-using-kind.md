@@ -10,6 +10,7 @@ tags:
   - kind
   - networking
 ---
+
 [kind](https://kind.sigs.k8s.io/) is one of my favorite tools for local development and testing
 of Kubernetes. While there are plenty of advantages to kind such as every node is a Docker
 container making it easy to setup and tear down clusters, there are some bumps to get over.
@@ -22,7 +23,7 @@ from the host. Fortunately, it's possible to configure the host's DNS configurat
 to resolve this issue.
 
 > This post uses kind `v0.8.1` and kubectl `v1.17.0` running on Ubuntu 19.10. This post will
-not work on macOS or Windows.
+> not work on macOS or Windows.
 
 ## verify host DNS configuration
 
@@ -71,8 +72,8 @@ Once the `10.96.0.10` DNS server is being returned in `systemd-resolves` output,
 good to move on.
 
 > The `10.96.0.10` is the IP address of the kube-dns service that will be created in our
-cluster. It's important to be listed first otherwise requests to
-SERVICE_NAME.NAMESPACE.svc.cluster.local will fail.
+> cluster. It's important to be listed first otherwise requests to
+> SERVICE_NAME.NAMESPACE.svc.cluster.local will fail.
 
 ## create a kubernetes cluster using kind
 
@@ -213,7 +214,7 @@ and the request is successful again from the host. This ip route will enable us 
 to any pod IP on this particular node from our host.
 
 > If your cluster has multiple nodes, you can repeat the above steps for each node (container)
-IP address and their respective pod CIDR.
+> IP address and their respective pod CIDR.
 
 ## add route to direct traffic for services to the cluster
 

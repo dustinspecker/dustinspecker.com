@@ -10,6 +10,7 @@ tags:
   - argo
   - kubernetes
 ---
+
 In a previous [post]({{< ref "adding-a-prometheus-rule-for-argo.md" >}}), we added a
 PrometheusRule for Argo that caused an alert to fire when an Argo Workflow failed.
 We were able to see the alert fire in AlertManager. AlertManager is another component
@@ -28,7 +29,6 @@ previously is firing.
 
 We'll continue from where we left off in
 [Adding a Prometheus Rule for Argo]({{< ref "adding-a-prometheus-rule-for-argo.md" >}}).
-
 
 First, we'll need to update the AlertManager's configuration. Start by making a file located at
 `~/alertmanager-main-secret.yaml` with the following content:

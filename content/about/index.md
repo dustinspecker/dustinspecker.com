@@ -3,6 +3,7 @@ title: "About"
 date: 2020-04-11T21:01:29Z
 draft: false
 ---
+
 ![picture of Dustin](https://s.gravatar.com/avatar/d75dd9891b57563dd25b3e2f15cad676?s=300)
 
 I've been writing software professionally since 2013. Most of my career has been focused on

@@ -8,15 +8,16 @@ categories:
 tags:
   - git
 ---
+
 There are lots of great articles on the benefits of making smaller Git commits
 such as being easier to review, identify sources of bugs later with `git bisect`,
-and resolve merge conflicts. These articles seem to skim over on the *how* to
+and resolve merge conflicts. These articles seem to skim over on the _how_ to
 make smaller commits.
 
 When first learning Git a lot of folks start with using `git add .` to add all
 files for their commit. Some continue to learn about `git add . -u` (or
 `git add . --update`) and how to add individual files with `git add FILE_NAME`.
-These commands *can* be used to create small commits, but require a lot of
+These commands _can_ be used to create small commits, but require a lot of
 discipline or a lot of manual work in an editor to fine-tune what's committed.
 
 ## stage and working directory
@@ -44,6 +45,7 @@ here's how to use the cool project
 here's some awesome info about how cool the cool project is
 
 some cool companies that use this cool project
+
 1. cool project users
 2. we use cool projects
 3. cool projects only
@@ -110,6 +112,7 @@ here's how to use the cool project
 here's some awesome info about how cool the cool project is
 
 some cool companies that use this cool project
+
 1. cool project users
 2. we use cool projects
 3. cool projects only
@@ -211,8 +214,7 @@ Stage this hunk [y,n,q,a,d,s,e,?]?
 You'll see output matching the above output of `git diff readme.md` with a
 prompt at the end asking what we want to do. This is a hunk. This is currently
 a single hunk, but if our file was larger there could be multiple hunks. And if
-we had multiple files with changes then each of these file changes have hunks. `git
-add --patch` will walk us through each tracked file with changes.
+we had multiple files with changes then each of these file changes have hunks. `git add --patch` will walk us through each tracked file with changes.
 
 The prompt gives us a lot of control over what to do next. The prompt asks "Stage
 this hunk?" and we can do the following:
@@ -221,9 +223,9 @@ this hunk?" and we can do the following:
 - n - skip adding this hunk to our stage and move on to the next hunk
 - q - don't add this hunk and skip any remaining hunks to examine
 - a - add this hunk as well as any other hunk in this file and then move on to
-the next file with hunks to examine
+  the next file with hunks to examine
 - d - skip adding this hunk and skip all other hunks in this file and then move on
-to the next file with hunks to examine
+  to the next file with hunks to examine
 - s - split this hunk
 - e - edit this hunk in an editor
 - ? - prints help output explaining all of these prompt options

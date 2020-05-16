@@ -11,6 +11,7 @@ tags:
   - kubernetes
   - kind
 ---
+
 [Argo](https://argoproj.github.io/) is a workflow manager for
 [Kubernetes](https://kubernetes.io/). [Prometheus](https://prometheus.io/)
 is a monitoring tool for collecting metrics. Argo may be configured to expose
@@ -23,6 +24,7 @@ a quick resource to figure it out. On top of that, using kind can sometimes make
 more challenging since the cluster is running within a docker container.
 
 ## Install kind
+
 For this we'll be using kind v0.7.0, which can be installed from its
 [GitHub Release](https://github.com/kubernetes-sigs/kind/releases/tag/v0.7.0).
 
@@ -237,7 +239,7 @@ Next we'll need to bind this role to Prometheus' service account:
 ## Create workflow-controller-metrics ServiceMonitor
 
 We'll need to create a ServiceMonitor so that Prometheus knows to scrape the
-workflow-controller-metrics service.  The easiest way is to create a YAML file
+workflow-controller-metrics service. The easiest way is to create a YAML file
 with the following contents:
 
 ```yaml

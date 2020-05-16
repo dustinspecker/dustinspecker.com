@@ -12,6 +12,7 @@ tags:
   - gitops
   - helm
 ---
+
 [kpt](https://googlecontainertools.github.io/kpt/) is one of the newest tools focused on packaging
 Kubernetes resources and leveraging GitOps to manage Kubernetes clusters. kpt tries to leverage
 the strengths of the existing [Helm](https://helm.sh/) and [kustomize](https://kustomize.io/)
@@ -23,9 +24,10 @@ their Kubernetes documents and makes it easier to migrate from one pattern to an
 A reminder kpt is pretty new and there are some rough edges here and there.
 
 > I've created a repository containing what this post goes through for reference at
-[github.com/dustinspecker/kpt-demo](https://github.com/dustinspecker/kpt-demo).
+> [github.com/dustinspecker/kpt-demo](https://github.com/dustinspecker/kpt-demo).
 
 # Why I'm trying kpt
+
 My first goal with kpt was to improve how I use [ingress-nginx](https://kubernetes.github.io/ingress-nginx/)
 on my home server. My home server is a single node Kubernetes instance that I use to mostly host media. I've
 been using ingress-nginx to provide an ingress solution. To be precise I use the
@@ -48,6 +50,7 @@ kpt also has alpha support for using [Starlark](https://googlecontainertools.git
 With this being said we can use a function in a container to delete a Kubernetes resource.
 
 # installing kpt
+
 At the time of writing this `v0.24.0` is the latest release of kpt. You may download a tar containing this
 version of kpt from the following links:
 
@@ -71,6 +74,7 @@ tar --extract --gzip --file -
 The above should end up outputting `v0.24.0`.
 
 # creating a new kpt package
+
 To create a new package we need to first create a new directory. We'll name it `kpt-demo`. This can be done
 by running:
 
@@ -124,6 +128,7 @@ specified in our dependency and the `Kptfile` includes some metadata around what
 of the commit used for our desired `controller-0.31.1` ref.
 
 # creating a patch using kustomize
+
 Now that we have ingress-nginx fetched the first objective is to add `hostNetwork: true` to the ingress-nginx-controller
 deployment. Kustomize works great for patching, so let's use it. We'll start by creating a `kustomization.yaml` file in
 `~/kpt-demo` with the following content:
@@ -183,6 +188,7 @@ kubectl apply \
 And at this point the advantage of kpt is keeping track of our dependencies.
 
 # using container functions
+
 Now we want to tackle deleting the ingress-nginx-controller service. This is something kustomize doesn't
 support. This is a great excuse to learn about using kpt functions. I've created a kpt container function
 at [github.com/dustinspecker/kpt-remove-resource](https://github.com/dustinspecker/kpt-remove-resource).
@@ -243,6 +249,7 @@ This will process our patch using kustomize and then deploy the resources to our
 cluster.
 
 # updating ingress-nginx
+
 One of the kpt features I'm excited about is updating dependencies. We can attempt to update
 our ingress-nginx dependency by running:
 
@@ -292,6 +299,7 @@ kubectl apply \
 This will update any changed resources in our cluster due to our dependency update.
 
 # other kpt functionality to explore in the future
+
 kpt also features a live command that will apply resources to a Kubernetes cluster. I've
 only used this a little bit, but it seems pretty similar to Helm v3. kpt uses ConfigMaps
 to keep track of what it has deployed in a cluster. The live command also has a neat

@@ -8,6 +8,7 @@ categories:
 tags:
   - git
 ---
+
 In previous posts we covered
 [creating smaller commits]({{< ref "making-smaller-git-commits" >}}) and
 [splitting an existing commit]({{< ref "splitting-existing-git-commit" >}}). In
@@ -37,6 +38,7 @@ This is the same repository that was used in
 and it will work for this post as well.
 
 ## modifying HEAD commit
+
 There have been several times where I've created a new commit and immediately
 realized I forgot to add a new file or I found a typo in the commit message.
 Fortunately Git has our back.
@@ -111,9 +113,10 @@ Since we're doing all of our work on the `master` branch, our local `master` bra
 now be back to its previous state as if we didn't change anything.
 
 > Be careful with `git reset --hard`. This command will delete any non-committed changes
-to tracked files.
+> to tracked files.
 
 ## rewording an older commit message
+
 Rewording an older commit isn't too bad. We'll use `git rebase --interactive` to
 accomplish this.
 
@@ -148,7 +151,7 @@ git rebase --interactive 602d1dc^
 ```
 
 > Note: this is telling Git to rebase the current history up to AND including the
-`602d1dc` commit.
+> `602d1dc` commit.
 
 which will open an editor with the following content:
 
@@ -169,7 +172,7 @@ pick d1836f1 add section
 ```
 
 After changing the action and saving the list, Git will open an editor with the
-existing commit message of the `602d1dc` commit.  At this time we are able to adjust
+existing commit message of the `602d1dc` commit. At this time we are able to adjust
 the commit message to our liking. We'll change it to `specify the cool project`. After saving
 and exiting the editor Git will continue rebasing the remaining commits (only `d1836f1` in this
 case).
@@ -193,11 +196,11 @@ and `origin/master` branch are no longer referencing the same commit. We would n
 execute `git push --force` to update `origin/master` with our changes.
 
 ## modifying an older commmit
+
 Modifying a commit older than the `HEAD` commit is a bit trickier. My preferred way
 of doing this is creating a new commit with the changes I want to combine with an older
 commit. Then use `git rebase --interactive` to combine this new commit with
 the commit I want to modify.
-
 
 If following along with the [git-reset-demo](https://github.com/dustinspecker/git-reset-demo)
 repository, please run the following to clean up any changes:
@@ -348,14 +351,13 @@ So now we've updated an existing commit by combining two commits to create an
 entirely new commit.
 
 ## quality of life improvements
+
 Before we were creating a new commit, having to remember which commit it amended,
 modify the action from pick to squash or fixup, and reorder the rebase list all
 manually. This is such a common operation that Git has some nice quality of life
 features to automate a lot of this.
 
-For starters, when we are creating our new commit before running `git rebase
---interactive` we can use `git commit --fixup COMMIT_REF_TO_AMEND` or `git commit
---squash COMMIT_REF_TO_AMEND`. These commands will take what is currently staged and create a
+For starters, when we are creating our new commit before running `git rebase --interactive` we can use `git commit --fixup COMMIT_REF_TO_AMEND` or `git commit --squash COMMIT_REF_TO_AMEND`. These commands will take what is currently staged and create a
 commit with a commit message prefixed with `fixup!` or `squash!`, respectively.
 After this prefix will be the rest of the `COMMIT_REF_TO_AMEND`'s commit message.
 This makes it easier to remember which commit we want to fixup or squash to.
@@ -396,10 +398,10 @@ pick d1836f1 add section
 ```
 
 # amending multiple commits at once
+
 Throughout this post we've only amended a single commit, but performing a fixup
 or squash through `git rebase --interactive` can handle more than one commit at
-a time. Create a few commits using `git commit --fixup REF` or `git commit
---squash REF` and run `git rebase --interactive`. Git will handle it flawlessly.
+a time. Create a few commits using `git commit --fixup REF` or `git commit --squash REF` and run `git rebase --interactive`. Git will handle it flawlessly.
 While creating fixup/squash commits, you can even create more commits that fixup
 or squash to our existing fixup/squash commits and Git will handle that just fine,
 too.

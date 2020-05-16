@@ -10,8 +10,13 @@ HUGO = docker run \
 	--volume=$(PWD):/src \
 	jojomi/hugo:0.68.3 hugo
 
+PRETTIER = docker run \
+	--rm \
+	--volume $(PWD):/work \
+	tmknom/prettier:2.0.5
+
 .PHONY: build
-build: fetch-theme
+build: fetch-theme fmt-check
 	$(HUGO)
 
 .PHONY: deploy
@@ -23,6 +28,18 @@ deploy:
 .PHONY: fetch-theme
 fetch-theme:
 	./scripts/fetch-theme.sh
+
+.PHONY: fmt
+fmt:
+	$(PRETTIER) '**/*.md' \
+		--parser markdown \
+		--write
+
+.PHONY: fmt-check
+fmt-check:
+	$(PRETTIER) '**/*.md' \
+		--check \
+		--parser markdown
 
 .PHONY: hugo-server
 hugo-server:
