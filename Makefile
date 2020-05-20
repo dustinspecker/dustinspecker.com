@@ -44,7 +44,7 @@ fmt-check:
 .PHONY: hugo-server
 hugo-server:
 	$(HUGO) server \
-			--bind "0.0.0.0"
+		--bind "0.0.0.0"
 
 .PHONY: new-post
 new-post:
