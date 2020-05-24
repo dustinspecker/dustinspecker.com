@@ -306,3 +306,5 @@ see status about any Argo workflows like the hello-world Workflow we ran earlier
 
 From here, you're able to use Prometheus' dashboard to explore metrics created by Argo's
 workflow-controller.
+
+{{< convertkit >}}

@@ -269,3 +269,5 @@ Finally we can delete our Kubernetes cluster created by kind by running:
 ```bash
 kind delete cluster
 ```
+
+{{< convertkit >}}

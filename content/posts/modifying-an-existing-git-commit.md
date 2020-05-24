@@ -405,3 +405,5 @@ a time. Create a few commits using `git commit --fixup REF` or `git commit --squ
 While creating fixup/squash commits, you can even create more commits that fixup
 or squash to our existing fixup/squash commits and Git will handle that just fine,
 too.
+
+{{< convertkit >}}

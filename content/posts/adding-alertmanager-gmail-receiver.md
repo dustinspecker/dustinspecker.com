@@ -140,3 +140,5 @@ After receiving an email about the alert we can clean up the failing Argo Workfl
 
 In a few minutes the WorkflowFailure alert should stop firing and the Gmail account should
 receive another email stating the WorkflowFailure alert has been resolved.
+
+{{< convertkit >}}

@@ -4,3 +4,5 @@ date: {{ .Date }}
 lastmod: {{ .Date }}
 draft: true
 ---
+
+{{< convertkit >}}

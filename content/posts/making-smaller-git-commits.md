@@ -369,3 +369,5 @@ because it lets me review what I'm going to stage before doing so. Afterwards
 run `git commit` and make a new commit.
 
 We've now made two small, standalone commits.
+
+{{< convertkit >}}

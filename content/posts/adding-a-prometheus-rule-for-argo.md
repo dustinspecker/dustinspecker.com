@@ -168,3 +168,5 @@ To make this alert green for this scenario, we can delete any completed workflow
 
 Looking back at the Prometheus dashboard's "Alerts" page should show the "WorkflowFailures"
 alert back in green with 0 active.
+
+{{< convertkit >}}

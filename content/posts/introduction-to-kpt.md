@@ -308,3 +308,5 @@ and what would happen to the cluster if the local version was applied.
 
 I'm interested to see what workflows kpt enables. I think there's going to be a lot of improvements
 for most of our workflows by leveraging kpt functions.
+
+{{< convertkit >}}
