@@ -696,8 +696,8 @@ Well, I sure learned a lot, but I still have some remaining questions to answer 
 
 - Why does Docker assign a MAC address to containers?
 - How does Docker handle publishing ports?
-- How does Docker manage anonymous network namespaces (This is why we only the namespaces we created
-  under `ip netns list`.)
+- How does Docker manage anonymous network namespaces (This is why we only see the namespaces we
+  created under `ip netns list`.)
 - How does
   [Kubernetes' pod to pod communication](https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/)
   work when a
