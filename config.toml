@@ -634,8 +634,6 @@ uglyURLs = false
     valineAppId = ""
     valineAppKey = ""
     valinePlaceholder = "Just go go"
-    valineNotify = false
-    valineVerify = false
     valinePath = ""
     valineAvatar = "mm"
     valineMeta = ["nick", "mail", "link"]
@@ -643,9 +641,13 @@ uglyURLs = false
     valineLang = "en"
     valineVisitor = false
     valineHighlight = true
-    avatarForce = false
+    valineAvatarForce = false
     valineRecordIP = false
     valineServerURLs = ""
+    valineEmojiCDN = ""
+    valineEmojiMaps = {}
+    valineEnableQQ = false
+    valineRequiredFields = []
     # Note: https://valine.js.org/
 
     ## Utterances
