@@ -1,7 +1,7 @@
 ---
 title: "Resolving Kubernetes Services from Host when using kind"
 date: 2020-05-09T16:10:52Z
-lastmod: 2020-05-09T16:10:52Z
+lastmod: 2020-06-28T16:10:52Z
 draft: false
 categories:
   - development
@@ -22,7 +22,7 @@ One of the first bumps a lot of us run into is Kubernetes services are no longer
 from the host. Fortunately, it's possible to configure the host's DNS configuration and routing
 to resolve this issue.
 
-> This post uses kind `v0.8.1` and kubectl `v1.17.0` running on Ubuntu 19.10. This post will
+> This post uses kind `v0.8.1` and kubectl `v1.18.5` running on Ubuntu 19.10. This post will
 > not work on macOS or Windows.
 
 ## verify host DNS configuration
@@ -62,7 +62,7 @@ network:
 ```
 
 The search nameservers are not required, but they can be convenient. It enables resolving
-SERVICE_NAME.NAMESPACE requests. `enp4s0` is the name of my interface found by running:
+`SERVICE_NAME.NAMESPACE` requests. `enp4s0` is the name of my interface found by running:
 
 ```bash
 ip addr
@@ -73,7 +73,7 @@ good to move on.
 
 > The `10.96.0.10` is the IP address of the kube-dns service that will be created in our
 > cluster. It's important to be listed first otherwise requests to
-> SERVICE_NAME.NAMESPACE.svc.cluster.local will fail.
+> `SERVICE_NAME.NAMESPACE.svc.cluster.local` will fail.
 
 ## create a kubernetes cluster using kind
 
