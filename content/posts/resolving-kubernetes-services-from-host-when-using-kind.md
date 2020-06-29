@@ -93,7 +93,7 @@ a service to make an HTTP request to later. Thankfully, there are some
 [NGINX demos](https://github.com/nginxinc/NGINX-Demos) that will be convenient to use. We'll
 use a demo that simply returns some plain text.
 
-We can create a deployment and service in our cluster by running:
+We can create a pod and service in our cluster by running:
 
 ```bash
 kubectl run hello \
@@ -102,7 +102,7 @@ kubectl run hello \
   --port 80
 ```
 
-This will create a deployment running a container using the `nginxdemos/hello:plain-text` image
+This will create a pod running a container using the `nginxdemos/hello:plain-text` image
 and create a service pointing at port 80 of the running container.
 
 ## add route to direct traffic for pods to the cluster
