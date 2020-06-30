@@ -3,6 +3,13 @@ title: "Using Docker to resolve Kubernetes services in a kind cluster"
 date: 2020-06-28T12:00:00Z
 lastmod: 2020-06-28T12:00:00Z
 draft: false
+categories:
+  - development
+tags:
+  - kubernetes
+  - kind
+  - networking
+  - docker
 ---
 
 This is a follow-up to
