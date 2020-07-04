@@ -1,7 +1,7 @@
 ---
 title: "Resolving Kubernetes Services from Host when using kind"
 date: 2020-05-09T16:10:52Z
-lastmod: 2020-06-28T16:10:52Z
+lastmod: 2020-07-04T12:00:00Z
 draft: false
 categories:
   - development
@@ -24,6 +24,10 @@ to resolve this issue.
 
 > This post uses kind `v0.8.1` and kubectl `v1.18.5` running on Ubuntu 19.10. This post will
 > not work on macOS or Windows.
+
+> Update: I wrote a follow up post on
+> [Using Docker to resolve Kubernetes services in a kind cluster]({{< ref "using-docker-to-resolve-kubernetes-services-in-a-kind-cluster" >}})
+> instead of modifying the host. This method is also **not** limited to Linux.
 
 ## verify host DNS configuration
 
