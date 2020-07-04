@@ -274,4 +274,10 @@ Finally we can delete our Kubernetes cluster created by kind by running:
 kind delete cluster
 ```
 
+## using Docker instead of modifying the host
+
+Sometimes modifying the host isn't desired, so I wrote a follow up post on
+[Using Docker to resolve Kubernetes services in a kind cluster]({{< ref "using-docker-to-resolve-kubernetes-services-in-a-kind-cluster" >}})
+instead of modifying the host. This method is also **not** limited to Linux.
+
 {{< convertkit >}}
