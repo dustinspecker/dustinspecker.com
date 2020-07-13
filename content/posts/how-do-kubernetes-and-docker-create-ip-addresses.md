@@ -3,7 +3,7 @@ title: "How Do Kubernetes and Docker Create IP Addresses?!"
 images:
   - images/full-diagram.png
 date: 2020-05-24T19:13:13Z
-lastmod: 2020-05-24T19:13:13Z
+lastmod: 2020-07-15T12:00:00Z
 draft: false
 categories:
   - development
@@ -696,6 +696,8 @@ Well, I sure learned a lot, but I still have some remaining questions to answer 
 
 - Why does Docker assign a MAC address to containers?
 - How does Docker handle publishing ports?
+  **Update**: I wrote a post on
+  [iptables: How Docker Publishes Ports]({{< ref "iptables-how-docker-publishes-ports" >}})
 - How does Docker manage anonymous network namespaces (This is why we only see the namespaces we
   created under `ip netns list`.)
 - How does
