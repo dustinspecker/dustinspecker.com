@@ -21,7 +21,7 @@ is "How does Docker handle publishing ports?"
 
 In the previous post we created our own network namespaces, virtual interfaces,
 and assigned IP addresses to these virtual interfaces. Now we'll learn how to make a request to `127.0.0.1:8080` or
-`192.168.0.100:8080` and forward the request to an HTTP server running in our network namespace. This will help us understand what Docker does
+`192.168.0.100:8080` (a local IP address) and forward the request to an HTTP server running in our network namespace. This will help us understand what Docker does
 when the `docker run` command is instructed to publish ports.
 
 Docker (version `19.03.6`) uses a couple of techniques including a proxy that binds a port in the host network
