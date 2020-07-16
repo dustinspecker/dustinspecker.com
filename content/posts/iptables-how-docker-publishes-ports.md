@@ -3,7 +3,7 @@ title: "iptables: How Docker Publishes Ports"
 images:
   - images/iptables-how-docker-publishes-ports/network-namespaces-and-virtual-devices.png
 date: 2020-07-15T12:00:00Z
-lastmod: 2020-07-15T12:00:00Z
+lastmod: 2020-07-16T12:00:00Z
 draft: false
 categories:
   - development
@@ -21,7 +21,7 @@ is "How does Docker handle publishing ports?"
 Specifically, I want to learn how a request to `127.0.0.1:80` and `192.0.0.100:80` (where `192.168.0.100` is a local IP address) gets forwarded to an IP address and port in a container (network
 namespace).
 
-Docker uses a couple of techniques including a proxy that binds a port in the host network
+Docker (version `19.03.6`) uses a couple of techniques including a proxy that binds a port in the host network
 namespace and makes requests to a container's network namespace.
 
 This post focuses on the other technique Docker uses, iptables, which can also be used to forward
