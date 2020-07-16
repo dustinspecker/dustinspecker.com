@@ -18,8 +18,11 @@ tags:
 The next question to answer after writing
 [How do Kubernetes and Docker create IP Addresses?!]({{< ref "how-do-kubernetes-and-docker-create-ip-addresses" >}})
 is "How does Docker handle publishing ports?"
-Specifically, I want to learn how a request to `127.0.0.1:80` and `192.0.0.100:80` (where `192.168.0.100` is a local IP address) gets forwarded to an IP address and port in a container (network
-namespace).
+
+In the previous post we created our own network namespaces, virtual interfaces,
+and assigned IP addresses to these virtual interfaces. Now we'll learn how to make a request to `127.0.0.1:8080` or
+`192.168.0.100:8080` and forward the request to an HTTP server running in our network namespace. This will help us understand what Docker does
+when the `docker run` command is instructed to publish ports.
 
 Docker (version `19.03.6`) uses a couple of techniques including a proxy that binds a port in the host network
 namespace and makes requests to a container's network namespace.
