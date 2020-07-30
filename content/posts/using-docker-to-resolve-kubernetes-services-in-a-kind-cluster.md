@@ -1,5 +1,7 @@
 ---
 title: "Using Docker to resolve Kubernetes services in a kind cluster"
+images:
+  - images/dustinspecker.jpg
 date: 2020-06-28T12:00:00Z
 lastmod: 2020-06-28T12:00:00Z
 draft: false

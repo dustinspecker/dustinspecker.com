@@ -1,5 +1,7 @@
 ---
 title: "Adding a Prometheus Rule for Argo"
+images:
+  - images/dustinspecker.jpg
 date: 2020-04-19T21:12:15Z
 lastmod: 2020-04-19T21:12:15Z
 draft: false

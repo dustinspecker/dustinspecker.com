@@ -1,5 +1,7 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
+images:
+  - images/dustinspecker.jpg
 date: {{ .Date }}
 lastmod: {{ .Date }}
 draft: true

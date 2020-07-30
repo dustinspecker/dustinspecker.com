@@ -1,5 +1,7 @@
 ---
 title: "Modifying an Existing Git Commit"
+images:
+  - images/dustinspecker.jpg
 date: 2020-05-16T12:43:18Z
 lastmod: 2020-05-16T12:43:18Z
 draft: false

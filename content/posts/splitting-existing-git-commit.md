@@ -1,5 +1,7 @@
 ---
 title: "Splitting an Existing Git Commit"
+images:
+  - images/dustinspecker.jpg
 date: 2020-04-22T12:15:13Z
 lastmod: 2020-04-22T12:15:13Z
 draft: false

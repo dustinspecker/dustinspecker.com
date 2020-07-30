@@ -1,5 +1,7 @@
 ---
 title: "Viewing Argo's Prometheus metrics in a kind cluster"
+images:
+  - images/dustinspecker.jpg
 date: 2020-04-18T13:58:53Z
 lastmod: 2020-04-19T13:58:53Z
 draft: false

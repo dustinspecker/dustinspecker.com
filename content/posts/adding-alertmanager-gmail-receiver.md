@@ -1,5 +1,7 @@
 ---
 title: "Adding an AlertManager Gmail Receiver"
+images:
+  - images/dustinspecker.jpg
 date: 2020-04-26T17:01:24Z
 lastmod: 2020-04-26T17:01:24Z
 draft: false
