@@ -597,6 +597,8 @@ and without a proxy!
 Learning all of this stuff typically ends with me having more questions such as:
 
 - Why does Docker not enable local network routing?
+  - Update (August 1st, 2020): [Tabitha Sable](https://twitter.com/TabbySable) wrote about a [Kubernetes CVE](https://github.com/tabbysable/POC-2020-8558) where
+    enabling routing on the local network is the culprit. So yeah, bad idea.
 - How to better debug iptables? I'm familiar with using `TRACE` and `LOG`, but please let me know
   if you have tools you like to use instead!
 - Not a question, but I want to learn more about `conntrack`. Docker uses this. `conntrack` seems
