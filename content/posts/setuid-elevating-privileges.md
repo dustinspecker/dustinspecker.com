@@ -109,10 +109,10 @@ And now for the magic, we use `chmod` to set the `setuid` bit on a file:
 sudo chmod u+s ./main
 ```
 
-If we run `ls -l ./main` again we'll see an `s` where an `x` used to be.
+If we run `ls -l ./main` again we'll see an `s` where an `x` used to be in the user column.
 
 ```
--rwsr-xr-x 1 root root 2072688 Jul 31 17:47 ./main
+-rwsr-xr-x 1 root dustin 2072688 Jul 31 17:47 ./main
 ```
 
 When this binary is run by any user the executable will actually be run as the owner of the file! Since root owns the file the executable will run as root.
