@@ -3,7 +3,7 @@ title: "iptables: How Docker Publishes Ports"
 images:
   - images/iptables-how-docker-publishes-ports/network-namespaces-and-virtual-devices.png
 date: 2020-07-15T12:00:00Z
-lastmod: 2020-07-16T12:00:00Z
+lastmod: 2020-08-13T12:00:00Z
 draft: false
 categories:
   - development
@@ -19,7 +19,7 @@ The next question to answer after writing
 [How do Kubernetes and Docker create IP Addresses?!]({{< ref "how-do-kubernetes-and-docker-create-ip-addresses" >}})
 is "How does Docker handle publishing ports?"
 
-In the previous post we created our own network namespaces, virtual interfaces,
+In the previous post, we created our own network namespaces, virtual interfaces,
 and assigned IP addresses to these virtual interfaces. Now we'll learn how to make a request to `127.0.0.1:8080` or
 `192.168.0.100:8080` (a local IP address) and forward the request to an HTTP server running in our network namespace. This will help us understand what Docker does
 when the `docker run` command is instructed to publish ports.
@@ -93,7 +93,7 @@ For a visual aid, our setup now looks like this:
 
 ![diagram showing virtual ethernet devices, physical ethernet device, and network namespaces](/images/iptables-how-docker-publishes-ports/network-namespaces-and-virtual-devices.png)
 
-## improve iptables commands from previous post
+## improve iptables commands from the previous post
 
 In the previous post we ran the following commands (don't run these now!):
 
@@ -116,7 +116,7 @@ sudo iptables --table nat --append POSTROUTING --source 10.0.0.0/24 --jump MASQU
 ```
 
 Now, what we're saying is any traffic entering or leaving the `bridge_home` interface may be
-accepted. And finally we perform a masquerade on our traffic coming from the `10.0.0.0/24` range,
+accepted. And finally, we perform a masquerade on our traffic coming from the `10.0.0.0/24` range,
 which covers our veth pairs connected to `bridge_home`.
 
 > Note: we'll cover what `MASQUERADE` means in a little bit.
@@ -138,7 +138,7 @@ namespaces may communicate with each other as well.
 
 ## iptables tips
 
-Through out this post we're going to be modifying iptables. A helpful command to view all
+Throughout this post we're going to be modifying iptables. A helpful command to view all
 iptables rules is:
 
 ```bash
@@ -206,8 +206,8 @@ sudo iptables \
 ```
 
 This adds a rule to the `nat` table. The `nat` table is used for Network Address Translation. In
-this case we're configuring a `DNAT` rule, which stands for Destination Network Address Translation.
-This rule will match any packet using TCP destined for port 8080. At that point it'll set the
+this case, we're configuring a `DNAT` rule, which stands for Destination Network Address Translation.
+This rule will match any packet using TCP destined for port 8080. At that point, it'll set the
 destination IP and port on the packet to `10.0.0.11:8080`.
 
 > Note: Why `--match tcp` and `--protocol tcp`? `--protocol tcp` specifies the rule is for TCP,
@@ -238,10 +238,10 @@ and try running:
 curl www.google.com:8080
 ```
 
-Both of these will "work" and get a response from our own HTTP server! This is undesirable to say the
+Both of these will "work" and get a response from our own HTTP server! This is undesirable, to say the
 least. Fortunately, iptables supports many options for rules. In the iptables rule above,
 we specified it needs to match on `--dport` (destination port) and TCP protocol. We can also
-say match on the destination IP.
+specify a match on the destination IP.
 
 First delete the previously created iptables rule via:
 
@@ -433,12 +433,12 @@ sudo iptables \
 ```
 
 We could have associated the `--match addrtype --dst-type LOCAL` on the rule in the `DUSTIN`
-chain and omitted it from these two rules. However, in a little bit we'll add another rule to
+chain and omitted it from these two rules. However, in a little bit, we'll add another rule to
 the `DUSTIN` chain and since the `--match addrtype --dst-type LOCAL` is at the calling chain
 (`PREROUTING` or `OUTPUT`), we don't have to remember to always add this to every rule in the
 `DUSTIN` chain. This is what Docker does as well, so we'll match them.
 
-# add another port forward to custom chain
+# add another port forward in the custom chain
 
 Let's start another HTTP server in the `netns_leah` network namespace:
 
@@ -487,7 +487,7 @@ DNAT       tcp  --  anywhere             anywhere             tcp dpt:tproxy to:
 So append is, well, appending to the end of the chain. We need to make sure the new rule is before
 the jump to `RETURN`. We can use `--insert` instead of `--append` to specify where to place the rule.
 
-First delete the rule we just made:
+First, delete the rule we just made:
 
 ```bash
 sudo iptables \
@@ -553,8 +553,8 @@ socat tcp-l:8080,fork,reuseaddr tcp:10.0.0.11:8080
 
 This instructs `socat` to listen on port 8080 and forward requests to `10.0.0.11:8080`.
 
-Next we'll need to make sure a `MASQUERADE` is being performed on requests coming from the local network
-into our `bridge_home` device. This can configured by running:
+Next, we'll need to make sure a `MASQUERADE` is being performed on requests coming from the local network
+into our `bridge_home` device. This can be configured by running:
 
 ```bash
 sudo iptables --table nat --append POSTROUTING --source 127.0.0.1 --out-interface bridge_home -j MASQUERADE
@@ -568,13 +568,13 @@ curl 0.0.0.0:8080
 curl localhost:8080
 ```
 
-# forward ports on local network using iptables
+# forward ports on the local network using iptables
 
 I'm stubborn and don't like admitting defeat to computers, so I want to understand how to use
 iptables to forward a port on the local network. Be sure to terminate the `socat` process (`CTRL+c`
 should do the trick).
 
-We'll need to enable a `route_localnet` option so that we can instruct Linux to properly direct
+We'll need to enable the `route_localnet` option so that we can instruct Linux to properly direct
 our port forwarding on the local network via iptables. Run:
 
 ```bash
