@@ -181,7 +181,7 @@ sudo iptables \
 ```
 
 At this point, we can then create a rule in the `DUSTIN-SERVICES` chain to handle a virtual IP.
-Our virtual IP will be `10.100.100.100`. Let's create a rule that direct traffic for
+Our virtual IP will be `10.100.100.100`. Let's create a rule that directs traffic for
 `10.100.100.100:8080` to `10.0.0.11:8080`. Recall, that `10.0.0.11:8080` is the python HTTP
 server running in the `netns_dustin` namespace.
 
