@@ -43,7 +43,7 @@ Like the first two articles, we won't use Docker or Kubernetes in this post. Ins
 underlying tools used.
 
 Recall that Kubernetes creates a network namespace for each pod.
-We'll be manually creating network namespaces, which will be treated as our "pods."
+We'll be manually creating network namespaces with a python HTTP server running, which will be treated as our "pods."
 
 > Note: This post only works on Linux. I'm using Ubuntu 19.10, but this should
 > work on other Linux distributions.
