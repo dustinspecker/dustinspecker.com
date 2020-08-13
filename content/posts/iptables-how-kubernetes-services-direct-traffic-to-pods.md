@@ -3,7 +3,7 @@ title: "iptables: How Kubernetes Services Direct Traffic to Pods"
 images:
   - images/iptables-how-kubernetes-services-direct-traffic-to-pods/network-diagram.png
 date: 2020-08-12T12:00:00Z
-lastmod: 2020-08-12T12:00:00Z
+lastmod: 2020-08-13T12:00:00Z
 draft: false
 categories:
   - development
@@ -16,6 +16,23 @@ tags:
 
 This is the third part of a series on Docker and Kubernetes networking. We'll be tackling how Kubernetes's kube-proxy component uses
 iptables to direct service traffic to pods randomly. We'll focus on the ClusterIP type of Kubernetes services.
+
+The goal of this post is to implement the iptables rules needed for a service like:
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-service
+spec:
+  clusterIP: 10.100.100.100
+  selector:
+    component: app
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+```
 
 The previous posts so far are:
 
