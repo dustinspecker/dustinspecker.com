@@ -499,7 +499,7 @@ sudo ip netns exec netns_leah ip link set dev lo up
 sudo ip netns exec netns_leah ip link set dev veth_ns_leah up
 sudo ip netns exec netns_leah ip address add 10.0.0.21/24 dev veth_ns_leah
 sudo ip netns exec netns_leah ip route add default via 10.0.0.20
-sudo ip netns exec netns_leah python -m http.server 8080
+sudo ip netns exec netns_leah python3 -m http.server 8080
 ```
 
 This will start a third HTTP server. This time in the `netns_leah` namespace.
