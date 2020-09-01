@@ -3,7 +3,7 @@ title: "Using Docker to resolve Kubernetes services in a kind cluster"
 images:
   - images/dustinspecker.jpg
 date: 2020-06-28T12:00:00Z
-lastmod: 2020-06-28T12:00:00Z
+lastmod: 2020-08-31T12:00:00Z
 draft: false
 categories:
   - development
@@ -78,7 +78,7 @@ get the IP Address of the Docker container running the kind cluster by running:
 
 ```bash
 docker container inspect kind-control-plane \
-  --format '{{ .NetworkSettingss.Networks.kind.IPAddress }}'
+  --format '{{ .NetworkSettings.Networks.kind.IPAddress }}'
 ```
 
 For me the output is `172.18.0.2`, but yours may be different. Please note what the output is
