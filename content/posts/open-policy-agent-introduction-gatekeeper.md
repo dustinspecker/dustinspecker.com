@@ -3,7 +3,7 @@ title: "Open Policy Agent: Introduction to Gatekeeper"
 images:
   - images/opa-gatekeeper/opa-gatekeeper.png
 date: 2020-11-15T12:00:00Z
-lastmod: 2020-11-15T12:00:00Z
+lastmod: 2020-11-16T12:00:00Z
 draft: false
 categories:
   - development
@@ -167,7 +167,10 @@ spec:
         kinds: ["Pod"]
 ```
 
-and then create the Constraint via:
+It's a good practice to provide a match. If a match is missing, then Gatekeeper will apply the Constraint to each resource kind.
+Providing a match improves performance.
+
+Now, create the Constraint via:
 
 ```bash
 kubectl apply \
