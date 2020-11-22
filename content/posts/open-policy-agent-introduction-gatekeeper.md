@@ -382,4 +382,7 @@ ConstraintTemplates.
 In the next post, I'll cover how to unit test our policies. This process provides a quicker feedback loop by
 not deploying to a cluster first and catches mistakes like syntax issues earlier.
 
+Update: You can read about unit testing policies here:
+[Open Policy Agent: Unit Testing Gatekeeper Policies]({{< ref "open-policy-agent-unit-testing-gatekeeper-policies" >}})
+
 {{< convertkit >}}
