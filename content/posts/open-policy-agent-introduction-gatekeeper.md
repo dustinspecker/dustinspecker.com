@@ -3,7 +3,7 @@ title: "Open Policy Agent: Introduction to Gatekeeper"
 images:
   - images/opa-gatekeeper/opa-gatekeeper.png
 date: 2020-11-15T12:00:00Z
-lastmod: 2020-11-16T12:00:00Z
+lastmod: 2020-11-22T12:00:00Z
 draft: false
 categories:
   - development
@@ -295,7 +295,7 @@ spec:
 
         violation[{"msg": msg}] {
           container := input.review.object.spec.containers[_]
-          endswith(container.image, sprintf(":%s", [input.parameters.tag])
+          endswith(container.image, sprintf(":%s", [input.parameters.tag]))
           msg := sprintf("container <%v> uses an image tagged with %v <%v>", [container.name, input.parameters.tag, container.image])
         }
 ```
