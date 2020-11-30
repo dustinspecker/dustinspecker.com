@@ -3,7 +3,7 @@ title: "Open Policy Agent: Unit Testing Gatekeeper Policies"
 images:
   - images/opa-gatekeeper-unit-testing/opa-gatekeeper-unit-testing.png
 date: 2020-11-22T12:00:00Z
-lastmod: 2020-11-22T12:00:00Z
+lastmod: 2020-11-29T12:00:00Z
 draft: false
 categories:
   - development
@@ -222,5 +222,7 @@ takes simple rego files as its input and automatically generates ConstraintTempl
 Constraints for us!
 
 The next post will cover using konstraint.
+
+Update: [Open Policy Agent: Konstraint]({{< ref "open-policy-agent-konstraint" >}}) has been posted.
 
 {{< convertkit >}}
