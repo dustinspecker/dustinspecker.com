@@ -28,6 +28,7 @@ more challenging since the cluster is running within a docker container.
 > Updated (December 06, 2020):
 >
 > - Use Argo v2.11.8 instead of v2.7.2
+> - Use kube-prometheus v0.6.0 instead of v0.3.0
 
 ## Install kind
 
@@ -167,14 +168,14 @@ The CoreOS organization has created a project called
 [kube-prometheus](https://github.com/coreos/kube-prometheus), which can be used
 to deploy Prometheus within a Kubernetes cluster.
 
-We'll use v0.3.0 of kube-prometheus which can be deployed via:
+We'll use v0.6.0 of kube-prometheus which can be deployed via:
 
 ```bash
 git clone https://github.com/coreos/kube-prometheus.git ~/kube-prometheus
 
 cd ~/kube-prometheus
 
-git checkout v0.3.0
+git checkout v0.6.0
 
 ~/kubectl create --filename ~/kube-prometheus/manifests/setup/
 until ~/kubectl get servicemonitors --all-namespaces ; do sleep 1; done
@@ -210,6 +211,14 @@ Next we'll need to bind this role to Prometheus' service account:
 
 ## Create workflow-controller-metrics ServiceMonitor
 
+Before we start collecting metrics from Argo, we'll want to label the service so that
+we can select the service in a bit. To do that, run:
+
+```bash
+~/kubectl label service workflow-controller-metrics app=workflow-controller \
+  --namespace argo
+```
+
 We'll need to create a ServiceMonitor so that Prometheus knows to scrape the
 workflow-controller-metrics service. The easiest way is to create a YAML file
 with the following contents:
@@ -227,8 +236,8 @@ spec:
     matchNames:
       - argo
   selector:
-    matchNames:
-      - workflow-controller-metrics
+    matchLabels:
+      app: workflow-controller
 ```
 
 We'll assume this YAML file is created at `~/workflow-controller-metrics-servicemonitor.yaml`.
