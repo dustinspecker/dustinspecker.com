@@ -3,7 +3,7 @@ title: "Adding a Prometheus Rule for Argo"
 images:
   - images/dustinspecker.jpg
 date: 2020-04-19T21:12:15Z
-lastmod: 2020-04-19T21:12:15Z
+lastmod: 2020-12-06T12:00:00Z
 draft: false
 categories:
   - development
@@ -20,6 +20,10 @@ and assumes you have a Kubernetes cluster running Argo and Prometheus.
 In the previous post a ServiceMonitor was created to instruct Prometheus on how to pull
 metrics from Argo's workflow-controller-metrics service. Now, we'll add a PrometheusRule to fire
 off an alert when any Argo Workflow fails.
+
+> Updated (December 06, 2020):
+>
+> - Use Argo v2.11.8 instead of v2.7.2
 
 ## Patch k8s Prometheus to find all rules
 
@@ -44,7 +48,7 @@ map (`{}`) then rules found in any namespace are used.
 
 ## Peek at Argo's metrics
 
-Argo has a number of metrics, but we want to focus on the `argo_workflow_status_phase` metric.
+Argo has a number of metrics, but we want to focus on the `argo_workflows_count` metric.
 Before getting started take a look at this metric on the Prometheus dashboard.
 
 Run:
@@ -55,20 +59,20 @@ Run:
 ```
 
 and then navigate to [http://localhost:9090](http://localhost:9090). On the main page or "Graph"
-page enter an "Expression" of `argo_workflow_status_phase{}`. This expression will return
+page enter an "Expression" of `argo_workflows_count{}`. This expression will return
 results similar to:
 
-| Element                                                                                                                                                                                                                                                                                                  | Value |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Error",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"}     | 0     |
-| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Failed",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"}    | 0     |
-| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Pending",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"}   | 0     |
-| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Running",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"}   | 0     |
-| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Skipped",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"}   | 0     |
-| argo_workflow_status_phase{endpoint="metrics",entrypoint="whalesay",exported_namespace="argo",instance="10.244.0.7:9090",job="workflow-controller-metrics",name="hello-world-g7rzt",namespace="argo",phase="Succeeded",pod="workflow-controller-5bc484d68b-4mcf4",service="workflow-controller-metrics"} | 1     |
+| Element                                                                                                                                                                                                                   | Value |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| argo_workflows_count{endpoint="metrics",instance="10.244.0.5:9090",job="workflow-controller-metrics",namespace="argo",pod="workflow-controller-6fc987d8d-52gmh",service="workflow-controller-metrics",status="Error"}     | 0     |
+| argo_workflows_count{endpoint="metrics",instance="10.244.0.5:9090",job="workflow-controller-metrics",namespace="argo",pod="workflow-controller-6fc987d8d-52gmh",service="workflow-controller-metrics",status="Failed"}    | 0     |
+| argo_workflows_count{endpoint="metrics",instance="10.244.0.5:9090",job="workflow-controller-metrics",namespace="argo",pod="workflow-controller-6fc987d8d-52gmh",service="workflow-controller-metrics",status="Pending"}   | 0     |
+| argo_workflows_count{endpoint="metrics",instance="10.244.0.5:9090",job="workflow-controller-metrics",namespace="argo",pod="workflow-controller-6fc987d8d-52gmh",service="workflow-controller-metrics",status="Running"}   | 0     |
+| argo_workflows_count{endpoint="metrics",instance="10.244.0.5:9090",job="workflow-controller-metrics",namespace="argo",pod="workflow-controller-6fc987d8d-52gmh",service="workflow-controller-metrics",status="Skipped"}   | 0     |
+| argo_workflows_count{endpoint="metrics",instance="10.244.0.5:9090",job="workflow-controller-metrics",namespace="argo",pod="workflow-controller-6fc987d8d-52gmh",service="workflow-controller-metrics",status="Succeeded"} | 1     |
 
-Looking at these results the metrics inform us that the hello-world-g7rzt Argo Workflow
-succeeded. This is good, but required us manually validating this. What we really want to do
+Looking at these results the metrics inform us that one Argo Workflow has succeeded and zero
+workflows failed. This is good, but required us manually validating this. What we really want to do
 is know when any Workflow has failed. That's where PrometheusRules come into play.
 
 ## Create a PrometheusRule to alert when a Workflow fails
@@ -89,7 +93,7 @@ spec:
   groups:
     - name: argo-workflows
       rules:
-        - expr: argo_workflow_status_phase{phase = "Failed"} == 1
+        - expr: argo_workflows_count{status = "Failed"} > 0
           alert: WorkflowFailures
 ```
 
@@ -118,7 +122,8 @@ Assuming the YAML file for the above PrometheusRule is located at
 Once again forward the port for Prometheus if not already and then navigate to
 [http://localhost:9090](http://localhost:9090). Click on the "Status" dropdown and
 select "Rules." "argo-workflows" should be at the top and you'll see the same expression and
-alert as we defined above.
+alert as we defined above. It may take a couple of minutes for the "argo-workflow" rule to appear
+in Prometheus.
 
 Now navigate to the "Alerts" page. Once again at the top, a "WorkflowFailures" alert should
 appear. It should be in green and state 0 active. This means the alert is not currently firing,

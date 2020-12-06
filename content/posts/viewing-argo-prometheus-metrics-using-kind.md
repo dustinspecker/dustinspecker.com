@@ -3,7 +3,7 @@ title: "Viewing Argo's Prometheus metrics in a kind cluster"
 images:
   - images/dustinspecker.jpg
 date: 2020-04-18T13:58:53Z
-lastmod: 2020-04-19T13:58:53Z
+lastmod: 2020-12-06T12:00:00Z
 draft: false
 categories:
   - development
@@ -24,6 +24,10 @@ for local development and testing.
 When I first started playing with Argo and its Prometheus metrics, there wasn't
 a quick resource to figure it out. On top of that, using kind can sometimes make it
 more challenging since the cluster is running within a docker container.
+
+> Updated (December 06, 2020):
+>
+> - Use Argo v2.11.8 instead of v2.7.2
 
 ## Install kind
 
@@ -83,7 +87,7 @@ A namespace-scoped Argo may be installed to the argo namespace via:
 ~/kubectl create namespace argo
 
 ~/kubectl create \
-  --filename https://raw.githubusercontent.com/argoproj/argo/v2.7.2/manifests/namespace-install.yaml \
+  --filename https://raw.githubusercontent.com/argoproj/argo/v2.11.8/manifests/namespace-install.yaml \
   --namespace argo
 
 ~/kubectl wait deployment workflow-controller \
@@ -110,7 +114,7 @@ cluster-admin.
 kind's cluster does not use Docker, which is the default container runtime used by
 Argo's Workflow controller. Instead Kind uses containerd. Fortunately, Argo's Workflow
 Controller may be configured. Argo documents the configuration pretty well in their
-[workflow-controller-configmap docs](https://github.com/argoproj/argo/blob/v2.7.2/docs/workflow-controller-configmap.yaml#L88).
+[workflow-controller-configmap docs](https://github.com/argoproj/argo/blob/v2.11.8/docs/workflow-controller-configmap.yaml#L95).
 
 We'll set this configuration in the Workflow Controller's configmap by:
 
@@ -121,54 +125,20 @@ We'll set this configuration in the Workflow Controller's configmap by:
   --type merge
 ```
 
-## Patch Argo to work with Prometheus
-
-Argo's workflow-controller by default does not expose Prometheus metrics, so we'll need
-to configure the workflow-controller:
-
-```bash
-~/kubectl patch configmap workflow-controller-configmap \
-  --namespace argo \
-  --patch '{"data": {"metricsConfig": "enabled: true\npath: /metrics\nport: 9090"}}' \
-  --type merge
-```
-
-As of Argo v2.7.2, the workflow-controller pod will not start the metrics server automatically
-when the configmap changes. But if the workflow-controller pod is deleted then the newly created
-workflow-controller pod will start the metrics server. The current workflow-controller pod
-can be deleted by:
-
-```bash
-~/kubectl delete pods \
-  --namespace argo \
-  --selector app=workflow-controller
-```
-
-The Argo installation also deploys a workflow-controller-metrics service. This service points
-at the workflow-controller's metrics port. This service port is lacking a name, which Prometheus
-requires so that Prometheus may discover this service. Fortunately, we can patch the service:
-
-```bash
-~/kubectl patch service workflow-controller-metrics \
-  --namespace argo \
-  --patch '[{"op": "add", "path": "/spec/ports/0/name", "value": "metrics"}]' \
-  --type json
-```
-
-This will name the service's port as metrics.
-
 ## Install Argo CLI
 
-Argo has a CLI that aids with submitting Argo Workflows. We'll be using v2.7.2, which can
+Argo has a CLI that aids with submitting Argo Workflows. We'll be using v2.11.8, which can
 also be installed from its
-[GitHub Release](https://github.com/argoproj/argo/releases/tag/v2.7.2).
+[GitHub Release](https://github.com/argoproj/argo/releases/tag/v2.11.8).
 
 For 64bit Linux, this can be done via:
 
 ```bash
-curl https://github.com/argoproj/argo/releases/download/v2.7.2/argo-linux-amd64 \
+curl https://github.com/argoproj/argo/releases/download/v2.11.8/argo-linux-amd64.gz \
   --location \
-  --output ~/argo
+  --output ~/argo.gz
+
+gunzip ~/argo.gz
 
 chmod +x ~/argo
 
@@ -178,15 +148,15 @@ chmod +x ~/argo
 ## Run hello-world Argo Workflow
 
 We'll want to execute an Argo Workflow so that there is data for Prometheus metrics.
-Argo has several [examples](https://github.com/argoproj/argo/tree/v2.7.2/examples).
+Argo has several [examples](https://github.com/argoproj/argo/tree/v2.11.8/examples).
 We'll use the
-[hello-world example](https://github.com/argoproj/argo/blob/v2.7.2/examples/hello-world.yaml)
+[hello-world example](https://github.com/argoproj/argo/blob/v2.11.8/examples/hello-world.yaml)
 to keep this simple.
 
 The hello-world Workflow may be executed by running:
 
 ```bash
-~/argo submit https://raw.githubusercontent.com/argoproj/argo/v2.7.2/examples/hello-world.yaml \
+~/argo submit https://raw.githubusercontent.com/argoproj/argo/v2.11.8/examples/hello-world.yaml \
   --namespace=argo \
   --watch
 ```
@@ -303,8 +273,10 @@ If you then click the "Status" dropdown and then click on "Targets," you'll see
 workflow--controller-metrics is up and running. This will have status about
 how long ago Prometheus has scraped the workflow-controller's metrics.
 
-Back on the "Graph" page, you can enter an expression like: `argo_workflow_info{}` and
-see status about any Argo workflows like the hello-world Workflow we ran earlier.
+Back on the "Graph" page, you can enter an expression like: `argo_workflows_count{}` and
+see how many Argo workflows are in the following states: Error, Failed, Pending, Running,
+Skipped, and Succeeded. The metric with the label `status=Succeeded` should have a value of 1
+because of our successful hello-world workflow.
 
 From here, you're able to use Prometheus' dashboard to explore metrics created by Argo's
 workflow-controller.
