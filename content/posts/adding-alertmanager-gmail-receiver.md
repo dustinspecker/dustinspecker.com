@@ -3,7 +3,7 @@ title: "Adding an AlertManager Gmail Receiver"
 images:
   - images/dustinspecker.jpg
 date: 2020-04-26T17:01:24Z
-lastmod: 2020-04-26T17:01:24Z
+lastmod: 2020-12-06T12:00:00Z
 draft: false
 categories:
   - development
@@ -22,6 +22,10 @@ AlertManager has a number of integrations for sending notifications. AlertManage
 calls these integrations receivers and the
 [Prometheus documentation on receivers](https://prometheus.io/docs/alerting/configuration/#receiver)
 has a lot of great information on the configuration of receivers.
+
+> Update (December 06, 2020)
+>
+> - Fix `alertmanager-main`'s `alertmanager.yaml` syntax
 
 ## Creating a Gmail receiver
 
@@ -55,14 +59,14 @@ stringData:
             auth_username: GMAIL_USERNAME@gmail.com
             auth_identity: GMAIL_USERNAME@gmail.com
             auth_password: GMAIL_PASSWORD
-      route:
-        group_by:
-          - job
-        receiver: none
-        routes:
-          - match:
-              namespace: argo
-            receiver: gmail
+    route:
+      group_by:
+        - job
+      receiver: none
+      routes:
+        - match:
+            namespace: argo
+          receiver: gmail
 ```
 
 In the above YAML replace `GMAIL_USERNAME` with your actual Gmail username. For the
