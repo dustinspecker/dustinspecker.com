@@ -8,7 +8,7 @@ HUGO = docker run \
 	--rm \
 	--user=$(shell id -u):$(shell id -g) \
 	--volume=$(PWD):/src \
-	jojomi/hugo:0.68.3 hugo
+	jojomi/hugo:0.76.5 hugo
 
 PRETTIER = docker run \
 	--rm \
