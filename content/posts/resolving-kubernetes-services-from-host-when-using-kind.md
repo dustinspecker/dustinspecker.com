@@ -3,7 +3,7 @@ title: "Resolving Kubernetes Services from Host when using kind"
 images:
   - images/dustinspecker.jpg
 date: 2020-05-09T16:10:52Z
-lastmod: 2020-07-04T12:00:00Z
+lastmod: 2020-12-06T12:00:00Z
 draft: false
 categories:
   - development
@@ -24,12 +24,17 @@ One of the first bumps a lot of us run into is Kubernetes services are no longer
 from the host. Fortunately, it's possible to configure the host's DNS configuration and routing
 to resolve this issue.
 
-> This post uses kind `v0.8.1` and kubectl `v1.18.5` running on Ubuntu 19.10. This post will
+> This post uses kind `v0.9.0` and kubectl `v1.19.4` running on Ubuntu 19.10. This post will
 > not work on macOS or Windows.
 
 > Update: I wrote a follow up post on
 > [Using Docker to resolve Kubernetes services in a kind cluster]({{< ref "using-docker-to-resolve-kubernetes-services-in-a-kind-cluster" >}})
 > instead of modifying the host. This method is also **not** limited to Linux.
+
+> Update (December 06, 2020)
+>
+> - Use kind v0.9.0 instead of v0.8.1
+> - Use kubectl v1.19.4 instead of v1.18.5
 
 ## verify host DNS configuration
 
@@ -64,7 +69,7 @@ network:
       dhcp4: true
       nameservers:
         search: ["svc.cluster.local", "cluster.local"]
-        addresses: ["192.168.0.1", "10.96.0.10"]
+        addresses: ["10.96.0.10", "192.168.0.1"]
 ```
 
 The search nameservers are not required, but they can be convenient. It enables resolving

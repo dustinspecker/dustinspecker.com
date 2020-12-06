@@ -3,7 +3,7 @@ title: "Using Docker to Resolve Kubernetes Services in a kind Cluster"
 images:
   - images/dustinspecker.jpg
 date: 2020-06-28T12:00:00Z
-lastmod: 2020-08-31T12:00:00Z
+lastmod: 2020-12-06T12:00:00Z
 draft: false
 categories:
   - development
@@ -26,6 +26,11 @@ Fortunately, we can run a Docker container configured to communicate with the ku
 
 By the end of this post we'll run a Docker container that can make requests to `http://hello.default.svc.cluster.local` successfully.
 
+> Update (December 06, 2020)
+>
+> - Use kind v0.9.0 instead of v0.8.1
+> - Use kubectl v1.19.4 instead of v1.18.5
+
 ## create a kind cluster with hello service
 
 To get caught up with where the previous post left off, run the following commands:
@@ -40,7 +45,7 @@ kubectl run hello \
   --port 80
 ```
 
-This will create a kubernetes cluster using kind (v0.8.1) running a hello pod and service.
+This will create a kubernetes cluster using kind (v0.9.0) running a hello pod and service.
 
 ## run a Docker container
 

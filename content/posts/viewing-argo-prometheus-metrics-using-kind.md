@@ -29,16 +29,18 @@ more challenging since the cluster is running within a docker container.
 >
 > - Use Argo v2.11.8 instead of v2.7.2
 > - Use kube-prometheus v0.6.0 instead of v0.3.0
+> - Use kind v0.9.0 instead of v0.7.0
+> - Use kubectl v1.19.4 instead of v1.17.4
 
 ## Install kind
 
-For this we'll be using kind v0.7.0, which can be installed from its
-[GitHub Release](https://github.com/kubernetes-sigs/kind/releases/tag/v0.7.0).
+For this we'll be using kind v0.9.0, which can be installed from its
+[GitHub Release](https://github.com/kubernetes-sigs/kind/releases/tag/v0.9.0).
 
 For 64bit Linux, this can be done via:
 
 ```bash
-curl https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-linux-amd64 \
+curl https://github.com/kubernetes-sigs/kind/releases/download/v0.9.0/kind-linux-amd64 \
   --location \
   --output ~/kind
 
@@ -56,18 +58,18 @@ is running. Then create a cluster via:
 ~/kind create cluster
 ```
 
-This will create a v1.17.0 Kubernetes cluster.
+This will create a v1.19.1 Kubernetes cluster.
 
 ## Install kubectl
 
 kubectl will help with deploying new resources to our cluster. We'll be using kubectl
-v1.17.4. The [Kubernetes docs](https://v1-17.docs.kubernetes.io/docs/tasks/tools/install-kubectl/#before-you-begin)
+v1.19.4. The [Kubernetes docs](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 have instructions for multiple operating systems.
 
 For 64bit Linux, the instructions are:
 
 ```bash
-curl https://storage.googleapis.com/kubernetes-release/release/v1.17.0/bin/linux/amd64/kubectl \
+curl https://storage.googleapis.com/kubernetes-release/release/v1.19.4/bin/linux/amd64/kubectl \
   --location \
   --output ~/kubectl
 

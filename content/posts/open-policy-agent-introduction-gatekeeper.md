@@ -3,7 +3,7 @@ title: "Open Policy Agent: Introduction to Gatekeeper"
 images:
   - images/opa-gatekeeper/opa-gatekeeper.png
 date: 2020-11-15T12:00:00Z
-lastmod: 2020-11-22T12:00:00Z
+lastmod: 2020-12-06T12:00:00Z
 draft: false
 categories:
   - development
@@ -26,6 +26,11 @@ resources to be deployed at all.
 
 Let's deploy Gatekeeper and experiment with creating a policy to forbid using the `latest`
 tag in images.
+
+> Update (December 06, 2020)
+>
+> - Use kind v0.9.0 instead of v0.8.1
+> - Use kubectl v1.19.4 instead of v1.18.5
 
 ## How does Gatekeeper work?
 
@@ -54,7 +59,7 @@ report the resource as violating, though.
 
 Like almost every post around Kubernetes I write, let's create a kind cluster to play with Gatekeeper.
 
-Install [kind](https://kind.sigs.k8s.io/) if not installed. I'm using kind version `v0.8.1`.
+Install [kind](https://kind.sigs.k8s.io/) if not installed. I'm using kind version `v0.9.0`.
 
 Run the following to create a cluster:
 
@@ -63,7 +68,7 @@ kind create cluster
 ```
 
 Install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) so that we can
-deploy Gatekeeper. I'm using kubectl version `v1.18.5`.
+deploy Gatekeeper. I'm using kubectl version `v1.19.4`.
 
 Deploy Gatekeeper's components by running:
 

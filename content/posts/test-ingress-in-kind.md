@@ -25,7 +25,13 @@ This article tackles communication through an ingress controller running in a ki
 Back in my minikube days, I used to add an A test record on my public DNS (AWS' Route 53) to resolve
 my private IP address to test my Ingress changes... Please learn from my mistakes! This is easier.
 
-> Note: This article uses kind `v0.8.1`.
+> Note: This article uses kind `v0.9.0`.
+
+> Update (December 06, 2020)
+>
+> - use kind v0.9.0 instead of v0.8.1
+> - use kubectl v1.19.4 instead of v1.18.5
+> - update ingress apiVersion to networking.k8s.io/v1 from networking.k8s.io/v1beta1
 
 ## create a kind cluster with ingress support
 
@@ -94,7 +100,7 @@ Then create an Ingress resource that directs traffic for `hello.dustinspecker.co
 service by creating a file named `ingress.yaml` with the following content:
 
 ```yaml
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: hello
@@ -103,9 +109,12 @@ spec:
     - host: hello.dustinspecker.com
       http:
         paths:
-          - backend:
-              serviceName: hello
-              servicePort: 80
+          - pathType: ImplementationSpecific
+            backend:
+              service:
+                name: hello
+                port:
+                  number: 80
 ```
 
 Deploy the Ingress resource by running:
