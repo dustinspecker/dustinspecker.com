@@ -42,7 +42,7 @@ fmt-check:
 		--parser markdown
 
 .PHONY: hugo-server
-hugo-server:
+hugo-server: fetch-theme
 	$(HUGO) server \
 		--bind "0.0.0.0"
 
