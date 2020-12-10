@@ -1,0 +1,16 @@
+---
+name: CI
+on: [pull_request, push]
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: make build
+      - env:
+          AWS_ACCESS_KEY: "${{ secrets.AWS_ACCESS_KEY }}"
+          AWS_SECRET_KEY: "${{ secrets.AWS_SECRET_KEY }}"
+        run: make deploy
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+...
+
