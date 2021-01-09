@@ -56,7 +56,7 @@ which commit a fixup commit applies.
 So we just learned about `git commit --fixup REF`, and we start using it. During interactive rebases,
 it's clear to us which commits we need to apply fixup commits to.
 
-When we run `git rebase --interactive`, when we see a list like this:
+When we run `git rebase --interactive`, we see a list like this:
 
 ```
 pick a06d62e feat(archetype): set date/lastmod to noon
@@ -74,7 +74,7 @@ We can enable autosquash by running:
 git config --global rebase.autosquash true
 ```
 
-When we start an interactive rebase, Git orders our commit list and marks fixup commits as `fixup` instead of `pick`.
+Now when we start an interactive rebase, Git orders our commit list and marks fixup commits as `fixup` instead of `pick`.
 For example, when starting an interactive rebase, we'll be presented with:
 
 ```
