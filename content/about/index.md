@@ -12,9 +12,8 @@ I've been writing software professionally since 2013. My career began with a foc
 JavaScript technologies such as AngularJS, Ember.js, and Node.js. Recently I've transitioned
 to focusing more on Kubernetes and Golang.
 
-In September 2020 and October 2020, I passed the Certified Kubernetes Application Developer (CKAD)
-and Certified Kubernetes Administrator (CKA) exams. Currently, I'm studying for the Certified
-Kubernetes Security Specialist (CKSS) exam.
+In 2020, I passed the Certified Kubernetes Application Developer (CKAD),
+Certified Kubernetes Administrator (CKA), and Certified Kubernetes Security Specialist (CKS) exams.
 
 This blog attempts to organize what I learn and have a knowledge base that I can refer
 back to in the future.
