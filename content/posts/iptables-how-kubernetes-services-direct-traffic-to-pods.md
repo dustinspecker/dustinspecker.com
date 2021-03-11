@@ -3,7 +3,7 @@ title: "iptables: How Kubernetes Services Direct Traffic to Pods"
 images:
   - images/iptables-how-kubernetes-services-direct-traffic-to-pods/network-diagram.png
 date: 2020-08-12T12:00:00Z
-lastmod: 2020-08-13T12:00:00Z
+lastmod: 2021-03-11T12:00:00Z
 draft: false
 categories:
   - development
@@ -47,6 +47,10 @@ We'll be manually creating network namespaces with python HTTP servers running, 
 
 > Note: This post only works on Linux. I'm using Ubuntu 19.10, but this should
 > work on other Linux distributions.
+
+> Update (March 11, 2021)
+>
+> - Correct typos from `10.100.100.100.8080` to `10.100.100.100:8080`
 
 ## create virtual devices and run HTTP servers in network namespaces
 
@@ -212,7 +216,7 @@ Nice! We've just handled traffic for a virtual IP!
 Now for some bad news. Let's try requesting the virtual IP address from `netns_dustin`.
 
 ```bash
-sudo ip netns exec netns_dustin curl 10.100.100.100.8080
+sudo ip netns exec netns_dustin curl 10.100.100.100:8080
 ```
 
 This command may succeed for some and will fail for others. What gives?!
@@ -265,7 +269,7 @@ sudo sysctl --write net.bridge.bridge-nf-call-iptables=1
 Now everyone _should_ see the following command fail:
 
 ```bash
-sudo ip netns exec netns_dustin curl 10.100.100.100.8080
+sudo ip netns exec netns_dustin curl 10.100.100.100:8080
 ```
 
 Now for the fix! We need to enable hairpin mode on `veth_dustin` connected to `bridge_home`.
@@ -284,7 +288,7 @@ sudo brctl hairpin bridge_home veth_dustin on
 Try the following command again:
 
 ```bash
-sudo ip netns exec netns_dustin curl 10.100.100.100.8080
+sudo ip netns exec netns_dustin curl 10.100.100.100:8080
 ```
 
 It's a success!
@@ -315,7 +319,7 @@ so many times while researching. Maybe that's why?
 Run the following beloved command again:
 
 ```bash
-sudo ip netns exec netns_dustin curl 10.100.100.100.8080
+sudo ip netns exec netns_dustin curl 10.100.100.100:8080
 ```
 
 Success again! With promiscuous mode enabled on `bridge_home`, we won't have to worry about
