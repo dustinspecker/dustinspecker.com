@@ -3,7 +3,7 @@ title: "How Do Kubernetes and Docker Create IP Addresses?!"
 images:
   - images/full-diagram.png
 date: 2020-05-24T19:13:13Z
-lastmod: 2020-07-15T12:00:00Z
+lastmod: 2021-04-06T12:00:00Z
 draft: false
 categories:
   - development
@@ -707,6 +707,7 @@ Well, I sure learned a lot, but I still have some remaining questions to answer 
 - What is Kubernetes' use of
   [IPVS](https://kubernetes.io/blog/2018/07/09/ipvs-based-in-cluster-load-balancing-deep-dive/)
   about?
+  **Update**: I dove into this on [IPVS: How Kubernetes Services Direct Traffic to Pods]({{< ref "ipvs-how-kubernetes-services-direct-traffic-to-pods" >}})
 - How does Kubernetes forward traffic to pods on multiple nodes?
   (I'm suspecting a route to a node based on the pod CIDR for that node from what I learned in
   [resolving kubernetes services from host when using kind]({{< ref "resolving-kubernetes-services-from-host-when-using-kind" >}}))
