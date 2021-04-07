@@ -178,7 +178,7 @@ sudo ipvsadm \
   --masquerading
 ```
 
-This command instructs IVPS to direct TCP requests for `10.100.100.100:8080` to `10.0.0.11:8080`. It's
+This command instructs IPVS to direct TCP requests for `10.100.100.100:8080` to `10.0.0.11:8080`. It's
 important to specify `--masquerading` here, as this effectively handles `NAT` for us as we previously
 did in [iptables: How Kubernetes Services Direct Traffic to Pods]({{< ref "iptables-how-kubernetes-services-direct-traffic-to-pods" >}}#add-a-virtual-ip-in-iptables). By not specifying `--masquerading`,
 IPVS attempts to use routing to direct the traffic, which will fail.
