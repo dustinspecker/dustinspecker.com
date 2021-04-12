@@ -6,4 +6,11 @@ meta: false
 displayCopyright: false
 ---
 
+If you'd like to get an email whenever I publish a new post, please
+subscribe below.
+
+I am also on [Twitter](https://twitter.com/dustinspecker),
+[LinkedIn](https://www.linkedin.com/in/dustin-specker/), and
+[GitHub](https://github.com/dustinspecker).
+
 {{< convertkit >}}
