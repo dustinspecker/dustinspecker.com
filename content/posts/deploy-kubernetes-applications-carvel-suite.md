@@ -17,7 +17,7 @@ tags:
 ---
 
 The [Carvel Suite](https://carvel.dev/) is a set of composable tools to help deploy applications to Kubernetes. While other solutions try to solve
-all problems in one package, Carvel provides tools and leaves it up to you on to glue the components together. This enables a lot of flexibility!
+all problems in one package, Carvel provides tools and leaves it up to you to glue the components together. This enables a lot of flexibility!
 
 This post will cover using:
 
