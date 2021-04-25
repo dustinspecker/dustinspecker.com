@@ -19,6 +19,10 @@ tags:
 The [Carvel Suite](https://carvel.dev/) is a set of composable tools to help deploy applications to Kubernetes. While other solutions try to solve
 all problems in one package, Carvel provides tools and leaves it up to you to glue the components together. This enables a lot of flexibility!
 
+> Updated (April 25, 2021):
+>
+> - Use ytt v0.32.0 instead of v0.31.0
+
 This post will cover using:
 
 - [vendir](https://carvel.dev/vendir/) to fetch dependencies such as YAML files from a Git repository and Helm charts
@@ -36,7 +40,7 @@ We'll need a few tools to try out the Carvel suite. Download the following:
 
 - [kind v0.10.0](https://github.com/kubernetes-sigs/kind/releases/tag/v0.10.0)
 - [vendir v0.18.0](https://github.com/vmware-tanzu/carvel-vendir/releases/tag/v0.18.0)
-- [ytt v0.31.0](https://github.com/vmware-tanzu/carvel-ytt/releases/tag/v0.31.0)
+- [ytt v0.32.0](https://github.com/vmware-tanzu/carvel-ytt/releases/tag/v0.32.0)
 - [kapp v0.36.0](https://github.com/vmware-tanzu/carvel-kapp/releases/tag/v0.36.0)
 - [helm v3.5.4](https://github.com/helm/helm/releases/tag/v3.5.4)
 
@@ -188,13 +192,8 @@ We can then run ytt to see the impact of our overlay by running:
 ```bash
 ytt \
   --file ./deploy/synced/nginx \
-  --file ./deploy/overlays/nginx \
-  --ignore-unknown-comments
+  --file ./deploy/overlays/nginx
 ```
-
-> Note: `--ignore-unknown-comments` ignores errors when ytt finds regular YAML comments like `# this is a comment`.
-> We could provide `--file-mark synced/nginx/deployment.yaml:type=yaml-plain`,
-> to explicitly instruct ytt that this file is a plain YAML file.
 
 ytt will print the modified nginx deployment with `3` replicas to stdout!
 
@@ -208,7 +207,6 @@ Run the following command:
 ytt \
   --file ./deploy/synced/nginx \
   --file ./deploy/overlays/nginx \
-  --ignore-unknown-comments \
 | kapp deploy \
   --app dev-nginx \
   --diff-changes \
@@ -299,9 +297,7 @@ We can run:
 
 ```bash
 helm template loki-stack ./deploy/synced/loki-stack \
-| ytt \
-  --file - \
-  --ignore-unknown-comments
+| ytt --file -
 ```
 
 At this point, there isn't anything for ytt to handle.
@@ -360,9 +356,7 @@ We can re-run the following command:
 
 ```bash
 helm template loki-stack ./deploy/synced/loki-stack \
-| ytt \
-  --file - \
-  --ignore-unknown-comments
+| ytt --file -
 ```
 
 to see the resources printed to stdout again. This time the namespace is set, and the loki namespace resource exists.
@@ -445,7 +439,6 @@ while IFS= read -r -d '' app_directory ; do
   ytt \
     --file "$SYNCED_DIR" \
     --file "./deploy/overlays/$app_name" \
-    --ignore-unknown-comments \
   > "./deploy/rendered/$app_name/deploy.yaml"
 
 done < <(find ./deploy/synced/* -maxdepth 0 -type d -print0)
