@@ -3,7 +3,7 @@ title: "Deploy Kubernetes Applications with the Carvel Suite"
 images:
   - images/deploy-kubernetes-applications-carvel-suite/deploy-kubernetes-applications-carvel-suite.png
 date: 2021-04-16T12:00:00Z
-lastmod: 2021-04-16T12:00:00Z
+lastmod: 2021-04-25T12:00:00Z
 draft: false
 categories:
   - development
