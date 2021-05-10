@@ -133,25 +133,6 @@ At the same level as `resourceRules`, create a key named `rules` looking like:
 
 ```yaml
 "rules":
-  - "seriesQuery": "container_network_receive_bytes_total"
-    "resources":
-      "overrides":
-        "namespace":
-          "resource": "namespace"
-        "pod":
-          "resource": "pod"
-    "name":
-      "matches": "^(.*)_total$"
-      "as": "${1}_per_second"
-    "metricsQuery": 'sum(rate(<<.Series>>{id=~".*docker.*",<<.LabelMatchers>>}[2m])) by (<<.GroupBy>>)'
-```
-
-Adding the `rules` list will begin populating the custom metrics.
-
-To explain what's going on in `rules`, I've annotated below:
-
-```
-"rules":
   # seriesQuery is a Prometheus query on its own, we'll set up parameters below
   # container_network_receive_bytes_total is a metric provided to us as part of kube-prometheus
   - "seriesQuery": "container_network_receive_bytes_total"
@@ -166,7 +147,7 @@ To explain what's going on in `rules`, I've annotated below:
           "resource": "pod"
     # We want to scale pods due to a surge in traffic. A metric that is a total isn't great for this, but
     # we can see the rate of change using Prometheus' `rate`, which is a good metric to scale by
-    "metricsQuery": "sum(rate(<<.Series>>{id=~\".*docker.*\",<<.LabelMatchers>>}[2m])) by (<<.GroupBy>>)"
+    "metricsQuery": 'sum(rate(<<.Series>>{id=~".*docker.*",<<.LabelMatchers>>}[2m])) by (<<.GroupBy>>)'
     # name allows us to modify the metric name given the seriesQuery
     # by default the name would be container_network_receive_bytes_total, which is misleading after our metricsQuery
     # produces a metric where we get bytes received per second
@@ -178,6 +159,10 @@ To explain what's going on in `rules`, I've annotated below:
       # in this case we're appending `_per_second` to `container_network_receive_bytes` resulting in `container_network_receive_bytes_per_second`
       "as": "${1}_per_second"
 ```
+
+I've annotated above to explain what's going on in `rules`.
+
+Adding the `rules` list will begin populating the custom metrics once the adapter has loaded this configuration file.
 
 We'll then need to re-create the `prometheus-adapter` pods to take the config changes. We can delete these pods, and then Kubernetes
 will re-create them by running:
