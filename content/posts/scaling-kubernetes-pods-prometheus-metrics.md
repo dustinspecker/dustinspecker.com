@@ -147,6 +147,8 @@ At the same level as `resourceRules`, create a key named `rules` looking like:
           "resource": "pod"
     # We want to scale pods due to a surge in traffic. A metric that is a total isn't great for this, but
     # we can see the rate of change using Prometheus' `rate`, which is a good metric to scale by
+    # metricsQuery is Go templating with a few variables defined such as `.Series` being seriesQuery
+    # and .LabelMatchers being parameters for our query
     "metricsQuery": 'sum(rate(<<.Series>>{id=~".*docker.*",<<.LabelMatchers>>}[2m])) by (<<.GroupBy>>)'
     # name allows us to modify the metric name given the seriesQuery
     # by default the name would be container_network_receive_bytes_total, which is misleading after our metricsQuery
