@@ -23,7 +23,7 @@ to set up a Horizontal Pod Autoscaler using custom metrics. This post walks thro
 
 1. Deploying kube-prometheus (Prometheus operator, Prometheus adapter, Grafana, and more)
 1. Creating a custom metrics APIService
-1. Configuring Prometheus adapter to support out custom metrics
+1. Configuring Prometheus adapter to support our custom metrics
 1. Deploying a Horizontal Pod Autoscaler for Grafana using a custom metric
 
 ## Deploy kube-prometheus
