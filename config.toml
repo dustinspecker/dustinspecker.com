@@ -226,11 +226,27 @@ uglyURLs = false
         pre = "internal"
         post = "envelope"
     [[menu.main]]
+        url = "https://twitter.com/dustinspecker"
+        name = ""
         weight = 6
-        identifier = "theme-switcher"
+        pre = "external"
+        post = "twitter"
+        identifier = "twitter"
     [[menu.main]]
+        url = "https://linkedin.com/in/dustin-specker"
         weight = 7
-        identifier = "lang-switcher"
+        pre = "external"
+        post = "linkedin"
+        identifier = "linkedin"
+    [[menu.main]]
+        url = "https://github.com/dustinspecker"
+        weight = 8
+        pre = "external"
+        post = "github"
+        identifier = "github"
+    [[menu.main]]
+        weight = 9
+        identifier = "theme-switcher"
 
 
 
