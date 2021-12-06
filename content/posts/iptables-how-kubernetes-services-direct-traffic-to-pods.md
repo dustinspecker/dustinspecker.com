@@ -7,6 +7,8 @@ lastmod: 2021-04-06T12:00:00Z
 draft: false
 categories:
   - development
+series:
+  - Container Networking
 tags:
   - iptables
   - kubernetes

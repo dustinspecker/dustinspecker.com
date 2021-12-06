@@ -54,6 +54,7 @@ uglyURLs = false
 # Taxonomies
 [taxonomies]
     category = "categories"
+    series = "series"
     tag = "tags"
 
 # Modified date
