@@ -202,45 +202,45 @@ uglyURLs = false
         weight = 2
         pre = "internal"
         post = "archive"
-    # [[menu.main]]
-    #     url = "/categories/"
-    #     name = "Categories"
-    #     weight = 3
-    #     pre = "internal"
-    #     post = "th"
+    [[menu.main]]
+        url = "/series/"
+        name = "Series"
+        weight = 3
+        pre = "internal"
+        post = "th"
     [[menu.main]]
         url = "/tags/"
         name = "Tags"
-        weight = 3
+        weight = 4
         pre = "internal"
         post = "tags"
     [[menu.main]]
         url = "/newsletter/"
         name = "Newsletter"
-        weight = 4
+        weight = 5
         pre = "internal"
         post = "envelope"
     [[menu.main]]
         url = "https://twitter.com/dustinspecker"
         name = ""
-        weight = 5
+        weight = 6
         pre = "external"
         post = "twitter"
         identifier = "twitter"
     [[menu.main]]
         url = "https://linkedin.com/in/dustin-specker"
-        weight = 6
+        weight = 7
         pre = "external"
         post = "linkedin"
         identifier = "linkedin"
     [[menu.main]]
         url = "https://github.com/dustinspecker"
-        weight = 7
+        weight = 8
         pre = "external"
         post = "github"
         identifier = "github"
     [[menu.main]]
-        weight = 8
+        weight = 9
         identifier = "theme-switcher"
 
 
