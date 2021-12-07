@@ -7,6 +7,8 @@ lastmod: 2020-09-01T12:00:00Z
 draft: false
 categories:
   - development
+series:
+  - Using kind
 tags:
   - kind
   - ingress

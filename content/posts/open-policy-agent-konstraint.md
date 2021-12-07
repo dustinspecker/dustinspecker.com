@@ -7,6 +7,8 @@ lastmod: 2020-11-29T12:00:00Z
 draft: false
 categories:
   - development
+series:
+  - Open Policy Agent & Gatekeeper
 tags:
   - konstraint
   - gatekeeper

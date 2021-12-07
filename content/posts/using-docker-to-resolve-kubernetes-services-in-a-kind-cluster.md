@@ -7,6 +7,8 @@ lastmod: 2020-12-06T12:00:00Z
 draft: false
 categories:
   - development
+series:
+  - Using kind
 tags:
   - kubernetes
   - kind
