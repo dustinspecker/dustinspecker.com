@@ -22,5 +22,5 @@ mkdir -p themes/meme
   # remove any previously made changes
   git checkout .
 
-  git am ../../theme-patches/*
+  git -c "user.name=Dustin Specker" -c "user.email=DustinSpecker.DustinSpecker.com" am ../../theme-patches/*
 )
