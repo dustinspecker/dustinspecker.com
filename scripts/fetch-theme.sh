@@ -18,4 +18,9 @@ mkdir -p themes/meme
   if [ "$(git rev-parse HEAD)" != ${memes_sha} ]; then
     git -c "advice.detachedHead=false" checkout ${memes_sha}
   fi
+
+  # remove any previously made changes
+  git checkout .
+
+  git am ../../theme-patches/*
 )
