@@ -1125,13 +1125,13 @@ uglyURLs = false
     shareOnTwitter = true
     shareOnFacebook = true
     shareOnLinkedIn = true
-    shareOnTelegram = true
-    shareOnWeibo = true
-    shareOnDouban = true
-    shareOnQQ = true
-    shareOnQzone = true
+    shareOnTelegram = false
+    shareOnWeibo = false
+    shareOnDouban = false
+    shareOnQQ = false
+    shareOnQzone = false
 
-    shareViaQRCode = true
+    shareViaQRCode = false
 
 
     ######################################
