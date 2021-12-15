@@ -1120,7 +1120,7 @@ uglyURLs = false
     #       `share` in post’s Front Matter
     #       has a higher priority than here
 
-    displayShareOnText = true
+    displayShareOnText = false
 
     shareOnTwitter = true
     shareOnFacebook = true
