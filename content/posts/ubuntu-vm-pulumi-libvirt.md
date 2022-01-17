@@ -24,6 +24,8 @@ Pulumi.
 
 I'm running this on Ubuntu 21.10 x64. We'll use Pulumi v3.22.1 with the Go SDK and Go v1.17.6.
 
+> Note: If you just want to see the code, visit [pulumi-libvirt-ubuntu-example](https://github.com/dustinspecker/pulumi-libvirt-ubuntu-example).
+
 ## Install libvirt
 
 First, install libvirt via:
