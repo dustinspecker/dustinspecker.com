@@ -13,7 +13,7 @@ tags:
   - IaC
 ---
 
-[Pulumi](https://www.pulumi.com/) is an Infrastructure as Code (IAC) tool that supports using
+[Pulumi](https://www.pulumi.com/) is an Infrastructure as Code (IaC) tool that supports using
 Go, .Net, Python, and TypeScript/JavaScript. [Libvirt](https://libvirt.org/) is a tool for managing virtual machines (VM).
 Typically, teams use Pulumi with different cloud providers, but we can leverage libvirt to
 manage virtual machines on bare-metal servers, perfect for a homelab.
