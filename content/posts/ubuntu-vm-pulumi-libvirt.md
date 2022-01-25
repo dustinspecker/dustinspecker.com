@@ -7,6 +7,8 @@ lastmod: 2022-01-17T12:00:00Z
 draft: false
 categories:
   - development
+series:
+  - Pulumi and libvirt
 tags:
   - pulumi
   - libvirt
