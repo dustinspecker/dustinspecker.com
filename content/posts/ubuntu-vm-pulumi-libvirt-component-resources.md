@@ -24,7 +24,7 @@ is perfect for creating shareable components.
 
 This post
 continues from the previous one and walks through how to migrate our existing `main.go` to use Component Resources. Then we'll explore
-the advantages of component resources over a language's built-in module capabilities.
+the advantages of component resources over a language's built-in package capabilities.
 
 > Note: If you'd like to see the finished code, view the [pulumi-libvirt-ubuntu-component-example](https://github.com/dustinspecker/pulumi-libvirt-ubuntu-component-resources-example).
 
@@ -312,11 +312,11 @@ pulumi config set libvirt:uri qemu:///system
 
 Run `pulumi up` to recreate our resources with the default libvirt provider.
 
-## Create a VM module
+## Create a VM package
 
 Now, let's start making our code re-usable by others. We'll start this by just using Go and nothing fancy with Pulumi.
 
-Our `VM` module will do the following:
+Our `VM` package will do the following:
 
 - create a filesystem unique to the VM based on a provided image volume ID in a given storage pool
 - create a domain using the filesystem and provided cloud-init volume ID and network ID
@@ -394,7 +394,7 @@ func NewVM(ctx *pulumi.Context, name string, poolName pulumi.StringOutput, baseD
 Our `NewVM` function requires a few args and then returns a map about the newly created VM. We can then use this
 in our `main.go` to export outputs for the stack.
 
-We've created a plain ol' Go module that others can consume. Let's update our `main.go` to use it.
+We've created a plain ol' Go package that others can consume. Let's update our `main.go` to use it.
 
 ```diff
  package main
