@@ -1,0 +1,25 @@
+From 8e6d8bdeb1d315f5e006ac46321ca3bf310edeae Mon Sep 17 00:00:00 2001
+From: Dustin Specker <DustinSpecker@DustinSpecker.com>
+Date: Wed, 26 Jan 2022 10:00:12 -0600
+Subject: [PATCH 3/3] feat(lists): order by name
+
+---
+ layouts/partials/pages/taxonomy.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/layouts/partials/pages/taxonomy.html b/layouts/partials/pages/taxonomy.html
+index bac40b6..0157bcb 100644
+--- a/layouts/partials/pages/taxonomy.html
++++ b/layouts/partials/pages/taxonomy.html
+@@ -5,7 +5,7 @@
+                 <h1 class="list-title">{{ .Title | default (.Type | title) }}</h1>
+             {{ end }}
+             {{ $type := .Type }}
+-            {{ range .Data.Terms.ByCount }}
++            {{ range .Data.Terms.Alphabetical }}
+                 {{ $name := .Name }}
+                 <h2 class="term-title">
+                     {{ $page := $.Site.GetPage (printf "/%s/%s" $type $name) }}
+-- 
+2.34.1
+

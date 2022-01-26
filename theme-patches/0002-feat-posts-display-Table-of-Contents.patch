@@ -1,7 +1,7 @@
-From 659c8a51901ebcc3ac806929b58673dcca34d50a Mon Sep 17 00:00:00 2001
+From b6b90763a26235cec0246d4c725138192027107a Mon Sep 17 00:00:00 2001
 From: Dustin Specker <DustinSpecker@DustinSpecker.com>
 Date: Wed, 26 Jan 2022 08:59:40 -0600
-Subject: [PATCH 2/2] feat(posts): display Table of Contents
+Subject: [PATCH 2/3] feat(posts): display Table of Contents
 
 ---
  i18n/en.toml | 2 +-
