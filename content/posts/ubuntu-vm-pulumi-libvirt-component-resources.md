@@ -734,7 +734,7 @@ Traditionally, the other team would have to add support by:
 
 With transformations, we can pass along a transformation as a Resource Option to our `NewVM` function to modify how it creates a child resource.
 
-## Transform a Component Resource's child resource
+## Transform a Component Resource's child resources
 
 Let's create a Resource Transformation named `domainsUse1GBMemory`. Pulumi will invoke this function for each resource created. We then:
 
