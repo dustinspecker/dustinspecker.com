@@ -28,7 +28,7 @@ the advantages of component resources over a language's built-in module capabili
 
 > Note: If you'd like to see the finished code, view the [pulumi-libvirt-ubuntu-component-example](https://github.com/dustinspecker/pulumi-libvirt-ubuntu-component-resources-example).
 
-# Configure the default libvirt provider
+## Configure the default libvirt provider
 
 At the end of the last blog post, our `main.go` looked like this:
 
@@ -312,7 +312,7 @@ pulumi config set libvirt:uri qemu:///system
 
 Run `pulumi up` to recreate our resources with the default libvirt provider.
 
-# Create a VM module
+## Create a VM module
 
 Now, let's start making our code re-usable by others. We'll start this by just using Go and nothing fancy with Pulumi.
 
@@ -519,7 +519,7 @@ Run `pulumi up`, and it should successfully recreate the domain and filesystem v
 
 Let's refactor our `NewVM` function to use Pulumi's ComponentResource and discover the advantages.
 
-# Convert to Component Resource
+## Convert to Component Resource
 
 Now modify `pkg/vm/vm.go` to use the Component Resource pattern:
 
@@ -722,7 +722,7 @@ Previewing update (dev):
 
 This UI is a little easier to glance at but not a huge advantage to bring in a new pattern. Let's talk about a huge advantage.
 
-# Why use a Component Resource?
+## Why use a Component Resource?
 
 By leveraging Pulumi's Component Resources, we can take advantage of [Resource Transformations](https://www.pulumi.com/docs/intro/concepts/resources/options/transformations/).
 
@@ -734,7 +734,7 @@ Traditionally, the other team would have to add support by:
 
 With transformations, we can pass along a transformation as a Resource Option to our `NewVM` function to modify how it creates a child resource.
 
-# Transform a Component Resource's child resource
+## Transform a Component Resource's child resource
 
 Let's create a Resource Transformation named `domainsUse1GBMemory`. Pulumi will invoke this function for each resource created. We then:
 
@@ -848,7 +848,7 @@ instead of using a transformation.
 Our VM Component Resource is looking pretty good, but currently, someone has to set up the pool, image volume, and network. Let's make
 a higher-level component to encapsulate all of this.
 
-# Create Higher Level VMGroup Component Resource
+## Create Higher Level VMGroup Component Resource
 
 We can go another step and create a Component Resource that makes other resources and Component Resources.
 
