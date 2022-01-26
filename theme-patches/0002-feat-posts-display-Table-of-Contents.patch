@@ -1,0 +1,25 @@
+From 659c8a51901ebcc3ac806929b58673dcca34d50a Mon Sep 17 00:00:00 2001
+From: Dustin Specker <DustinSpecker@DustinSpecker.com>
+Date: Wed, 26 Jan 2022 08:59:40 -0600
+Subject: [PATCH 2/2] feat(posts): display Table of Contents
+
+---
+ i18n/en.toml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/i18n/en.toml b/i18n/en.toml
+index 7514133..f1770d0 100644
+--- a/i18n/en.toml
++++ b/i18n/en.toml
+@@ -9,7 +9,7 @@ one = "min"
+ other = "mins"
+ 
+ [tocTitle]
+-other = "Contents"
++other = "Table of Contents"
+ 
+ [readMore]
+ other = "Read More"
+-- 
+2.34.1
+

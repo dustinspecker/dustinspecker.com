@@ -807,7 +807,7 @@ uglyURLs = false
     ######################################
     # Table of Contents
 
-    enableTOC = false
+    enableTOC = true
     # Note: *global settings*
     #       `toc` in post’s Front Matter
     #       has a higher priority than here
