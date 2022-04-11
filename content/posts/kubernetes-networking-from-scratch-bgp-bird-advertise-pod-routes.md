@@ -574,7 +574,7 @@ to see we're currently sharing routes associated with the `ens3` interfaces on o
 
 Let's modify our `bird` configuration, so we start receiving pod CIDR routes.
 
-## Export and import BGP routes automatically
+## Advertise Pod CIDRs via BGP
 
 Open another shell for `vm1` with `multipass shell vm1` and modify `/etc/bird/bird.conf`'s `static` section.
 
