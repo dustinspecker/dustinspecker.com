@@ -3,7 +3,7 @@ title: "iptables: How Kubernetes Services Direct Traffic to Pods"
 images:
   - images/iptables-how-kubernetes-services-direct-traffic-to-pods/network-diagram.png
 date: 2020-08-12T12:00:00Z
-lastmod: 2021-04-06T12:00:00Z
+lastmod: 2022-04-11T12:00:00Z
 draft: false
 categories:
   - development
@@ -517,6 +517,7 @@ topics I'd like to learn are:
   **Update**: I dove into this on [IPVS: How Kubernetes Services Direct Traffic to Pods]({{< ref "ipvs-how-kubernetes-services-direct-traffic-to-pods" >}})
 - conntrack and how it's used in iptables rules by kube-proxy
 - how are virtual tunnels and BGP optionally used in multi-node Kubernetes clusters?
+  - I talk about using BGP and BIRD to do this in [Kubernetes Networking from Scratch: Using BGP and BIRD to Advertise Pod Routes]({{< ref "kubernetes-networking-from-scratch-bgp-bird-advertise-pod-routes" >}}).
 
 Have any knowledge to share about the above topics? Or any other additional questions?
 Then please feel free to reach out and let me know on [Twitter](https://twitter.com/dustinspecker),

@@ -3,7 +3,7 @@ title: "How Do Kubernetes and Docker Create IP Addresses?!"
 images:
   - images/full-diagram.png
 date: 2020-05-24T19:13:13Z
-lastmod: 2021-04-06T12:00:00Z
+lastmod: 2022-04-11T12:00:00Z
 draft: false
 categories:
   - development
@@ -713,6 +713,7 @@ Well, I sure learned a lot, but I still have some remaining questions to answer 
 - How does Kubernetes forward traffic to pods on multiple nodes?
   (I'm suspecting a route to a node based on the pod CIDR for that node from what I learned in
   [resolving kubernetes services from host when using kind]({{< ref "resolving-kubernetes-services-from-host-when-using-kind" >}}))
+  - I talk about using BGP and BIRD to do this in [Kubernetes Networking from Scratch: Using BGP and BIRD to Advertise Pod Routes]({{< ref "kubernetes-networking-from-scratch-bgp-bird-advertise-pod-routes" >}}).
 
 I'm new to a lot of this, so if you see something glaringly wrong please feel free to reach
 out on [Twitter](https://twitter.com/dustinspecker), [LinkedIn](https://www.linkedin.com/in/dustin-specker/), or [GitHub](https://github.com/dustinspecker). Or drop a message if you know the answer

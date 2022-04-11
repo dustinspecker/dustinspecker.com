@@ -3,7 +3,7 @@ title: "IPVS: How Kubernetes Services Direct Traffic to Pods"
 images:
   - images/ipvs-how-kubernetes-services-direct-traffic-to-pods/ipvs-how-kubernetes-services-direct-traffic-to-pods.png
 date: 2021-04-06T12:00:00Z
-lastmod: 2021-04-06T12:00:00Z
+lastmod: 2022-04-11T12:00:00Z
 draft: false
 categories:
   - development
@@ -416,6 +416,7 @@ In the future, I'd like to learn more about
 - conntrack
 - how some CNIs use virtual tunnels instead of host routing
 - how some CNIs use BGP peering
+  - I talk about using BGP and BIRD to do this in [Kubernetes Networking from Scratch: Using BGP and BIRD to Advertise Pod Routes]({{< ref "kubernetes-networking-from-scratch-bgp-bird-advertise-pod-routes" >}}).
 
 Have any info on these topics or any questions/comments on this post? Please feel free to connect on [Twitter](https://twitter.com/dustinspecker),
 [LinkedIn](https://www.linkedin.com/in/dustin-specker/), or [GitHub](https://github.com/dustinspecker).
