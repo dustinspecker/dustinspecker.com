@@ -17,7 +17,8 @@ PRETTIER = docker run \
 
 .PHONY: build
 build: fetch-theme fmt-check
-	$(HUGO)
+	$(HUGO) \
+		--environment production
 
 .PHONY: deploy
 deploy:
