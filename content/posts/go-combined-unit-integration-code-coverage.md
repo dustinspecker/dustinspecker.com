@@ -176,7 +176,7 @@ We've built our binary ready to report coverage. Now we want to run it.
 Start by creating a directory `coverage/int` for our coverage reports for integration tests.
 
 ```bash
-mkdir coverage/int
+mkdir -p coverage/int
 ```
 
 We can still run our program like usual:
@@ -214,7 +214,7 @@ At this point, we can see code coverage from our integration tests (executing
 `./bin/add` twice) by running:
 
 ```bash
-go tool covdata percent -i=./coverage/unit
+go tool covdata percent -i=./coverage/int
 ```
 
 and we'll see the following output:
@@ -239,7 +239,7 @@ Fortunately, with Go 1.20, there's a way to instruct `go test` to create binary 
 Create a new directory to store binary coverage for unit tests:
 
 ```bash
-mkdir coverage/unit
+mkdir -p coverage/unit
 ```
 
 Then run the following command to generate coverage from unit tests:
