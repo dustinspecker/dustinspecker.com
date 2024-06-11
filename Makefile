@@ -13,7 +13,7 @@ HUGO = docker run \
 PRETTIER = docker run \
 	--rm \
 	--volume $(PWD):/work \
-	tmknom/prettier:2.8.1
+	tmknom/prettier:3.2.5
 
 .PHONY: build
 build: fetch-theme fmt-check
