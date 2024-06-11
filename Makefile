@@ -8,7 +8,7 @@ HUGO = docker run \
 	--rm \
 	--user=$(shell id -u):$(shell id -g) \
 	--volume=$(PWD):/src \
-	klakegg/hugo:0.107.0-ext-alpine
+	hugomods/hugo:exts-0.127.0 hugo
 
 PRETTIER = docker run \
 	--rm \
