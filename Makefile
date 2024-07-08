@@ -12,6 +12,7 @@ HUGO = docker run \
 
 PRETTIER = docker run \
 	--rm \
+	--user $(shell id -u):$(shell id -g) \
 	--volume $(PWD):/work \
 	tmknom/prettier:3.2.5
 
