@@ -20,6 +20,8 @@ In this post, we'll create a custom formatter for Gomega to improve the output o
 
 > Jump to [Create a custom formatter to handle github.com/pkg/errors](#create-a-custom-formatter-to-handle-githubcompkgerrors) to skip project setup steps.
 
+The source code for this project may also be viewed at [ginkgo-gomega-custom-formatter-example](https://github.com/dustinspecker/ginkgo-gomega-custom-formatter-example).
+
 ## Setup a new project
 
 Initialize a new Go module by running:
