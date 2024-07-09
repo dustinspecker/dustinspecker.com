@@ -1534,3 +1534,9 @@ uglyURLs = false
         valine = "/npm/valine@1.4.14/dist/Valine.min.js"
         busuanzi = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
         utterances = "https://utteranc.es/client.js"
+
+[deployment]
+[[deployment.targets]]
+name = "s3"
+URL = "s3://dustinspecker.com?region=us-east-1"
+cloudFrontDistributionID = "E31LNIWHS5691E"
