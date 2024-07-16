@@ -10,3 +10,4 @@
 
 1. Install Docker
 1. Run `make NEW_POST_NAME=blah new-post` to scaffold a new post
+1. Run `go run ./content/posts/blah.md` to generate logo for post
