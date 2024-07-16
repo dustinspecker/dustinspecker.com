@@ -1,7 +1,7 @@
 ---
 title: "Adding a Prometheus Rule for Argo"
 images:
-  - images/dustinspecker.jpg
+  - images/logos/adding-a-prometheus-rule-for-argo.png
 date: 2020-04-19T21:12:15Z
 lastmod: 2020-12-06T12:00:00Z
 draft: false

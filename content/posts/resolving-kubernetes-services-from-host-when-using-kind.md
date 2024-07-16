@@ -1,7 +1,7 @@
 ---
 title: "Resolving Kubernetes Services from Host when using kind"
 images:
-  - images/dustinspecker.jpg
+  - images/logos/resolving-kubernetes-services-from-host-when-using-kind.png
 date: 2020-05-09T16:10:52Z
 lastmod: 2020-12-06T12:00:00Z
 draft: false

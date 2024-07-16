@@ -1,7 +1,7 @@
 ---
 title: "Scaling Kubernetes Pods using Prometheus Metrics"
 images:
-  - images/scaling-kubernetes-pods-prometheus-metrics/scaling-kubernetes-pods-prometheus-metrics.png
+  - images/logos/scaling-kubernetes-pods-prometheus-metrics.png
 date: 2021-05-09T12:00:00Z
 lastmod: 2021-05-09T12:00:00Z
 draft: false

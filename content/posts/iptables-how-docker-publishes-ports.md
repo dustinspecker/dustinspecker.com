@@ -1,7 +1,7 @@
 ---
 title: "iptables: How Docker Publishes Ports"
 images:
-  - images/iptables-how-docker-publishes-ports/network-namespaces-and-virtual-devices.png
+  - images/logos/iptables-how-docker-publishes-ports.png
 date: 2020-07-15T12:00:00Z
 lastmod: 2020-08-13T12:00:00Z
 draft: false

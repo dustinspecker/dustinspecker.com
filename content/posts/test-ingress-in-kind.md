@@ -1,7 +1,7 @@
 ---
 title: "How to Test Ingress in a kind cluster"
 images:
-  - images/dustinspecker.jpg
+  - images/logos/test-ingress-in-kind.png
 date: 2020-09-01T12:00:00Z
 lastmod: 2020-09-01T12:00:00Z
 draft: false

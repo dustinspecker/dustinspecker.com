@@ -1,7 +1,7 @@
 ---
 title: "Ginkgo/Gomega: Custom Formatter for Improved Assertion Messages"
 images:
-  - images/ginkgo-gomega-custom-formatter/ginkgo-gomega-custom-formatter.png
+  - images/logos/ginkgo-gomega-custom-formatter.png
 date: 2024-07-09T12:00:00Z
 lastmod: 2024-07-09T12:00:00Z
 draft: false

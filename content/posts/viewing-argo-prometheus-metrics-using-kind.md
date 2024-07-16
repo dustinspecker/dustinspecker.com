@@ -1,7 +1,7 @@
 ---
 title: "Viewing Argo's Prometheus metrics in a kind cluster"
 images:
-  - images/dustinspecker.jpg
+  - images/logos/viewing-argo-prometheus-metrics-using-kind.png
 date: 2020-04-18T13:58:53Z
 lastmod: 2020-12-06T12:00:00Z
 draft: false

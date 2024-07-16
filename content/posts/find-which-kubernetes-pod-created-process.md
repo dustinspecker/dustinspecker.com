@@ -1,7 +1,7 @@
 ---
 title: "How to Find Which Kubernetes Pod Created a Process"
 images:
-  - images/find-which-kubernetes-pod-created-process/nsenter-cover.png
+  - images/logos/find-which-kubernetes-pod-created-process.png
 date: 2020-09-08T12:00:00Z
 lastmod: 2020-09-08T12:00:00Z
 draft: false

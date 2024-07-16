@@ -1,7 +1,7 @@
 ---
 title: "Introduction to kpt"
 images:
-  - images/dustinspecker.jpg
+  - images/logos/introduction-to-kpt.png
 date: 2020-05-04T17:04:22Z
 lastmod: 2020-05-04T17:04:22Z
 draft: false

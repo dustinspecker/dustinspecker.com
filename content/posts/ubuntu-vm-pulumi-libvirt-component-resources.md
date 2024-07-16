@@ -1,7 +1,7 @@
 ---
 title: "Spin up a Ubuntu VM using Pulumi and libvirt: Component Resources Edition"
 images:
-  - images/ubuntu-vm-pulumi-libvirt-component-resources/ubuntu-vm-pulumi-libvirt-component-resources.png
+  - images/logos/ubuntu-vm-pulumi-libvirt-component-resources.png
 date: 2022-01-25T12:00:00Z
 lastmod: 2022-01-25T12:00:00Z
 draft: false

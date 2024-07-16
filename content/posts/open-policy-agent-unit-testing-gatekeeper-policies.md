@@ -1,7 +1,7 @@
 ---
 title: "Open Policy Agent: Unit Testing Gatekeeper Policies"
 images:
-  - images/opa-gatekeeper-unit-testing/opa-gatekeeper-unit-testing.png
+  - images/logos/open-policy-agent-unit-testing-gatekeeper-policies.png
 date: 2020-11-22T12:00:00Z
 lastmod: 2020-11-29T12:00:00Z
 draft: false

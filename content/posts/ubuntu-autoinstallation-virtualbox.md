@@ -1,7 +1,7 @@
 ---
 title: "Ubuntu Autoinstallation on VirtualBox"
 images:
-  - images/ubuntu-autoinstallation-virtualbox/ubuntu-autoinstallation-virtualbox.png
+  - images/logos/ubuntu-autoinstallation-virtualbox.png
 date: 2021-01-31T12:00:00Z
 lastmod: 2021-01-31T12:00:00Z
 draft: false

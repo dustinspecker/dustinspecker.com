@@ -1,7 +1,7 @@
 ---
 title: "Open Policy Agent: Introduction to Gatekeeper"
 images:
-  - images/opa-gatekeeper/opa-gatekeeper.png
+  - images/logos/open-policy-agent-introduction-gatekeeper.png
 date: 2020-11-15T12:00:00Z
 lastmod: 2020-12-06T12:00:00Z
 draft: false

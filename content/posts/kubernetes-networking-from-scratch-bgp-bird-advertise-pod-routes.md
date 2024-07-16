@@ -1,7 +1,7 @@
 ---
 title: "Kubernetes Networking from Scratch: Using BGP and BIRD to Advertise Pod Routes"
 images:
-  - images/kubernetes-networking-from-scratch-bgp-bird-advertise-pod-routes/kubernetes-networking-from-scratch-bgp-bird-advertise-pod-routes-header.png
+  - images/logos/kubernetes-networking-from-scratch-bgp-bird-advertise-pod-routes.png
 date: 2022-04-11T12:00:00Z
 lastmod: 2022-04-11T12:00:00Z
 draft: false

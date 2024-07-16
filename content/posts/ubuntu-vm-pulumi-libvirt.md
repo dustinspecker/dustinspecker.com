@@ -1,7 +1,7 @@
 ---
 title: "Spin up a Ubuntu VM using Pulumi and libvirt"
 images:
-  - images/ubuntu-vm-pulumi-libvirt/ubuntu-vm-pulumi-libvirt.png
+  - images/logos/ubuntu-vm-pulumi-libvirt.png
 date: 2022-01-17T12:00:00Z
 lastmod: 2022-01-26T12:00:00Z
 draft: false

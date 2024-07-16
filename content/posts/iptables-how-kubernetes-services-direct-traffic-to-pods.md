@@ -1,7 +1,7 @@
 ---
 title: "iptables: How Kubernetes Services Direct Traffic to Pods"
 images:
-  - images/iptables-how-kubernetes-services-direct-traffic-to-pods/network-diagram.png
+  - images/logos/iptables-how-kubernetes-services-direct-traffic-to-pods.png
 date: 2020-08-12T12:00:00Z
 lastmod: 2022-04-11T12:00:00Z
 draft: false

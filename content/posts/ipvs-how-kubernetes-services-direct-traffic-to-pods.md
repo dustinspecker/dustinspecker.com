@@ -1,7 +1,7 @@
 ---
 title: "IPVS: How Kubernetes Services Direct Traffic to Pods"
 images:
-  - images/ipvs-how-kubernetes-services-direct-traffic-to-pods/ipvs-how-kubernetes-services-direct-traffic-to-pods.png
+  - images/logos/ipvs-how-kubernetes-services-direct-traffic-to-pods.png
 date: 2021-04-06T12:00:00Z
 lastmod: 2022-04-11T12:00:00Z
 draft: false

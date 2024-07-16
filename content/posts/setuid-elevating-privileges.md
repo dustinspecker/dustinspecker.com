@@ -1,7 +1,7 @@
 ---
 title: "setuid: Elevating Privileges"
 images:
-  - images/dustinspecker.jpg
+  - images/logos/setuid-elevating-privileges.png
 date: 2020-08-01T12:00:00Z
 lastmod: 2020-08-01T12:00:00Z
 draft: false

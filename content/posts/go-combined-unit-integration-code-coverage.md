@@ -1,7 +1,7 @@
 ---
 title: "Go 1.20: Combined Unit and Integration Code Coverage"
 images:
-  - images/go-combined-unit-integration-code-coverage/go-combined-unit-integration-code-coverage.png
+  - images/logos/go-combined-unit-integration-code-coverage.png
 date: 2023-01-08T12:00:00Z
 lastmod: 2023-01-08T12:00:00Z
 draft: false

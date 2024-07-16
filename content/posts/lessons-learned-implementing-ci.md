@@ -1,7 +1,7 @@
 ---
 title: "Lessons Learned Implementing CI"
 images:
-  - images/lessons-learned-implementing-ci/lessons-learned-implementing-ci.png
+  - images/logos/lessons-learned-implementing-ci.png
 date: 2021-01-16T12:00:00Z
 lastmod: 2021-01-16T12:00:00Z
 draft: false

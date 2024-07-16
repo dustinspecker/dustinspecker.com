@@ -1,7 +1,7 @@
 ---
 title: "Open Policy Agent: Konstraint"
 images:
-  - images/opa-konstraint/opa-konstraint.png
+  - images/logos/open-policy-agent-konstraint.png
 date: 2020-11-29T12:00:00Z
 lastmod: 2020-11-29T12:00:00Z
 draft: false

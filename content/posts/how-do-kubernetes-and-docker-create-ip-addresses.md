@@ -1,7 +1,7 @@
 ---
 title: "How Do Kubernetes and Docker Create IP Addresses?!"
 images:
-  - images/full-diagram.png
+  - images/logos/how-do-kubernetes-and-docker-create-ip-addresses.png
 date: 2020-05-24T19:13:13Z
 lastmod: 2022-04-11T12:00:00Z
 draft: false

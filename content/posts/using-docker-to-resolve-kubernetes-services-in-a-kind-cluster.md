@@ -1,7 +1,7 @@
 ---
 title: "Using Docker to Resolve Kubernetes Services in a kind Cluster"
 images:
-  - images/dustinspecker.jpg
+  - images/logos/using-docker-to-resolve-kubernetes-services-in-a-kind-cluster.png
 date: 2020-06-28T12:00:00Z
 lastmod: 2020-12-06T12:00:00Z
 draft: false

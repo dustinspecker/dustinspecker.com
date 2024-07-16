@@ -1,7 +1,7 @@
 ---
 title: "Making Smaller Git Commits"
 images:
-  - images/dustinspecker.jpg
+  - images/logos/making-smaller-git-commits.png
 date: 2020-04-21T23:27:42Z
 lastmod: 2020-04-21T23:27:42Z
 draft: false

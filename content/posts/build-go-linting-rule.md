@@ -1,7 +1,7 @@
 ---
 title: "Go, Lint. Go! How to Build a Go Linting Rule"
 images:
-  - images/build-go-linting-rule/build-go-linting-rule.png
+  - images/logos/build-go-linting-rule.png
 date: 2023-07-13T12:00:00Z
 lastmod: 2023-07-13T12:00:00Z
 draft: false

@@ -1,7 +1,7 @@
 ---
 title: "3 Git Tips for Rebasing Quicker"
 images:
-  - images/three-git-tips-rebasing-quicker/three-git-tips-rebasing-quicker.png
+  - images/logos/three-git-tips-rebasing-quicker.png
 date: 2021-01-09T12:00:00Z
 lastmod: 2021-01-09T12:00:00Z
 draft: false
