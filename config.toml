@@ -658,7 +658,7 @@ uglyURLs = false
     ######################################
     # Mermaid (https://github.com/mermaid-js/mermaid)
 
-    enableMermaid = false
+    enableMermaid = true
     # Note: *global settings*
     #       `mermaid` in post’s Front Matter
     #       has a higher priority than here
@@ -1529,7 +1529,8 @@ uglyURLs = false
         lunr_lang = "/npm/lunr-languages@1.4.0/min/lunr.de.min.js"
         mathjax = "/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"
         medium_zoom = "/npm/medium-zoom@latest/dist/medium-zoom.min.js"
-        mermaid = "/npm/mermaid@8.8.3/dist/mermaid.min.js"
+        # use an older version of mermaid since newer ones don't support theme switching
+        mermaid = "/npm/mermaid@8.5.2/dist/mermaid.min.js"
         qrcode = "/npm/qrcode-generator@1.4.4/qrcode.min.js"
         valine = "/npm/valine@1.4.14/dist/Valine.min.js"
         busuanzi = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
