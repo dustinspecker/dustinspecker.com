@@ -54,7 +54,7 @@ Here is an example of what a failing trace looks like:
 
 ![example trace in Jaeger](/images/open-telemetry-tracing-ginkgo/jaeger-trace.png)
 
-Feel free to skip to [Create Ginkgo suite with TracerProvider set up](#create-ginkgo-suite-with-tracerprovider-set-up) if you want to jump straight to the Ginkgo test suite with tracing.
+Feel free to skip to [Create Ginkgo suite with TracerProvider set up](#create-ginkgo-suite-with-tracerprovider-set-up) if you want to jump straight to the Ginkgo test suite with tracing. The source code for this post is available at [ginkgo-gomega-open-telemetry](https://github.com/dustinspecker/ginkgo-gomega-open-telemetry).
 
 ## Set up tracing provider and propagator
 
