@@ -591,6 +591,9 @@ Then run tests like before with `ginkgo run -v ./test/`.
 
 I hope this post has shed some light on how to trace through Ginkgo tests using OpenTelemetry. As mentioned in the introduction, tracing can be a powerful tool for troubleshooting test failures in distributed systems if each service is also publishing spans.
 
+Another thing about this approach is that if it's hard to troubleshoot test failures, it's probably hard to troubleshoot production issues. This approach
+guides you towards improving tracing for your tests by improving the tracing of the product, ultimately improving supporting your production services.
+
 A future post will cover how to publish metrics to Prometheus using OpenTelemetry Collector. We'll publish data per test case.
 
 If you have any questions or feedback, please get in touch with me on [LinkedIn](https://linkedin.com/in/dustin-specker), [Twitter](https://twitter.com/dustinspecker), or [GitHub](https://github.com/dustinspecker). Also, let me know if you have found other techniques to improve troubleshooting and testing distributed services.
