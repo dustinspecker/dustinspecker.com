@@ -122,7 +122,6 @@ Git handles stashing before rebasing and applying the stash after rebasing!
 
 ---
 
-Know any other Git tips for quickly rebasing? Let me know on [Twitter](https://twitter.com/dustinspecker)
-or [LinkedIn](https://www.linkedin.com/in/dustin-specker/).
+Know any other Git tips for quickly rebasing? Let me know on [LinkedIn](https://www.linkedin.com/in/dustin-specker/).
 
 {{< convertkit >}}

@@ -418,7 +418,7 @@ In the future, I'd like to learn more about
 - how some CNIs use BGP peering
   - I talk about using BGP and BIRD to do this in [Kubernetes Networking from Scratch: Using BGP and BIRD to Advertise Pod Routes]({{< ref "kubernetes-networking-from-scratch-bgp-bird-advertise-pod-routes" >}}).
 
-Have any info on these topics or any questions/comments on this post? Please feel free to connect on [Twitter](https://twitter.com/dustinspecker),
+Have any info on these topics or any questions/comments on this post? Please feel free to connect on 
 [LinkedIn](https://www.linkedin.com/in/dustin-specker/), or [GitHub](https://github.com/dustinspecker).
 
 And if you enjoyed this post, consider signing up for my newsletter to know when I publish new posts.

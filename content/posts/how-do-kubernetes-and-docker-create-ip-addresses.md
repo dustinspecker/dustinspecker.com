@@ -716,7 +716,7 @@ Well, I sure learned a lot, but I still have some remaining questions to answer 
   - I talk about using BGP and BIRD to do this in [Kubernetes Networking from Scratch: Using BGP and BIRD to Advertise Pod Routes]({{< ref "kubernetes-networking-from-scratch-bgp-bird-advertise-pod-routes" >}}).
 
 I'm new to a lot of this, so if you see something glaringly wrong please feel free to reach
-out on [Twitter](https://twitter.com/dustinspecker), [LinkedIn](https://www.linkedin.com/in/dustin-specker/), or [GitHub](https://github.com/dustinspecker). Or drop a message if you know the answer
+out on [LinkedIn](https://www.linkedin.com/in/dustin-specker/) or [GitHub](https://github.com/dustinspecker). Or drop a message if you know the answer
 to any of these remaining questions.
 
 {{< convertkit >}}

@@ -317,6 +317,6 @@ coverage from unit and integration tests will go a long way in
 helping teams have confidence in their tests.
 
 Do you have other interesting use cases for this? Please feel free to reach out on
-[Twitter](https://twitter.com/dustinspecker), [LinkedIn](https://www.linkedin.com/in/dustin-specker/), or [GitHub](https://github.com/dustinspecker). Let me know!
+[LinkedIn](https://www.linkedin.com/in/dustin-specker/) or [GitHub](https://github.com/dustinspecker). Let me know!
 
 {{< convertkit >}}

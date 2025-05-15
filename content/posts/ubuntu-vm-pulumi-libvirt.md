@@ -822,8 +822,7 @@ And then, we can use the same code for different environments!
 ---
 
 I hope you enjoyed learning about libvirt and Pulumi. I'm pretty happy to take advantage of Infrastructure as Code tooling
-for my homelab. Have some advice on Pulumi? Let me know on [Twitter](https://twitter.com/dustinspecker),
-[LinkedIn](https://www.linkedin.com/in/dustin-specker/), or [GitHub](https://github.com/dustinspecker).
+for my homelab. Have some advice on Pulumi? Let me know on [LinkedIn](https://www.linkedin.com/in/dustin-specker/) or [GitHub](https://github.com/dustinspecker).
 
 Update: I wrote about refactoring to use Component Resources:
 [Spin up a Ubuntu VM using Pulumi and libvirt: Component Resources Edition]({{< ref "ubuntu-vm-pulumi-libvirt-component-resources" >}}).

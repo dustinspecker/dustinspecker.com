@@ -1091,7 +1091,6 @@ Afterward, run `pulumi up`.
 
 I hope this helps illustrate the advantages of Pulumi's Component Resources and how to make shareable components for others.
 
-Have any recommendations for improvements or questions? Let me know on [Twitter](https://twitter.com/dustinspecker),
-[LinkedIn](https://www.linkedin.com/in/dustin-specker/), or [GitHub](https://github.com/dustinspecker).
+Have any recommendations for improvements or questions? Let me know on [LinkedIn](https://www.linkedin.com/in/dustin-specker/), or [GitHub](https://github.com/dustinspecker).
 
 {{< convertkit >}}

@@ -608,7 +608,6 @@ Learning all of this stuff typically ends with me having more questions such as:
   from the same source has to traverse all of the iptables rules.
 
 Did I explain something poorly or, worse, wrong? Know the answer to one of the above questions?
-Then please feel free to reach out and let me know on [Twitter](https://twitter.com/dustinspecker),
-[LinkedIn](https://www.linkedin.com/in/dustin-specker/), or [GitHub](https://github.com/dustinspecker).
+Then please feel free to reach out and let me know on [LinkedIn](https://www.linkedin.com/in/dustin-specker/) or [GitHub](https://github.com/dustinspecker).
 
 {{< convertkit >}}

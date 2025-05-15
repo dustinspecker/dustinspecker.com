@@ -596,6 +596,6 @@ guides you towards improving tracing for your tests by improving the tracing of 
 
 A future post will cover how to publish metrics to Prometheus using OpenTelemetry Collector. We'll publish data per test case.
 
-If you have any questions or feedback, please get in touch with me on [LinkedIn](https://linkedin.com/in/dustin-specker), [Twitter](https://twitter.com/dustinspecker), or [GitHub](https://github.com/dustinspecker). Also, let me know if you have found other techniques to improve troubleshooting and testing distributed services.
+If you have any questions or feedback, please get in touch with me on [LinkedIn](https://linkedin.com/in/dustin-specker) or [GitHub](https://github.com/dustinspecker). Also, let me know if you have found other techniques to improve troubleshooting and testing distributed services.
 
 {{< convertkit >}}

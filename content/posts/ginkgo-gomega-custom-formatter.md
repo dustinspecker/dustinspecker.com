@@ -307,6 +307,6 @@ The stack trace is now correctly displayed for the test case that uses `github.
 This post is an example of creating a custom formatter for Ginkgo/Gomega. You can customize the formatter to handle other types of errors or to display additional information. Another use case of formatters is redacting sensitive information.
 
 Have you used Gomega's formatters for something else? Please let me know on
-[Twitter](https://twitter.com/dustinspecker), [LinkedIn](https://www.linkedin.com/in/dustin-specker/), or [GitHub](https://github.com/dustinspecker).
+[LinkedIn](https://www.linkedin.com/in/dustin-specker/) or [GitHub](https://github.com/dustinspecker).
 
 {{< convertkit >}}

@@ -439,6 +439,6 @@ I am still looking for a reliable way to modify the imports accordingly.
 
 If you know a better way to implement rules or how to handle adding/removing imports, please connect on
 
-[Twitter](https://twitter.com/dustinspecker), [LinkedIn](https://www.linkedin.com/in/dustin-specker/), or [GitHub](https://github.com/dustinspecker).
+[[LinkedIn](https://www.linkedin.com/in/dustin-specker/) or [GitHub](https://github.com/dustinspecker).
 
 {{< convertkit >}}

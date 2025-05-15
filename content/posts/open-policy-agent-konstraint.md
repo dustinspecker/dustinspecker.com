@@ -289,7 +289,6 @@ rego code itself, enforcement kind, and any kinds/parameters specified.
 
 We've now tackled Gatekeeper, opa, and Konstraint. Konstraint is relatively new, but I look forward to
 future features it adds. Know any more tools to help with writing policies? Or better ways to use these
-tools? Please let me know on [Twitter](https://twitter.com/dustinspecker) or
-[LinkedIn](https://www.linkedin.com/in/dustin-specker/).
+tools? Please let me know on [LinkedIn](https://www.linkedin.com/in/dustin-specker/).
 
 {{< convertkit >}}

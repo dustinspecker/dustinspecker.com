@@ -143,7 +143,7 @@ Like everything else dealing with technology, understanding `setuid` has created
 - How does Kubernetes' `AllowPrivilegeEscalation` prevent `setuid`, `setgid`, and `setcap`?
 
 Know the answer to one of the above questions or have more questions? Then please feel free to
-reach out and let me know on [Twitter](https://twitter.com/dustinspecker), [LinkedIn](https://www.linkedin.com/in/dustin-specker/), or [GitHub](https://github.com/dustinspecker).
+reach out and let me know on [LinkedIn](https://www.linkedin.com/in/dustin-specker/) or [GitHub](https://github.com/dustinspecker).
 
 The source code for this Go application may be found in a [setuid-example Git repository](https://github.com/dustinspecker/setuid-example).
 

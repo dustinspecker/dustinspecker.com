@@ -764,7 +764,7 @@ We haven't had the chance to experience the benefit of BGP. In this use case, it
 vxlan (future topics for me to learn).
 
 There's a lot of information here, and I wouldn't be surprised if I misunderstood something. Please feel free to reach out on
-[Twitter](https://twitter.com/dustinspecker), [LinkedIn](https://www.linkedin.com/in/dustin-specker/), or [GitHub](https://github.com/dustinspecker), letting me know!
+[[LinkedIn](https://www.linkedin.com/in/dustin-specker/) or [GitHub](https://github.com/dustinspecker), letting me know!
 
 The last thing I want to do is be wrong on the internet.
 

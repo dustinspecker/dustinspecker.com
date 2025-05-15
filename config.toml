@@ -113,7 +113,7 @@ uglyURLs = false
     # Personal website, default: baseURL
     website = ""
     # Twitter
-    twitter = "dustinspecker"
+    twitter = ""
 
 # Related content
 [related]
@@ -239,29 +239,22 @@ uglyURLs = false
         pre = "internal"
         post = "envelope"
     [[menu.main]]
-        url = "https://twitter.com/dustinspecker"
-        name = ""
-        weight = 6
-        pre = "external"
-        post = "twitter"
-        identifier = "twitter"
-    [[menu.main]]
         url = "https://linkedin.com/in/dustin-specker"
-        weight = 7
+        weight = 6
         pre = "external"
         post = "linkedin"
         identifier = "linkedin"
     [[menu.main]]
         url = "https://github.com/dustinspecker"
-        weight = 8
+        weight = 7
         pre = "external"
         post = "github"
         identifier = "github"
     [[menu.main]]
-        weight = 9
+        weight = 8
         identifier = "theme-switcher"
     [[menu.main]]
-        weight = 10
+        weight = 9
         identifier = "search"
 
 
@@ -387,7 +380,7 @@ uglyURLs = false
     # ATTENTION: keep this format, change
     #            the number
 
-    siteTwitter = "dustinspecker"
+    siteTwitter = ""
     # Note: used for Twitter Cards
 
 

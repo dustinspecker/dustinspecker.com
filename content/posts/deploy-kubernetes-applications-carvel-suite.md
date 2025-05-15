@@ -471,7 +471,7 @@ attempting to deploy to a real cluster, and I'm all about that fast feedback loo
 There's a tradeoff with Carvel compared to other tools, given the amount of glue needed. For me, this composability is what I'm after. We've created a workflow
 that handles plain YAML files and Helm charts. It wouldn't be much effort to support kustomize, for example. The flexibility here is empowering.
 
-Are you using Carvel for anything? What's working out for you? Let me know on [Twitter](https://twitter.com/dustinspecker), [LinkedIn](https://linkedin.com/in/dustin-specker/), or
+Are you using Carvel for anything? What's working out for you? Let me know on [LinkedIn](https://linkedin.com/in/dustin-specker/) or
 [GitHub](https://github.com/dustinspecker).
 
 {{< convertkit >}}

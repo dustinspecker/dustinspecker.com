@@ -93,6 +93,6 @@ change may not have the patience to retrigger CI a few times and ultimately aban
 
 ---
 
-Do you have any lessons learned you'd add to this list? Let me know on [Twitter](https://twitter.com/dustinspecker) or [LinkedIn](https://linkedin.com/in/dustin-specker).
+Do you have any lessons learned you'd add to this list? Let me know on [LinkedIn](https://linkedin.com/in/dustin-specker).
 
 {{< convertkit >}}

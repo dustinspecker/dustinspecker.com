@@ -125,7 +125,6 @@ with the host.
 We've created a Kubernetes cluster via kind running a hello service. We then ran a Docker container configured to
 successfully communicate with services running in the kind cluster.
 
-I'm a huge fan of using kind for development. Do you have any recommended tools for Kubernetes development? Feel free to
-reach out on [Twitter](https://twitter.com/dustinspecker).
+I'm a huge fan of using kind for development. Do you have any recommended tools for Kubernetes development?
 
 {{< convertkit >}}

@@ -520,7 +520,7 @@ topics I'd like to learn are:
   - I talk about using BGP and BIRD to do this in [Kubernetes Networking from Scratch: Using BGP and BIRD to Advertise Pod Routes]({{< ref "kubernetes-networking-from-scratch-bgp-bird-advertise-pod-routes" >}}).
 
 Have any knowledge to share about the above topics? Or any other additional questions?
-Then please feel free to reach out and let me know on [Twitter](https://twitter.com/dustinspecker),
+Then please feel free to reach out and let me know on
 [LinkedIn](https://www.linkedin.com/in/dustin-specker/), or [GitHub](https://github.com/dustinspecker).
 
 {{< convertkit >}}

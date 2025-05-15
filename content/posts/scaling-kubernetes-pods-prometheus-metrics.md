@@ -425,6 +425,6 @@ grafana   Deployment/grafana   100533m/10   1         10        10         2m19s
 ---
 
 How else have you been leveraging Prometheus Metrics? Or any tips for supporting Horizontal Pod Autoscalers? Let me know
-on [Twitter](https://twitter.com/dustinspecker), [LinkedIn](https://linkedin.com/in/dustin-specker), or [GitHub](https://github.com/dustinspecker).
+on [LinkedIn](https://linkedin.com/in/dustin-specker) or [GitHub](https://github.com/dustinspecker).
 
 {{< convertkit >}}

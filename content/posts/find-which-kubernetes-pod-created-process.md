@@ -39,7 +39,6 @@ Finally, we execute the `hostname` command in the process' UTS namespace.
 
 And we see the Kubernetes pod name printed.
 
-Know an easier way? Let me know on [Twitter](https://twitter.com/dustinspecker) or
-[LinkedIn](https://linkedin.com/in/dustin-specker)!
+Know an easier way? Let me know on [LinkedIn](https://linkedin.com/in/dustin-specker)!
 
 {{< convertkit >}}
