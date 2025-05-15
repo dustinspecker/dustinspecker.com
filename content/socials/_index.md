@@ -9,7 +9,6 @@ share: false
 
 - [Blog](https://dustinspecker.com)
 - [Newsletter]({{< ref "newsletter" >}})
-- [Twitter](https://twitter.com/dustinspecker)
 - [LinkedIn](https://www.linkedin.com/in/dustin-specker/)
 - [GitHub](https://github.com/dustinspecker)
 - [Polywork](https://polywork.com/dustinspecker)
