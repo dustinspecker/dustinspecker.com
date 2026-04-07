@@ -280,8 +280,8 @@ multipass exec vm2 -- ping -c 1 10.0.1.10
 We can add host level routes to fix this issue by running:
 
 ```bash
-multipass exec vm1 -- sudo ip route add 10.0.2.0/24 via 198.20.0.2
-multipass exec vm2 -- sudo ip route add 10.0.1.0/24 via 198.20.0.1
+multipass exec vm1 -- sudo ip route add 10.0.2.10/32 via 198.20.0.2
+multipass exec vm2 -- sudo ip route add 10.0.1.10/32 via 198.20.0.1
 ```
 
 These commands instruct each VM about what to do with traffic for a pod found in the other VM's pod CIDR.
